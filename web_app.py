@@ -819,6 +819,7 @@ def render_page(
     formBox.classList.add('disabled');
     
     // Reset State
+    document.body.classList.remove('show-partials');
     errorBox.innerHTML = '';
     resultContainer.innerHTML = '';
     document.getElementById('progress-bar-fill').style.width = '0%';
