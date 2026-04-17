@@ -262,6 +262,7 @@ _QUALITY_PREFIXES = (
     "Exalted ",
     "Infused ",
     "Auspicious ",
+    "Unusual ",
 )
 
 

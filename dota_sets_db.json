@@ -8,7 +8,6 @@
     "Bindings of Vashundol",
     "Broken Blade of Vashundol",
     "Cloak of Vashundol",
-    "Evil Geniuses",
     "Fires of Vashundol Loading Screen",
     "Skull of Vashundol",
     "Tail of Vashundol",
@@ -53,8 +52,7 @@
     "Frozen Sigil of the Glacier Sea",
     "Hook of the Glacier Sea",
     "Rudder of the Glacier Sea",
-    "Tusks of the Glacier Sea",
-    "Vici Gaming"
+    "Tusks of the Glacier Sea"
   ],
   "Knight of the Burning Scale": [
     "Blade of the Burning Scale",
@@ -83,6 +81,7 @@
     "Vestments of Decay"
   ],
   "Flowersong Tempest": [
+    "Flowersong",
     "Flowersong Beauty",
     "Flowersong Breeze",
     "Flowersong Guard",
@@ -170,7 +169,7 @@
     "Blades of Nightsilver's Resolve",
     "Guardian of Nightsilver's Resolve",
     "Nightsilver's Resolve Loading Screen",
-    "Pauldrons of Nightsilver's Resolve",
+    "Pauldons of Nightsilver's Resolve",
     "Shield of Nightsilver's Resolve",
     "Style of Nightsilver's Resolve"
   ],
@@ -192,7 +191,6 @@
   "The Family Values": [
     "The Family Values Arms",
     "The Family Values Back",
-    "The Family Values Bundle",
     "The Family Values Head",
     "The Family Values Loading Screen",
     "The Family Values Shoulders",
@@ -213,7 +211,7 @@
     "Doomsday Ripper Weapon"
   ],
   "Hakobi and Tenneko": [
-    "Hakobi and Tenneko Bundle",
+    "Hakobi and Tenneko",
     "Hakobi and Tenneko Loading Screen"
   ],
   "Jolly Reaver": [
@@ -619,7 +617,6 @@
   "The Rat King": [
     "Bracers of the Rat King",
     "Crown of the Rat King",
-    "File:Cosmetic icon Royal Mount of the Rat King .png",
     "Royal Mount of the Rat King",
     "Scepter of the Rat King",
     "Vest of the Rat King"
@@ -866,7 +863,6 @@
   "Distinguished Expeditionary": [
     "Back of Distinguished Expeditionary",
     "Coat of Distinguished Expeditionary",
-    "Distinguished Expeditionary – русский",
     "Fist of Distinguished Expeditionary",
     "Hat of Distinguished Expeditionary",
     "Knife of Distinguished Expeditionary",
@@ -1298,51 +1294,11 @@
     "Silverwurm Sacrifice Loading Screen"
   ],
   "Scales of the Shadow Walker": [
-    "Ancestors' Pride Set",
-    "Arms of the Bramble Lord Set",
-    "Category:Pages with hard coded colors",
-    "Concord Dominion",
-    "Concord Dominion of the Crimson Witness",
-    "Concord Reversion",
-    "Darkwater Dominion",
-    "Diffusal Lance",
-    "Disquiet Solitude",
-    "Eye of Niuhi",
-    "Feathered Naginata",
-    "Fishing Halberd",
-    "Flock of Avilliva",
-    "Harsh Sojourn",
-    "Holy Spear of Images",
-    "Honors of the Golden Mane Set",
-    "Humble Drifter",
-    "Jewels of Teardrop Ice Set",
-    "Kinetic: Serene Honor",
-    "Legion's Wrath",
-    "Manifold Spear",
-    "Merciless Spear",
-    "Noble Warrior",
-    "Peregrine Lance",
-    "Phantom Concord",
-    "Phantom Lancer",
-    "Phantom Lancer/Equipment",
-    "Power of the Red Horse",
-    "Revered Arms Set",
-    "Ring Spear of Soul Diffusion",
-    "Royal Halberd",
     "Scales of the Shadow Walker - Arms",
     "Scales of the Shadow Walker - Belt",
     "Scales of the Shadow Walker - Head",
     "Scales of the Shadow Walker - Shoulder",
-    "Scales of the Shadow Walker - Weapon",
-    "Spear of the Herald",
-    "Spetum of the Disciplined",
-    "Template:Equipment Phantom Lancer",
-    "Tyrian Phantom Concord",
-    "Vengeance of the Sunwarrior",
-    "Vestments of the Infinite Waves",
-    "View this template",
-    "Winter Lineage Humble Drifter",
-    "Wraith of the Red Sands"
+    "Scales of the Shadow Walker - Weapon"
   ],
   "Perception of the First Light": [
     "Perception of the First Light - Armor",
@@ -1358,34 +1314,12 @@
     "Apex Automated - Weapon"
   ],
   "Test of the Basilisk Lord": [
-    "Affront of the Overseer",
-    "Amethyst Influx",
-    "Arc Adder",
-    "Bindings of the Storm-Stealer Set",
-    "Category:Pages with hard coded colors",
-    "Compact of the Guardian Construct",
-    "Cruel Assemblage",
-    "Empire of the Lightning Lord",
-    "Eye of the Maze Keeper",
-    "Golden Severing Crest",
-    "Grand Helm of the Narrow Maze",
-    "Heinous Exultation",
-    "Magister of the Narrow Fates",
-    "Menace of the Forlorn Maze",
-    "Severing Crest",
-    "Severing Lash",
-    "Shard of the Revenant",
-    "Taunt: Unhidden Talents",
-    "Template:Equipment Razor",
     "Test of the Basilisk Lord - Armor",
     "Test of the Basilisk Lord - Arms",
     "Test of the Basilisk Lord - Belt",
     "Test of the Basilisk Lord - Head",
     "Test of the Basilisk Lord - Weapon",
-    "Test of the Basilisk Lord Loading Screen",
-    "The Twisted Arc Set",
-    "View this template",
-    "Voidstorm Asylum"
+    "Test of the Basilisk Lord Loading Screen"
   ],
   "Secrets of the Frost Singularity": [
     "Secrets of the Frost Singularity - Arms",
@@ -1416,21 +1350,10 @@
     "Wings of Obelis Set"
   ],
   "The Chained Scribe": [
-    "Category:Pages with hard coded colors",
-    "Elegy of the Reaper",
-    "Fortune of the Five Houses",
-    "Fury of the Damned",
-    "Herald of the Ember Eye",
-    "Kite of Darkness",
-    "Paean of the Ink Dragon",
-    "Remnants of Ascension",
-    "Taunt: Harsh Critique",
-    "Template:Equipment Grimstroke",
     "The Chained Scribe - Armor",
     "The Chained Scribe - Belt",
     "The Chained Scribe - Head",
-    "The Chained Scribe - Weapon",
-    "View this template"
+    "The Chained Scribe - Weapon"
   ],
   "Widow of the Undermount Gloom": [
     "Widow of the Undermount Gloom - Anterior",
