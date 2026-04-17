@@ -773,7 +773,7 @@ def render_page(
           <div class="input-group">
             <label for="inventory_url">Steam Profile / Inventory URL</label>
             <input id="inventory_url" name="inventory_url" type="text" required
-                   placeholder="https://steamcommunity.com/id/m4xvel/inventory"
+                   placeholder="https://steamcommunity.com/id/STEAM_ID/inventory"
                    value="{inventory_url_safe}">
           </div>
 
