@@ -15,7 +15,7 @@ import uuid
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Callable
 
 from inventory_finder import (
     SteamInventoryError,
