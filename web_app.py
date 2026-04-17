@@ -490,13 +490,11 @@ def render_page(
     *,
     names_file: str,
     inventory_url: str = "",
-    exact: bool = False,
     error: str = "",
     result: Optional[Dict[str, Any]] = None,
 ) -> str:
     inventory_url_safe = html.escape(inventory_url)
     names_file_safe = html.escape(names_file)
-    exact_checked = "checked" if exact else ""
     
     error_html = f'<div class="error">{html.escape(error)}</div>' if error else ""
 
@@ -833,7 +831,6 @@ class AppHandler(BaseHTTPRequestHandler):
         page = render_page(
             names_file=NAMES_FILE.name,
             inventory_url=inventory_url,
-            exact=exact,
             error=error,
             result=result,
         )
