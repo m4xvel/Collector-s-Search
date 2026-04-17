@@ -7,6 +7,7 @@ from __future__ import annotations
 import gzip
 import json
 import re
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -78,32 +79,53 @@ def _http_get(url: str, params: Dict[str, str] | None = None) -> str:
     full_url = f"{url}?{query}" if query else url
     req = urllib.request.Request(full_url, headers={"User-Agent": USER_AGENT})
 
-    try:
-        with urllib.request.urlopen(req, timeout=20) as response:
-            raw = response.read()
-            encoding = response.headers.get("Content-Encoding", "")
-            return _decode_response(raw, encoding)
-    except urllib.error.HTTPError as exc:
-        body = ""
-        if exc.fp:
-            raw = exc.read()
-            encoding = exc.headers.get("Content-Encoding", "") if exc.headers else ""
-            body = _decode_response(raw, encoding)
-        hint = ""
-        if exc.code in {401, 403}:
-            hint = (
-                " Inventory is likely private or hidden. "
-                "Make sure profile and inventory are Public."
-            )
-        elif exc.code == 429:
-            hint = " Too many requests; wait and retry."
-        msg = f"HTTP {exc.code} while requesting {url}.{hint}"
-        if body:
-            trimmed = re.sub(r"\s+", " ", body)[:200]
-            msg += f" Response snippet: {trimmed}"
-        raise SteamInventoryError(msg) from exc
-    except urllib.error.URLError as exc:
-        raise SteamInventoryError(f"Network error while requesting {url}: {exc.reason}") from exc
+    max_retries = 3
+    base_delay = 5  # Start with 5s delay for 429
+
+    for attempt in range(max_retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                raw = response.read()
+                encoding = response.headers.get("Content-Encoding", "")
+                return _decode_response(raw, encoding)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429:
+                if attempt < max_retries:
+                    delay = base_delay * (2 ** attempt)
+                    # For long waits, print to console so user knows why it hangs
+                    print(f"Received 429 for {url}. Waiting {delay}s before retry {attempt + 1}/{max_retries}...", flush=True)
+                    time.sleep(delay)
+                    continue
+                hint = " Too many requests; wait and retry."
+            elif exc.code in {401, 403}:
+                hint = (
+                    " Inventory is likely private or hidden. "
+                    "Make sure profile and inventory are Public."
+                )
+            else:
+                hint = ""
+            
+            body = ""
+            if exc.fp:
+                try:
+                    raw = exc.read()
+                    encoding = exc.headers.get("Content-Encoding", "") if exc.headers else ""
+                    body = _decode_response(raw, encoding)
+                except Exception: pass
+
+            msg = f"HTTP {exc.code} while requesting {url}.{hint}"
+            if body:
+                trimmed = re.sub(r"\s+", " ", body)[:200]
+                msg += f" Response snippet: {trimmed}"
+            raise SteamInventoryError(msg) from exc
+        except urllib.error.URLError as exc:
+            if attempt < max_retries:
+                time.sleep(1) # Short retry for network blips
+                continue
+            raise SteamInventoryError(f"Network error while requesting {url}: {exc.reason}") from exc
+
+    # Should not be reachable
+    raise SteamInventoryError(f"Failed to fetch {url} after {max_retries} attempts.")
 
 
 def _http_get_json(url: str, params: Dict[str, str] | None = None) -> Dict:

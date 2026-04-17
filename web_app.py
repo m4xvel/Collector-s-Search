@@ -7,6 +7,7 @@ No external dependencies required.
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import html
 import json
 import urllib.parse
@@ -447,11 +448,12 @@ body:not(.show-partials) .card[data-full="false"] {
 """
 
 def fetch_rich_prices(targets: List[str]) -> Dict[str, Dict[str, Any]]:
-    """Fetch prices and numeric values for sorting."""
-    data = {}
+    """Fetch prices and numeric values for sorting in parallel."""
     unique_targets = list(dict.fromkeys([t.strip() for t in targets if t.strip()]))
-    
-    for target in unique_targets:
+    if not unique_targets:
+        return {}
+
+    def fetch_one(target: str) -> tuple[str, dict[str, Any]]:
         try:
             payload = _http_get_json(
                 COLLECTORSSHOP_ITEMS_ENDPOINT,
@@ -463,27 +465,34 @@ def fetch_rich_prices(targets: List[str]) -> Dict[str, Dict[str, Any]]:
             )
             items = payload.get("items")
             if not isinstance(items, list) or not items:
-                data[target] = {"label": "n/a", "value": 0}
-                continue
+                return target, {"label": "n/a", "value": 0}
             
             best_item = _pick_best_catalog_item(target, items)
             if not best_item:
-                data[target] = {"label": "n/a", "value": 0}
-                continue
+                return target, {"label": "n/a", "value": 0}
                 
             amount = extract_price_value(best_item)
             if amount is None:
-                data[target] = {"label": "n/a", "value": 0}
-                continue
+                return target, {"label": "n/a", "value": 0}
                 
             currency = str(payload.get("currency", "rub"))
             label = _format_price(amount, currency)
             if best_item.get("stock") is False:
                 label += " (нет в наличии)"
             
-            data[target] = {"label": label, "value": amount}
+            return target, {"label": label, "value": amount}
         except Exception:
-            data[target] = {"label": "n/a", "value": 0}
+            return target, {"label": "n/a", "value": 0}
+
+    # Use ThreadPoolExecutor to fetch prices in parallel
+    # 8 workers is a safe balance for this API
+    data = {}
+    with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
+        future_to_target = {executor.submit(fetch_one, t): t for t in unique_targets}
+        for future in concurrent.futures.as_completed(future_to_target):
+            target, result = future.result()
+            data[target] = result
+            
     return data
 
 def render_page(
