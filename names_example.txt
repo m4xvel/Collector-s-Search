@@ -1,0 +1,286 @@
+# Dota 2 set names example
+Fires of Vashundol
+Armor of the Unyielding Mask
+Serpent of the Emerald Sea
+Flowing Entropy
+Echoes of the Eyrie
+Brawler of the Glacier Sea
+Knight of the Burning Scale
+Garb of the Cunning Augur
+Apostle of Decay
+Flowersong Tempest
+Beacon of Cerulean Light
+Faceless Rex
+Oni Knight the Dark Conqueror
+Fortified Fabricator
+Diabolical Fiend
+Creeping Shadow
+Stormwrought Arbiter
+Iceburnt Elegy
+Wartorn Heavens
+Heir of Terror
+Dirgeful Overlord
+Nightsilver's Resolve
+Fractured Envoy
+Rising Glory
+The Family Values
+Atrophic Skitterwing
+Doomsday Ripper
+Hakobi and Tenneko
+Jolly Reaver
+Eternal Testament
+Secrets of the Katekhein
+Rumrunner's Carronade
+Abyssal Vortex
+Samareen Sacrifice
+Seablight Procession
+Corruption of the Virulent Krait
+Seaborne Reprisal
+Pressure Regulator
+Meranth Dragoon
+Spoils of the Vodou Rover
+Shadowforce Gale
+Mechalodon Interdictor
+Riptide Raider
+The Dread Prophet
+Covenant of the Depths
+Sovereign of the Kray Legions
+Cunning Corsair
+Chitinous Stalker
+Submerged Hazard
+Manta Marauder
+Heiress of the Coastal Kingdom
+Trail of the Sanguine Spectrum
+Pitfall Crusader
+Insights of the Sapphire Shroud
+Pillar of the Fractured Citadel
+Forlorn Descent
+Stonemarch Sovereign
+The Murid Divine
+Primer of the Sapper's Guile
+Molokau Stalker
+Morbific Provision
+Raptures of the Abyssal Kin
+Fate Meridian
+Grasp of the Riven Exile
+Visions of the Lifted Veil
+Dread Compact
+Endowments of the Lucent Canopy
+Vespidun Hunter-Killer
+Pitmouse Fraternity
+Fires of the Volcanic Guard
+Third Awakening
+Shackles of the Enduring Conscript
+Shimmer of the Anointed
+Cruelties of the Spiral Bore
+Loaded Prospects
+Ire of Molten Rebirth
+Pattern of the Silken Queen
+Dread Ascendance
+The Rat King
+Raiments of the Obsidian Forge
+Legends of Darkheart Pursuit
+Twisted Maelstrom
+Echoes of the Everblack
+Allure of the Faeshade Flower
+Paean of the Ink Dragon
+Scorched Amber
+Priest of the Proudsilver Clan
+The Arts of Mortal Deception
+Poacher's Bane
+Soul of the Brightshroud
+Curse of the Creeping Vine
+Pursuit of the Ember Demons
+Appetites of the Lizard King
+Forbidden Medicine
+Riddle of the Hierophant
+Glimmer of the Sacred Hunt
+Adornments of the Jade Emissary
+Defender of Ruin
+Gothic Whisper
+Avatar of the Impossible Realm
+Sight of the Kha-Ren Faithful
+Tribal Pathways
+Directive of the Sunbound
+Souls Tyrant
+Endless Night
+Dapper Disguise
+Fury of the Bloodforge
+Automaton Antiquity
+Tales of the Windward Rogue
+Grim Destiny
+Distinguished Expeditionary
+Verdant Predator
+Prized Acquisitions
+Fowl Omen
+Cinder Sensei
+Jagged Honor
+Origin of the Dark Oath
+Ravenous Abyss
+Apocalypse Unbound
+Beholden of the Banished Ones
+Fury of the Righteous Storm
+Lineage of the Stormlords
+Silent Slayer
+Mindless Slaughter
+Heartless Hunt
+Herald of the Ember Eye
+Fissured Flight
+Flashpoint Proselyte
+Signs of the Allfather
+Glory of the Elderflame
+Songs of Starfall Glen
+Ancient Inheritance
+Forsworn Legacy
+Spirit of the Sacred Grove
+Evolution of the Infinite
+Beast of the Crimson Ring
+Clearcut Cavalier
+The King Of Thieves
+Horror from the Deep
+Ire of the Ancient Gaoler
+Talons of the Endless Storm
+Carousal of the Mystic Masquerade
+Crown of Calaphas
+Wrath of the Fallen
+Blacksail Cannoneer
+Secrets of the Celestial
+Blaze of Oblivion
+Master of the Searing Path
+Steward of the Forbidden Chamber
+Claszureme Incursion
+Radiant Conqueror
+Twilight Hex
+Litany of the Damned
+Astral Terminus
+Caerulean Star
+Arcane Inverter
+Creed of the Skullhound
+Desert Bloom
+Silence of the Starweaver
+Vision of the Seraph Scion
+Anthozoan Assault
+Eyriebound Imperator
+Defender of the Brumal Crest
+Red Sands Marauder
+Indomitable Legacy
+Footfalls of the Sporefathers
+Darktrench Stalker
+Silverwurm Sacrifice
+Scales of the Shadow Walker
+Perception of the First Light
+Apex Automated
+Test of the Basilisk Lord
+Secrets of the Frost Singularity
+Perils of the Red Banks
+The Chained Scribe
+Widow of the Undermount Gloom
+Forgotten Fate
+March of the Crackerjack Mage
+Stranger in the Wandering Isles
+Cosmic Concoctioneers
+Days of the Demon
+Blightfall
+Pyrexae Polymorph Perfected
+Wrath of the Celestial Sentinel
+Bane of the Deathstalkers
+Shadowleaf Insurgent
+Scarlet Subversion
+Whippersnapper
+Hounds of Obsession
+Seadog's Stash
+Starlorn Adjudicator
+Spoils of the Shadowveil
+Chines of the Inquisitor
+Trophies of the Hallowed Hunt
+Crimson Dawn
+Forgotten Station
+Dirge Amplifier
+Champion of the Fire Lotus
+Deathstitch Shaman
+Blue Horizons
+Angel of Vex
+Dark Behemoth
+Astral Origins
+Bird of Prey
+Grand Suppressor
+Darkbrew's Transgression
+Transcendent Path
+The Wilding Tiger
+Dawn of a Darkness Foretold
+Cursed Cryptbreaker
+Feasts of Forever
+Darkfeather Factioneer
+Freeboot Fortunes
+Acrimonies of Obsession
+Sacred Chamber Guardian
+Withering Pain
+War Rig Eradicators
+Grudges of the Gallows Tree
+Brands of the Reaper
+Sublime Equilibrium
+Unities of Discord
+Primeval Abomination
+Astral Herald
+Spectral Shadow
+Taur Rider
+Crescent Huntress
+Tyrant of the Veil
+Tomo'kan Footsoldier
+Darkwood Eulogy
+Sea Spirit
+Triumph of the Imperatrix
+Beast of Thunder
+Ancestral Heritage
+Dezun Viper
+Brightfist
+Snailfire
+Turstarkuri Pilgrim
+Darkblade Adept
+Phantom's Facade
+Lotus of the Mountain Bear Clan
+Martyrdom of the Brineborn
+Elegy of the Reaper
+Mecha Nyx
+Faithful Fortune
+Ardalan Arms Race
+Dread of Night
+Blackwing Bandolera
+Exquisite Agonies
+Colossal Terrorpin
+Proselyte of the Sakura Clan
+Bloodmoon Stalker
+Ancient Exile
+Aberrant Observer
+Igneous Infernal
+Bleeding Edge
+Magus Mimicry
+Seam Ripper Snuggle Time
+Angler in the Abyss
+Phantom Balladeer
+Bootblack Brawler
+Needlepoint Necromancer
+Hare of the Cog
+Thundervolt
+Caprine Chimera
+Canis Crystallum
+Unchained Entropy
+Undying Love
+Crystal Colossus
+Secondhand Sorcery
+Glutton of Punishment
+Lord of the Sundered Souls
+Prehistoric Predator
+Insatiable Seas
+The White Widow
+Angel of the Abyss
+Blinding Bastion
+Harrow's Harvest
+Seed of Strife
+Laurels of the Dawnstar
+Sodbustin' Saboteurs
+Sins of the Simian Sovereign
+Worship of the Whispered Wing
+Cunning Counterfeit
+Fluid Frenzy
+Stone Giant Stronghold
