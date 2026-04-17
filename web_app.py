@@ -10,6 +10,8 @@ import argparse
 import concurrent.futures
 import html
 import json
+import threading
+import uuid
 import urllib.parse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -33,6 +35,31 @@ from inventory_finder import (
 
 BASE_DIR = Path(__file__).resolve().parent
 NAMES_FILE = BASE_DIR / "names_example.txt"
+
+# Global state for background tasks
+SEARCH_TASKS: Dict[str, Dict[str, Any]] = {}
+
+class SearchTask:
+    def __init__(self):
+        self.percentage = 0
+        self.status = "Инициализация..."
+        self.result = None
+        self.error = None
+        self.done = False
+
+    def update(self, percentage: int, status: str):
+        self.percentage = percentage
+        self.status = status
+
+    def complete(self, result: Any):
+        self.result = result
+        self.done = True
+        self.percentage = 100
+        self.status = "Завершено"
+
+    def fail(self, error: str):
+        self.error = error
+        self.done = True
 
 # Design System & Styles
 CSS = """
@@ -445,15 +472,105 @@ body:not(.show-partials) .card[data-full="false"] {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--ink-muted); }
+  border-bottom: 2px solid var(--accent);
+}
+
+.search-box.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(0.5);
+}
+
+/* Modal UI */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 18, 0.92);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-overlay.visible {
+  display: flex;
+}
+
+.progress-card {
+  background: rgba(34, 45, 50, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 36px;
+  padding: 40px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.25);
+  animation: modalPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes modalPop {
+  from { transform: scale(0.92); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 24px 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progress-bar-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), #34d399);
+  box-shadow: 0 0 15px var(--accent-glow);
+  transition: width 0.3s ease;
+}
+
+.progress-log {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  height: 1.2rem;
+  overflow: hidden;
+}
+
+.spinner-mini {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--accent-glow);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 """
 
-def fetch_rich_prices(targets: List[str]) -> Dict[str, Dict[str, Any]]:
+def fetch_rich_prices(
+    targets: List[str], 
+    progress_callback: Optional[Callable[[int, str], None]] = None
+) -> Dict[str, Dict[str, Any]]:
     """Fetch prices and numeric values for sorting in parallel."""
     unique_targets = list(dict.fromkeys([t.strip() for t in targets if t.strip()]))
     if not unique_targets:
         return {}
 
+    total = len(unique_targets)
+    done_count = 0
+    lock = threading.Lock()
+
     def fetch_one(target: str) -> tuple[str, dict[str, Any]]:
+        nonlocal done_count
         try:
             payload = _http_get_json(
                 COLLECTORSSHOP_ITEMS_ENDPOINT,
@@ -464,28 +581,28 @@ def fetch_rich_prices(targets: List[str]) -> Dict[str, Dict[str, Any]]:
                 },
             )
             items = payload.get("items")
-            if not isinstance(items, list) or not items:
-                return target, {"label": "n/a", "value": 0}
+            res = {"label": "n/a", "value": 0}
+            if isinstance(items, list) and items:
+                best_item = _pick_best_catalog_item(target, items)
+                if best_item:
+                    amount = extract_price_value(best_item)
+                    if amount is not None:
+                        currency = str(payload.get("currency", "rub"))
+                        label = _format_price(amount, currency)
+                        if best_item.get("stock") is False:
+                            label += " (нет в наличии)"
+                        res = {"label": label, "value": amount}
             
-            best_item = _pick_best_catalog_item(target, items)
-            if not best_item:
-                return target, {"label": "n/a", "value": 0}
-                
-            amount = extract_price_value(best_item)
-            if amount is None:
-                return target, {"label": "n/a", "value": 0}
-                
-            currency = str(payload.get("currency", "rub"))
-            label = _format_price(amount, currency)
-            if best_item.get("stock") is False:
-                label += " (нет в наличии)"
-            
-            return target, {"label": label, "value": amount}
+            with lock:
+                done_count += 1
+                if progress_callback:
+                    progress_callback(70 + int((done_count / total) * 25), f"Получение цен: {done_count}/{total}...")
+            return target, res
         except Exception:
+            with lock:
+                done_count += 1
             return target, {"label": "n/a", "value": 0}
 
-    # Use ThreadPoolExecutor to fetch prices in parallel
-    # 8 workers is a safe balance for this API
     data = {}
     with concurrent.futures.ThreadPoolExecutor(max_workers=8) as executor:
         future_to_target = {executor.submit(fetch_one, t): t for t in unique_targets}
@@ -645,11 +762,6 @@ def render_page(
   <style>{CSS}</style>
 </head>
 <body>
-  <div id="loading-overlay">
-    <div class="spinner"></div>
-    <div class="loading-text">ПОИСК ПРЕДМЕТОВ...</div>
-  </div>
-
   <div class="wrap">
     <header>
       <h1>Collector's Search</h1>
@@ -657,7 +769,7 @@ def render_page(
 
     <main>
       <section class="search-box">
-        <form method="post" action="/">
+        <form id="search-form" onsubmit="return startSearch(event)">
           <div class="input-group">
             <label for="inventory_url">Steam Profile / Inventory URL</label>
             <input id="inventory_url" name="inventory_url" type="text" required
@@ -666,20 +778,113 @@ def render_page(
           </div>
 
           <div class="form-footer">
-            <div class="controls">
-            </div>
-            <button type="submit">Найти предметы</button>
+            <div class="controls"></div>
+            <button type="submit" id="search-btn">Найти предметы</button>
           </div>
         </form>
       </section>
 
-      {error_html}
-      {result_html}
+      <div id="modal-overlay" class="modal-overlay">
+        <div class="progress-card">
+          <div class="loading-text" id="progress-percent" style="font-size: 2.5rem; margin-bottom: 15px; font-weight: 800;">0%</div>
+          <div class="progress-bar-bg">
+            <div id="progress-bar-fill" class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-log">
+            <span class="spinner-mini"></span>
+            <span id="progress-status">Инициализация...</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="error-box"></div>
+      <div id="results-container"></div>
     </main>
   </div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {{
+  function startSearch(e) {{
+    e.preventDefault();
+    const url = document.getElementById('inventory_url').value;
+    const input = document.getElementById('inventory_url');
+    const btn = document.getElementById('search-btn');
+    const formBox = document.querySelector('.search-box');
+    const progContainer = document.getElementById('progress-container');
+    const resultContainer = document.getElementById('results-container');
+    const errorBox = document.getElementById('error-box');
+
+    // Lock UI
+    btn.disabled = true;
+    input.disabled = true;
+    formBox.classList.add('disabled');
+    
+    // Reset State
+    errorBox.innerHTML = '';
+    resultContainer.innerHTML = '';
+    document.getElementById('progress-bar-fill').style.width = '0%';
+    document.getElementById('progress-percent').innerText = '0%';
+    document.getElementById('progress-status').innerText = 'Запуск...';
+    document.getElementById('modal-overlay').classList.add('visible');
+
+    fetch('/api/search', {{
+        method: 'POST',
+        body: new URLSearchParams({{ inventory_url: url }})
+    }})
+    .then(r => r.json())
+    .then(data => {{
+        if (data.error) throw new Error(data.error);
+        pollProgress(data.task_id);
+    }})
+    .catch(err => {{
+        showError(err.message);
+        unlockUI();
+    }});
+
+    return false;
+  }}
+
+  function unlockUI() {{
+    document.getElementById('search-btn').disabled = false;
+    document.getElementById('inventory_url').disabled = false;
+    document.querySelector('.search-box').classList.remove('disabled');
+    document.getElementById('modal-overlay').classList.remove('visible');
+  }}
+
+  function pollProgress(taskId) {{
+    fetch(`/api/progress?id=${{taskId}}`)
+    .then(r => r.json())
+    .then(data => {{
+        document.getElementById('progress-percent').innerText = data.percentage + '%';
+        document.getElementById('progress-bar-fill').style.width = data.percentage + '%';
+        document.getElementById('progress-status').innerText = data.status;
+
+        if (data.done) {{
+            if (data.error) {{
+                showError(data.error);
+                unlockUI();
+            }} else {{
+                // Final "Completed" message
+                document.getElementById('progress-status').innerText = 'Завершено!';
+                document.getElementById('progress-percent').innerText = '100%';
+                document.getElementById('progress-bar-fill').style.width = '100%';
+                
+                setTimeout(() => {{
+                    document.getElementById('results-container').innerHTML = data.result;
+                    initResultScripts();
+                    unlockUI();
+                }}, 800);
+            }}
+        }} else {{
+            setTimeout(() => pollProgress(taskId), 500);
+        }}
+    }});
+  }}
+
+  function showError(msg) {{
+    document.getElementById('error-box').innerHTML = `<div class="error">${{msg}}</div>`;
+  }}
+
+  function initResultScripts() {{
     const grid = document.getElementById('results-grid');
     if (!grid) return;
 
@@ -692,50 +897,34 @@ def render_page(
       const query = filterInput.value.toLowerCase();
       const sortBy = sortSelect.value;
 
-      // Filter
       cards.forEach(card => {{
         const target = card.dataset.target || '';
         card.style.display = target.includes(query) ? '' : 'none';
       }});
 
-      // Sort
       const sorted = [...cards].sort((a, b) => {{
-        // Special logic: if partials are shown, sort them to the top
         if (document.body.classList.contains('show-partials')) {{
           const isFullA = a.dataset.full === 'true';
           const isFullB = b.dataset.full === 'true';
-          if (isFullA !== isFullB) {{
-            return isFullA ? 1 : -1; // Full sets (true) go down, partials (false) go up
-          }}
+          if (isFullA !== isFullB) return isFullA ? 1 : -1;
         }}
 
-        if (sortBy === 'name') {{
-          return a.dataset.target.localeCompare(b.dataset.target);
-        }}
+        if (sortBy === 'name') return a.dataset.target.localeCompare(b.dataset.target);
         if (sortBy.startsWith('price')) {{
-          const pA = parseFloat(a.dataset.price) || 0;
-          const pB = parseFloat(b.dataset.price) || 0;
-          
-          if (pA === 0 && pB !== 0) return 1;
-          if (pB === 0 && pA !== 0) return -1;
-          
-          return sortBy === 'price_desc' ? pB - pA : pA - pB;
+            const pA = parseFloat(a.dataset.price) || 0;
+            const pB = parseFloat(b.dataset.price) || 0;
+            if (pA === 0 && pB !== 0) return 1;
+            if (pB === 0 && pA !== 0) return -1;
+            return sortBy === 'price_desc' ? pB - pA : pA - pB;
         }}
-        if (sortBy === 'count') {{
-          return parseInt(b.dataset.count) - parseInt(a.dataset.count);
-        }}
-        if (sortBy === 'rarity') {{
-          return a.dataset.rarity.localeCompare(b.dataset.rarity);
-        }}
+        if (sortBy === 'count') return parseInt(b.dataset.count) - parseInt(a.dataset.count);
         return 0;
       }});
-
       sorted.forEach(node => grid.appendChild(node));
     }};
 
     filterInput.addEventListener('input', update);
     sortSelect.addEventListener('change', update);
-
     if (togglePartialsBtn) {{
       togglePartialsBtn.addEventListener('click', () => {{
         document.body.classList.toggle('show-partials');
@@ -743,15 +932,6 @@ def render_page(
         update();
       }});
     }}
-  }});
-
-  // Loading indicator for form
-  const searchForm = document.querySelector('form');
-  const overlay = document.getElementById('loading-overlay');
-  if (searchForm && overlay) {{
-    searchForm.addEventListener('submit', () => {{
-      overlay.classList.add('visible');
-    }});
   }}
   </script>
 </body>
@@ -760,90 +940,166 @@ def render_page(
 
 class AppHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
-        if self.path != "/":
-            self.send_error(404, "Not Found")
-            return
-        page = render_page(names_file=NAMES_FILE.name)
-        self._send_html(page)
+        parsed = urllib.parse.urlparse(self.path)
+        if parsed.path == "/":
+            page = render_page(names_file=NAMES_FILE.name)
+            self._send_html(page)
+        elif parsed.path == "/api/progress":
+            params = urllib.parse.parse_qs(parsed.query)
+            task_id = params.get("id", [""])[0]
+            task = SEARCH_TASKS.get(task_id)
+            if not task:
+                self._send_json({"error": "Task not found"})
+                return
+            
+            self._send_json({
+                "percentage": task.percentage,
+                "status": task.status,
+                "done": task.done,
+                "error": task.error,
+                "result": task.result
+            })
+        else:
+            self.send_error(404)
 
     def do_POST(self) -> None:
-        if self.path != "/":
-            self.send_error(404, "Not Found")
-            return
+        if self.path == "/api/search":
+            form = self._read_form_data()
+            inventory_url = (form.get("inventory_url", [""])[0] or "").strip()
+            if not inventory_url:
+                self._send_json({"error": "Укажите ссылку на инвентарь"}, status=400)
+                return
 
-        form = self._read_form_data()
-        inventory_url = (form.get("inventory_url", [""])[0] or "").strip()
-
-        error = ""
-        result = None
-
-        if not inventory_url:
-            error = "Укажите ссылку на инвентарь или профиль."
+            task_id = str(uuid.uuid4())
+            task = SearchTask()
+            SEARCH_TASKS[task_id] = task
+            
+            # Start background thread
+            thread = threading.Thread(target=self._run_search, args=(task_id, inventory_url))
+            thread.daemon = True
+            thread.start()
+            
+            self._send_json({"task_id": task_id})
         else:
-            try:
-                targets = read_targets(str(NAMES_FILE))
-                steam_id = resolve_steam_id(inventory_url)
-                assets, descriptions = fetch_dota_inventory(steam_id)
-                items = build_items(assets, descriptions)
-                raw_results = search_items(items, targets)
+            self.send_error(404)
+
+    def _run_search(self, task_id: str, inventory_url: str):
+        task = SEARCH_TASKS[task_id]
+        try:
+            task.update(5, "Разрешение Steam ID...")
+            targets = read_targets(str(NAMES_FILE))
+            steam_id = resolve_steam_id(inventory_url)
+            
+            task.update(10, "Загрузка инвентаря...")
+            assets, descriptions = fetch_dota_inventory(steam_id, progress_callback=task.update)
+            
+            task.update(55, "Парсинг предметов...")
+            items = build_items(assets, descriptions)
+            
+            task.update(60, "Поиск совпадений...")
+            raw_results = search_items(items, targets, progress_callback=task.update)
+            
+            task.update(70, "Получение цен...")
+            matched_rows = [r for r in raw_results if r.items]
+            target_names_for_price = [r.target for r in matched_rows if r.is_full]
+            rich_prices = fetch_rich_prices(target_names_for_price, progress_callback=task.update)
+
+            matches = []
+            total_value = 0.0
+            currency = "RUB"
+            for row in matched_rows:
+                price_info = rich_prices.get(row.target, {"label": "n/a", "value": 0})
+                price_val = float(price_info.get("value", 0))
+                if row.full_set_count > 0:
+                    total_value += (price_val * row.full_set_count)
+                if "RUB" in price_info["label"].upper(): currency = "RUB"
+                elif "USD" in price_info["label"].upper(): currency = "USD"
                 
-                matched_rows = [r for r in raw_results if r.items]
-                target_names_for_price = [r.target for r in matched_rows if r.is_full]
-                rich_prices = fetch_rich_prices(target_names_for_price)
+                matches.append({
+                    "target": row.target,
+                    "items": row.items,
+                    "price_label": price_info["label"] if row.is_full else "Неполный сет",
+                    "price_value": price_info["value"] if row.is_full else 0,
+                    "total_units": row.total_units,
+                    "full_set_count": row.full_set_count,
+                    "rarity": row.items[0].rarity_name if row.items else "",
+                    "is_full": row.is_full,
+                    "missing_parts": row.missing_parts
+                })
 
-                matches = []
-                total_value = 0.0
-                currency = "RUB"
+            matches.sort(key=lambda x: (x["is_full"], x["target"].lower()))
+            result_data = {
+                "steam_id": steam_id,
+                "matched_count": len([m for m in matches if m["is_full"]]),
+                "partial_count": len([m for m in matches if not m["is_full"]]),
+                "matches": matches,
+                "total_price_label": _format_price(total_value, currency),
+            }
+            
+            # Generate the final HTML slice using the existing render_page logic (parts of it)
+            # Actually, let's just use the result_html generation logic from render_page
+            # I will refactor a bit to avoid code duplication if possible, but for now I'll inline the logic
+            cards_html = ""
+            for item_data in result_data["matches"]:
+                grouped_items = {}
+                for itm in item_data["items"]:
+                    key = (itm.display_name, itm.icon_url, itm.rarity_name, itm.rarity_color, itm.name_color)
+                    if key not in grouped_items:
+                        grouped_items[key] = {"display_name": itm.display_name, "icon_url": itm.icon_url, 
+                                            "rarity_name": itm.rarity_name, "rarity_color": itm.rarity_color, 
+                                            "name_color": itm.name_color, "amount": 0}
+                    grouped_items[key]["amount"] += itm.amount
+
+                items_html = ""
+                for itm in grouped_items.values():
+                    is_bundle = itm['display_name'].lower() == item_data['target'].lower()
+                    bundle_class = "is-bundle" if is_bundle else ""
+                    bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                    rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
+                    name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
+                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
                 
-                for row in matched_rows:
-                    price_info = rich_prices.get(row.target, {"label": "n/a", "value": 0})
-                    price_val = float(price_info.get("value", 0))
-                    
-                    # Calculate contribution to total value based on quantity of full sets
-                    if row.full_set_count > 0:
-                        total_value += (price_val * row.full_set_count)
-                    
-                    if "RUB" in price_info["label"].upper(): currency = "RUB"
-                    elif "USD" in price_info["label"].upper(): currency = "USD"
-                    
-                    first_item_rarity = row.items[0].rarity_name if row.items else ""
-                    
-                    matches.append({
-                        "target": row.target,
-                        "items": row.items,
-                        "price_label": price_info["label"] if row.is_full else "Неполный сет",
-                        "price_value": price_info["value"] if row.is_full else 0,
-                        "total_units": row.total_units,
-                        "full_set_count": row.full_set_count,
-                        "rarity": first_item_rarity,
-                        "is_full": row.is_full,
-                        "missing_parts": row.missing_parts
-                    })
+                for part in (item_data.get("missing_parts") or []):
+                    items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
+                
+                count_badge = f'<div class="set-count">Полных сетов: {item_data["full_set_count"]}</div>' if item_data["full_set_count"] > 0 else ""
+                
+                total_set_price = float(item_data["price_value"]) * item_data["full_set_count"]
+                if item_data["full_set_count"] > 1 and item_data["price_value"] > 0:
+                    main_label = f"{total_set_price:,.0f} ".replace(',', ' ') + currency
+                    unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
+                else:
+                    main_label = item_data['price_label']
+                    unit_label = ""
 
-                # Initial sort: partials first, then by name
-                matches.sort(key=lambda x: (x["is_full"], x["target"].lower()))
+                cards_html += f"""<div class="card" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}"><div class="card-header"><h3 class="target-name">{html.escape(item_data['target'])}</h3>{count_badge}<div class="price"><div style="display: flex; align-items: center; gap: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>{html.escape(main_label)}</div>{unit_label}</div></div><div class="item-list">{items_html}</div></div>"""
 
-                result = {
-                    "steam_id": steam_id,
-                    "targets_count": len(targets),
-                    "items_count": len(items),
-                    "matched_count": len([m for m in matches if m["is_full"]]),
-                    "partial_count": len([m for m in matches if not m["is_full"]]),
-                    "matches": matches,
-                    "total_price_label": _format_price(total_value, currency),
-                }
-            except SteamInventoryError as exc:
-                error = str(exc)
-            except Exception as e:
-                error = f"Ошибка: {str(e)}"
+            final_html = f"""
+            <div class="result-controls">
+                <div class="stats">
+                    <a href="https://steamcommunity.com/profiles/{result_data['steam_id']}" target="_blank" class="chip">SteamID: {result_data['steam_id']}</a>
+                    <span class="chip" style="color: var(--accent)">Найдено полных: {result_data['matched_count']}</span>
+                    <span class="chip" style="color: var(--gold)">Общая стоимость: {result_data['total_price_label']}</span>
+                    <button id="toggle-partials" class="toggle-partials"><span>Неполные ({result_data['partial_count']})</span></button>
+                </div>
+                <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-end;">
+                    <input id="js-filter" type="text" placeholder="Фильтр по названию..." style="max-width: 250px;">
+                    <select id="js-sort"><option value="name">По названию</option><option value="price_desc">Дороже</option><option value="price_asc">Дешевле</option><option value="count">По количеству</option></select>
+                </div>
+            </div>
+            <div id="results-grid" class="grid">{cards_html}</div>
+            """
+            task.complete(final_html)
+        except Exception as e:
+            task.fail(str(e))
 
-        page = render_page(
-            names_file=NAMES_FILE.name,
-            inventory_url=inventory_url,
-            error=error,
-            result=result,
-        )
-        self._send_html(page)
+    def _send_json(self, data: Dict, status: int = 200):
+        body = json.dumps(data).encode("utf-8")
+        self.send_response(status)
+        self.send_header("Content-Type", "application/json")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
 
     def _read_form_data(self) -> Dict[str, list[str]]:
         length = int(self.headers.get("Content-Length", "0") or "0")

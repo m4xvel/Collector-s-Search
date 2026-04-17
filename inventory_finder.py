@@ -14,7 +14,7 @@ import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List, Tuple, Callable, Any
 
 STEAM_COMMUNITY_HOST = "steamcommunity.com"
 DOTA_APP_ID = 570
@@ -196,7 +196,10 @@ def resolve_vanity_to_steam_id(vanity: str) -> str:
     return steam_id
 
 
-def fetch_dota_inventory(steam_id: str) -> Tuple[List[Dict], Dict[Tuple[str, str], Dict]]:
+def fetch_dota_inventory(
+    steam_id: str, 
+    progress_callback: Callable[[int, str], None] | None = None
+) -> Tuple[List[Dict], Dict[Tuple[str, str], Dict]]:
     endpoint = f"https://steamcommunity.com/inventory/{steam_id}/{DOTA_APP_ID}/{DOTA_CONTEXT_ID}"
 
     all_assets: List[Dict] = []
@@ -207,6 +210,9 @@ def fetch_dota_inventory(steam_id: str) -> Tuple[List[Dict], Dict[Tuple[str, str
 
     while True:
         page += 1
+        if progress_callback:
+            progress_callback(10 + min(page * 5, 40), f"Загрузка страницы инвентаря {page}...")
+            
         if page > MAX_PAGES:
             raise SteamInventoryError(
                 f"Inventory pagination exceeded {MAX_PAGES} pages."
@@ -378,8 +384,12 @@ class MatchResult:
 def search_items(
     items: List[InventoryItem],
     targets: List[str],
+    progress_callback: Callable[[int, str], None] | None = None
 ) -> List[MatchResult]:
     results: List[MatchResult] = []
+
+    if progress_callback:
+        progress_callback(60, "Сопоставление предметов с базой сетов...")
 
     db_path = Path(__file__).resolve().parent / "dota_sets_db.json"
     sets_db = {}
