@@ -238,10 +238,16 @@ _QUALITY_PREFIXES = (
 
 
 def _strip_quality_prefix(name: str) -> str:
-    """Remove quality prefix (e.g. 'Inscribed ') from an item name."""
-    for prefix in _QUALITY_PREFIXES:
-        if name.startswith(prefix):
-            return name[len(prefix):]
+    """Remove quality prefixes (e.g. 'Inscribed Genuine ') from an item name."""
+    while True:
+        changed = False
+        for prefix in _QUALITY_PREFIXES:
+            if name.startswith(prefix):
+                name = name[len(prefix):]
+                changed = True
+                break
+        if not changed:
+            break
     return name
 
 
@@ -369,9 +375,10 @@ def search_items(
         required_parts = sets_db.get(target, [])
         names_to_find = {needle} | {p.lower() for p in required_parts}
 
+        # Select only items that EXACTLY match our target or its parts
         matched_items: List[InventoryItem] = []
         for item in items:
-            if any(name in item.match_text for name in names_to_find):
+            if any(name in item.exact_fields for name in names_to_find):
                 matched_items.append(item)
 
         if not matched_items:
@@ -379,7 +386,7 @@ def search_items(
             continue
         
         # 1. Gather all unique items matching the target name exactly (Bundles)
-        bundle_items = [i for i in matched_items if i.display_name.lower() == needle]
+        bundle_items = [i for i in matched_items if needle in i.exact_fields]
         sets_from_bundles = sum(i.amount for i in bundle_items)
         
         if not required_parts:
@@ -396,13 +403,16 @@ def search_items(
         # 2. Count parts from individual items
         part_counts = {p.lower(): 0 for p in required_parts}
         for item in matched_items:
-            if item.display_name.lower() == needle:
+            # If it's a bundle, we already counted it. 
+            # Note: We check if it matches the bundle name exactly.
+            if needle in item.exact_fields:
                 continue
             
-            item_name = item.display_name.lower()
+            # Check if this item matches any of the required parts
             for rp in required_parts:
-                if item_name == rp.lower():
-                    part_counts[rp.lower()] += item.amount
+                rp_lower = rp.lower()
+                if rp_lower in item.exact_fields:
+                    part_counts[rp_lower] += item.amount
                     break
 
         # 3. Calculate full sets from parts
@@ -415,7 +425,8 @@ def search_items(
         
         # 4. Check for an incomplete set from remaining parts
         remaining_parts = {p: count - sets_from_parts for p, count in part_counts.items()}
-        missing = [p for p in required_parts if remaining_parts[p.lower()] == 0]
+        # A part is missing if we have 0 units left AFTER forming full sets
+        missing = [p for p in required_parts if remaining_parts[p.lower()] <= 0]
         has_incomplete = any(count > 0 for count in remaining_parts.values())
         
         results.append(MatchResult(
