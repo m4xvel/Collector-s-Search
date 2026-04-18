@@ -53,17 +53,7 @@ class InventoryItem:
 
 
 
-def read_targets(path: str) -> List[str]:
-    try:
-        with open(path, "r", encoding="utf-8") as file:
-            lines = [line.strip() for line in file]
-    except OSError as exc:
-        raise SteamInventoryError(f"Failed to read names file: {exc}") from exc
 
-    targets = [line for line in lines if line and not line.startswith("#")]
-    if not targets:
-        raise SteamInventoryError("Names file is empty (or contains only comments).")
-    return targets
 
 
 def _http_get(url: str, params: Dict[str, str] | None = None) -> str:
@@ -391,7 +381,7 @@ class MatchResult:
 
 def search_items(
     items: List[InventoryItem],
-    targets: List[str],
+    targets: List[str] | None = None,
     progress_callback: Callable[[int, str], None] | None = None
 ) -> List[MatchResult]:
     results: List[MatchResult] = []
@@ -415,7 +405,9 @@ def search_items(
         except Exception:
             pass
 
-    for target in targets:
+    search_targets = targets if targets is not None else sorted(sets_db.keys())
+    
+    for target in search_targets:
         needle = target.strip().lower()
         if not needle:
             continue

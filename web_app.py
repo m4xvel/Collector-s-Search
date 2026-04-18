@@ -22,7 +22,6 @@ from inventory_finder import (
     build_items,
     fetch_collectorsshop_prices,
     fetch_dota_inventory,
-    read_targets,
     resolve_steam_id,
     search_items,
     extract_price_value,
@@ -35,7 +34,6 @@ from inventory_finder import (
 import re
 
 BASE_DIR = Path(__file__).resolve().parent
-NAMES_FILE = BASE_DIR / "names_example.txt"
 
 # Global state for background tasks
 SEARCH_TASKS: Dict[str, Dict[str, Any]] = {}
@@ -627,13 +625,11 @@ def fetch_rich_prices(
 
 def render_page(
     *,
-    names_file: str,
     inventory_url: str = "",
     error: str = "",
     result: Optional[Dict[str, Any]] = None,
 ) -> str:
     inventory_url_safe = html.escape(inventory_url)
-    names_file_safe = html.escape(names_file)
     
     error_html = f'<div class="error">{html.escape(error)}</div>' if error else ""
 
@@ -972,7 +968,7 @@ class AppHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
         if parsed.path == "/":
-            page = render_page(names_file=NAMES_FILE.name)
+            page = render_page()
             self._send_html(page)
         elif parsed.path == "/api/progress":
             params = urllib.parse.parse_qs(parsed.query)
@@ -1017,7 +1013,6 @@ class AppHandler(BaseHTTPRequestHandler):
         task = SEARCH_TASKS[task_id]
         try:
             task.update(5, "Разрешение Steam ID...")
-            targets = read_targets(str(NAMES_FILE))
             steam_id = resolve_steam_id(inventory_url)
             
             task.update(10, "Загрузка инвентаря...")
@@ -1027,7 +1022,7 @@ class AppHandler(BaseHTTPRequestHandler):
             items = build_items(assets, descriptions)
             
             task.update(60, "Поиск совпадений...")
-            raw_results = search_items(items, targets, progress_callback=task.update)
+            raw_results = search_items(items, None, progress_callback=task.update)
             
             task.update(70, "Получение цен...")
             matched_rows = [r for r in raw_results if r.items]
@@ -1172,9 +1167,7 @@ def main() -> int:
     parser.add_argument("--port", type=int, default=8000)
     args = parser.parse_args()
 
-    if not NAMES_FILE.exists():
-        print(f"Error: {NAMES_FILE} not found")
-        return 1
+
 
     server = ThreadingHTTPServer((args.host, args.port), AppHandler)
     print(f"Running at http://{args.host}:{args.port}")
