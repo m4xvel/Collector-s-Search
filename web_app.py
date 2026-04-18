@@ -927,9 +927,14 @@ def render_page(
       // Sort all visible cards
       const visibleCards = cards.filter(c => c.style.display !== 'none');
       visibleCards.sort((a, b) => {{
+        // If showPartials is active, prioritize incomplete sets at the top
+        if (showPartials) {{
+            const fullA = a.dataset.full === 'true';
+            const fullB = b.dataset.full === 'true';
+            if (fullA !== fullB) return fullA ? 1 : -1; // Incomplete (false) comes first
+        }}
+
         if (sortBy === 'name') {{
-            const catComp = a.dataset.category.localeCompare(b.dataset.category);
-            if (catComp !== 0) return catComp;
             return a.dataset.target.localeCompare(b.dataset.target);
         }}
         if (sortBy.startsWith('price')) {{
