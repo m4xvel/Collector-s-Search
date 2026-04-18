@@ -203,6 +203,7 @@ def fetch_dota_inventory(
     endpoint = f"https://steamcommunity.com/inventory/{steam_id}/{DOTA_APP_ID}/{DOTA_CONTEXT_ID}"
 
     all_assets: List[Dict] = []
+    seen_asset_ids = set()
     descriptions: Dict[Tuple[str, str], Dict] = {}
 
     start_assetid = ""
@@ -230,7 +231,12 @@ def fetch_dota_inventory(
         assets = payload.get("assets") or []
         descs = payload.get("descriptions") or []
 
-        all_assets.extend(assets)
+        for asset in assets:
+            aid = str(asset.get("assetid", ""))
+            if aid and aid not in seen_asset_ids:
+                all_assets.append(asset)
+                seen_asset_ids.add(aid)
+
         for desc in descs:
             classid = str(desc.get("classid", ""))
             instanceid = str(desc.get("instanceid", "0"))
@@ -466,18 +472,30 @@ def search_items(
         
         # 4. Check for an incomplete set from remaining parts
         remaining_parts = {p: count - sets_from_parts for p, count in part_counts.items()}
-        # A part is missing if we have 0 units left AFTER forming full sets
-        missing = [p for p in required_parts if remaining_parts[p.lower()] <= 0]
-        has_incomplete = any(count > 0 for count in remaining_parts.values())
+        # A part is missing IF we have some extra parts but not all of them for the NEXT set
+        has_extra_parts = any(count > 0 for count in remaining_parts.values())
+        
+        missing = []
+        if total_full_sets == 0:
+            # If we have 0 full sets, show what's missing for the 1st
+            missing = [p for p in required_parts if remaining_parts[p.lower()] <= 0]
+
+        # Safety deduplication by asset_id (just in case input had them)
+        unique_matched_items = []
+        seen_matched_aids = set()
+        for i in matched_items:
+            if i.asset_id not in seen_matched_aids:
+                unique_matched_items.append(i)
+                seen_matched_aids.add(i.asset_id)
         
         results.append(MatchResult(
             target=target,
-            items=matched_items,
+            items=unique_matched_items,
             category=set_to_category.get(target, "Other"),
             full_set_count=total_full_sets,
             is_full=(total_full_sets > 0),
-            missing_parts=missing if has_incomplete or total_full_sets == 0 else None,
-            found_parts_count=remaining_parts if has_incomplete else None
+            missing_parts=missing if missing else None,
+            found_parts_count=remaining_parts if has_extra_parts else None
         ))
 
     return results

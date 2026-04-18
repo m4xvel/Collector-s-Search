@@ -662,10 +662,11 @@ def render_page(
     if result:
         cards_html = ""
         for item_data in result["matches"]:
-            # Group items by name and icon to show combined quantities (x2, x3...)
+            # Group items by name to show combined quantities, even if colors/icons slightly differ
+            # Pick the first icon/rarity for the bunch
             grouped_items = {}
             for itm in item_data["items"]:
-                key = (itm.display_name, itm.icon_url, itm.rarity_name, itm.rarity_color, itm.name_color)
+                key = itm.display_name.lower().strip()
                 if key not in grouped_items:
                     grouped_items[key] = {
                         "display_name": itm.display_name,
@@ -1117,11 +1118,16 @@ class AppHandler(BaseHTTPRequestHandler):
                 for item_data in cat_matches:
                     grouped_items = {}
                     for itm in item_data["items"]:
-                        key = (itm.display_name, itm.icon_url, itm.rarity_name, itm.rarity_color, itm.name_color)
+                        key = itm.display_name.lower().strip()
                         if key not in grouped_items:
-                            grouped_items[key] = {"display_name": itm.display_name, "icon_url": itm.icon_url, 
-                                                "rarity_name": itm.rarity_name, "rarity_color": itm.rarity_color, 
-                                                "name_color": itm.name_color, "amount": 0}
+                            grouped_items[key] = {
+                                "display_name": itm.display_name,
+                                "icon_url": itm.icon_url, 
+                                "rarity_name": itm.rarity_name, 
+                                "rarity_color": itm.rarity_color, 
+                                "name_color": itm.name_color, 
+                                "amount": 0
+                            }
                         grouped_items[key]["amount"] += itm.amount
 
                     items_html = ""
