@@ -2058,6 +2058,198 @@
       "Secondhand Sorcery - Weapon"
     ]
   },
+  "Winter 2024 Heroes' Hoard": {
+    "Foreseen Horizons": [
+      "Foreseen Horizons - Weapon",
+      "Foreseen Horizons - Head",
+      "Foreseen Horizons - Armor",
+      "Foreseen Horizons - Back"
+    ],
+    "Tendrils of the Timeless": [
+      "Tendrils of the Timeless - Head",
+      "Tendrils of the Timeless - Shoulder",
+      "Tendrils of the Timeless - Arms",
+      "Tendrils of the Timeless - Weapon",
+      "Tendrils of the Timeless - Belt",
+      "Tendrils of the Timeless - Loading Screen"
+    ],
+    "Verminator": [
+      "Verminator - Weapon",
+      "Verminator - Head",
+      "Verminator - Shoulder",
+      "Verminator - Offhand Weapon",
+      "Verminator - Back",
+      "Verminator - Armor"
+    ],
+    "Rose of Moira": [
+      "Rose of Moira - Crown",
+      "Rose of Moira - Prison",
+      "Rose of Moira - Raiment",
+      "Rose of Moira - Revolvers",
+      "Rose of Moira - Ultimate",
+      "Rose of Moira - Loading Screen"
+    ],
+    "Bilge Rat Buccaneer": [
+      "Bilge Rat Buccaneer - Back",
+      "Bilge Rat Buccaneer - Armor",
+      "Bilge Rat Buccaneer - Tail",
+      "Bilge Rat Buccaneer - Weapon"
+    ],
+    "Bloodzo the Bear": [
+      "Bloodzo the Bear - Weapon",
+      "Bloodzo the Bear - Arms",
+      "Bloodzo the Bear - Belt",
+      "Bloodzo the Bear - Back",
+      "Bloodzo the Bear - Head",
+      "Bloodzo the Bear - Loading Screen"
+    ],
+    "Velveteen Vanquisher": [
+      "Velveteen Vanquisher - Head",
+      "Velveteen Vanquisher - Armor",
+      "Velveteen Vanquisher - Arms",
+      "Velveteen Vanquisher - Weapon",
+      "Velveteen Vanquisher - Offhand",
+      "The Toy Butcher"
+    ],
+    "Starforge Reformer": [
+      "Starforge Reformer - Head",
+      "Starforge Reformer - Arms",
+      "Starforge Reformer - Armor",
+      "Starforge Reformer - Weapon",
+      "Starforge Reformer - Loading Screen"
+    ],
+    "Shellshock Saturnalia": [
+      "Shellshock Saturnalia - Head",
+      "Shellshock Saturnalia - Costume",
+      "Shellshock Saturnalia - Armor",
+      "Shellshock Saturnalia - Mount",
+      "Shellshock Saturnalia - Weapon",
+      "Shellshock Saturnalia - Loading Screen"
+    ],
+    "Onikage Disciple": [
+      "Onikage Disciple - Weapon",
+      "Onikage Disciple - Head",
+      "Onikage Disciple - Shoulder",
+      "Onikage Disciple - Back",
+      "Onikage Disciple - Belt"
+    ],
+    "Svarog the Infernal": [
+      "Svarog the Infernal - Head",
+      "Svarog the Infernal - Arms",
+      "Svarog the Infernal - Back",
+      "Svarog the Infernal - Legs"
+    ],
+    "Little Red": [
+      "Little Red - Hood",
+      "Little Red - Armor",
+      "Little Red - Cloak",
+      "Little Red - Pack",
+      "Little Red - Wolf Pet",
+      "Taunt: Riding High"
+    ],
+    "Designs of the Dragon": [
+      "Designs of the Dragon - Head",
+      "Designs of the Dragon - Armor",
+      "Designs of the Dragon - Weapon",
+      "Designs of the Dragon - Offhand",
+      "The Disciple's Path"
+    ],
+    "Vile Vessel": [
+      "Vile Vessel - Back",
+      "Vile Vessel - Belt",
+      "Vile Vessel - Armor",
+      "Vile Vessel - Tail",
+      "Vile Vessel - Loading Screen"
+    ],
+    "Ardalan Arsonist": [
+      "Ardalan Arsonist - Head",
+      "Ardalan Arsonist - Armor",
+      "Ardalan Arsonist - Back",
+      "Ardalan Arsonist - Belt",
+      "Ardalan Arsonist - Offhand Weapon"
+    ],
+    "Mechamancer": [
+      "Mechamancer - Back",
+      "Mechamancer - Head",
+      "Mechamancer - Tail",
+      "Mechamancer - Arms",
+      "Mechamancer - Ward",
+      "Taunt: Mecha Bananadancer"
+    ],
+    "Fluttering Breeze": [
+      "Fluttering Breeze - Bow",
+      "Fluttering Breeze - Head",
+      "Fluttering Breeze - Back",
+      "Fluttering Breeze - Shoulder",
+      "Fluttering Breeze - Arrows",
+      "Compass of the Rising Gale Bundle"
+    ]
+  },
+  "The Charms of the Snake": {
+    "Q'uq'umatz Charmer": [
+      "Q'uq'umatz Charmer - Head",
+      "Q'uq'umatz Charmer - Arms",
+      "Q'uq'umatz Charmer - Belt",
+      "Q'uq'umatz Charmer - Weapon",
+      "Q'uq'umatz Charmer - Off-Hand"
+    ],
+    "Call of the Coral Cultist": [
+      "Call of the Coral Cultist - Weapon",
+      "Call of the Coral Cultist - Head",
+      "Call of the Coral Cultist - Armor",
+      "Call of the Coral Cultist - Legs",
+      "Call of the Coral Cultist - Off-hand Weapon"
+    ],
+    "Psionic Constrictor": [
+      "Psionic Constrictor - Head",
+      "Psionic Constrictor - Shoulder",
+      "Psionic Constrictor - Armor",
+      "Psionic Constrictor - Loading Screen"
+    ],
+    "Obsidian Ophis": [
+      "Obsidian Ophis - Weapon",
+      "Obsidian Ophis - Tail",
+      "Obsidian Ophis - Head",
+      "Obsidian Ophis - Arms",
+      "Obsidian Ophis - Armor"
+    ],
+    "Slithering Stone": [
+      "Slithering Stone - Head",
+      "Slithering Stone - Neck",
+      "Slithering Stone - Arms",
+      "Slithering Stone - Belt",
+      "Slithering Stone - Weapon"
+    ],
+    "Madam Mamba": [
+      "Madam Mamba - Head",
+      "Madam Mamba - Costume",
+      "Madam Mamba - Armor",
+      "Madam Mamba - Mount",
+      "Madam Mamba - Weapon"
+    ],
+    "Arc Adder": [
+      "Arc Adder - Weapon",
+      "Arc Adder - Head",
+      "Arc Adder - Armor",
+      "Arc Adder - Arms",
+      "Arc Adder - Belt"
+    ],
+    "Cobra-Ka": [
+      "Cobra-Ka - Neck",
+      "Cobra-Ka - Arms",
+      "Cobra-Ka - Belt",
+      "Cobra-Ka - Back",
+      "Cobra-Ka - Head",
+      "Cobra-Ka - Loading Screen"
+    ],
+    "Serpent's Spite": [
+      "Serpent's Spite - Head",
+      "Serpent's Spite - Sash",
+      "Serpent's Spite - Robe",
+      "Serpent's Spite - Tail",
+      "Serpent's Spite - Scythe"
+    ]
+  },
   "Collector's Cache 2025": {
     "Glutton of Punishment": [
       "Glutton of Punishment - Armor",
@@ -2172,6 +2364,253 @@
       "Stone Giant Stronghold - Keep",
       "Stone Giant Stronghold - Tower",
       "Stone Giant Stronghold - Weapon"
+    ]
+  },
+  "Spring 2025 Heroes' Hoard": {
+    "Mariposa Mori": [
+      "Mariposa Mori - Weapon",
+      "Mariposa Mori - Head",
+      "Mariposa Mori - Back",
+      "Mariposa Mori - Armor",
+      "Mariposa Mori - Ultimate",
+      "Mariposa Mori - Loading Screen"
+    ],
+    "School of the Solar Fang": [
+      "School of the Solar Fang - Head",
+      "School of the Solar Fang - Armor",
+      "School of the Solar Fang - Shoulder",
+      "School of the Solar Fang - Back"
+    ],
+    "Wasteland Rattler": [
+      "Wasteland Rattler - Head",
+      "Wasteland Rattler - Costume",
+      "Wasteland Rattler - Armor",
+      "Wasteland Rattler - Mount",
+      "Wasteland Rattler - Weapon"
+    ],
+    "Red Dawn": [
+      "Red Dawn - Head",
+      "Red Dawn - Arms",
+      "Red Dawn - Armor",
+      "Red Dawn - Weapon",
+      "Red Dawn - Loading Screen"
+    ],
+    "Taurhorn Terror": [
+      "Taurhorn Terror - Weapon",
+      "Taurhorn Terror - Tail",
+      "Taurhorn Terror - Shoulder",
+      "Taurhorn Terror - Head",
+      "Taurhorn Terror - Belt",
+      "Taurhorn Terror - Arms"
+    ],
+    "Shadow Stalker": [
+      "Shadow Stalker - Head",
+      "Shadow Stalker - Armor",
+      "Shadow Stalker - Weapon",
+      "Shadow Stalker - Legs",
+      "Shadow Stalker - Loading Screen",
+      "Exile Unveiled"
+    ],
+    "Spellbreaker's Braid": [
+      "Spellbreaker's Braid - Head",
+      "Spellbreaker's Braid - Armor",
+      "Spellbreaker's Braid - Weapon",
+      "Spellbreaker's Braid - Offhand Weapon",
+      "The Disciple's Path"
+    ],
+    "The Burning Sentinel": [
+      "The Burning Sentinel - Weapon",
+      "The Burning Sentinel - Shoulder",
+      "The Burning Sentinel - Offhand",
+      "The Burning Sentinel - Arms",
+      "The Burning Sentinel - Head"
+    ],
+    "Urchin of Kazim": [
+      "Urchin of Kazim - Head",
+      "Urchin of Kazim - Shoulder",
+      "Urchin of Kazim - Back",
+      "Urchin of Kazim - Arms",
+      "Urchin of Kazim - Armor",
+      "Urchin of Kazim - Forged Spirit",
+      "Taunt: Rug Cutter",
+      "Acolyte of the Lost Arts",
+      "The Good Old Days"
+    ],
+    "Seeker of the Crescent Wheel": [
+      "Seeker of the Crescent Wheel - Head",
+      "Seeker of the Crescent Wheel - Mount",
+      "Seeker of the Crescent Wheel - Shoulder",
+      "Seeker of the Crescent Wheel - Off-Hand",
+      "Seeker of the Crescent Wheel - Weapon"
+    ],
+    "Rot-Iron Ripper": [
+      "Rot-Iron Ripper - Head",
+      "Rot-Iron Ripper - Body",
+      "Rot-Iron Ripper - Shoulders",
+      "Rot-Iron Ripper - Legs",
+      "Rot-Iron Ripper - Weapon"
+    ],
+    "The Molten Fist": [
+      "The Molten Fist - Weapon",
+      "The Molten Fist - Armor",
+      "The Molten Fist - Head",
+      "The Molten Fist - Belt",
+      "The Molten Fist - Misc",
+      "The Molten Fist - Loading Screen"
+    ],
+    "Pallbringer": [
+      "Pallbringer - Weapon",
+      "Pallbringer - Head",
+      "Pallbringer - Arms",
+      "Pallbringer - Belt",
+      "Pallbringer - Loading Screen"
+    ],
+    "Rotzo the Clown": [
+      "Rotzo the Clown - Shoulder",
+      "Rotzo the Clown - Weapon",
+      "Rotzo the Clown - Head",
+      "Rotzo the Clown - Arms",
+      "Rotzo the Clown - Offhand Weapon",
+      "Rotzo the Clown - Belt",
+      "Rotzo the Clown - Back",
+      "Taunt: The Meat Wagon",
+      "Rotzo's Peepers"
+    ],
+    "Serket of the Black Sands": [
+      "Serket of the Black Sands - Head",
+      "Serket of the Black Sands - Shoulder",
+      "Serket of the Black Sands - Arms",
+      "Serket of the Black Sands - Legs",
+      "Serket of the Black Sands - Back"
+    ],
+    "Cannonroar Confessor": [
+      "Cannonroar Confessor - Arms",
+      "Cannonroar Confessor - Back",
+      "Cannonroar Confessor - Head",
+      "Cannonroar Confessor - Shoulder",
+      "Cannonroar Confessor - Weapon"
+    ]
+  },
+  "Cosmic 2025 Heroes' Hoard": {
+    "Taurid Twilight": [
+      "Taurid Twilight - Weapon",
+      "Taurid Twilight - Tail",
+      "Taurid Twilight - Shoulder",
+      "Taurid Twilight - Head",
+      "Taurid Twilight - Belt",
+      "Taurid Twilight - Arms"
+    ],
+    "Graviton Blackguard": [
+      "Graviton Blackguard - Helm",
+      "Graviton Blackguard - Armor",
+      "Graviton Blackguard - Arms",
+      "Graviton Blackguard Probe"
+    ],
+    "Umbral Expanse": [
+      "Umbral Expanse - Head",
+      "Umbral Expanse - Weapon",
+      "Umbral Expanse - Armor",
+      "Umbral Expanse - Belt"
+    ],
+    "Frozen Nova": [
+      "Frozen Nova - Head",
+      "Frozen Nova - Shoulder",
+      "Frozen Nova - Arms",
+      "Frozen Nova - Tail"
+    ],
+    "Photax Fluttercat": [
+      "Photax Fluttercat - Bow",
+      "Photax Fluttercat - Head",
+      "Photax Fluttercat - Shoulder",
+      "Photax Fluttercat - Back",
+      "Photax Fluttercat - Arms",
+      "Photax Fluttercat - Quiver",
+      "Photax Fluttercat - Mount"
+    ],
+    "Photonic Father": [
+      "Photonic Father - Head",
+      "Photonic Father - Back",
+      "Photonic Father - Arms",
+      "Photonic Father - Belt"
+    ],
+    "Star Sage": [
+      "Star Sage - Head",
+      "Star Sage - Back",
+      "Star Sage - Wings",
+      "Star Sage - Rebirth"
+    ],
+    "Astral Schism": [
+      "Astral Schism - Head",
+      "Astral Schism - Shoulder",
+      "Astral Schism - Back",
+      "Astral Schism - Weapon",
+      "Astral Schism - Arms",
+      "Astral Schism - Belt"
+    ],
+    "Narwolf Nebula": [
+      "Narwolf Nebula - Head",
+      "Narwolf Nebula - Stars",
+      "Narwolf Nebula - Armor",
+      "Narwolf Nebula - Tail",
+      "Conduit of the Blueheart"
+    ],
+    "Chrononaut Continuum": [
+      "Chrononaut Continuum - Head",
+      "Chrononaut Continuum - Shoulder",
+      "Chrononaut Continuum - Arms",
+      "Chrononaut Continuum - Weapon",
+      "Chrononaut Continuum - Belt"
+    ],
+    "Cosmic Cartographer": [
+      "Cosmic Cartographer - Head",
+      "Cosmic Cartographer - Armor",
+      "Cosmic Cartographer - Shoulder",
+      "Cosmic Cartographer - Back"
+    ],
+    "Reaper of the Waning Veil": [
+      "Reaper of the Waning Veil - Head",
+      "Reaper of the Waning Veil - Armor",
+      "Reaper of the Waning Veil - Legs",
+      "Reaper of the Waning Veil - Weapon",
+      "Exile Unveiled"
+    ],
+    "Flame of Origin": [
+      "Flame of Origin - Head",
+      "Flame of Origin - Neck",
+      "Flame of Origin - Arms",
+      "Flame of Origin - Belt"
+    ],
+    "Interstellar Astrarium": [
+      "Interstellar Astrarium - Head",
+      "Interstellar Astrarium - Weapon",
+      "Interstellar Astrarium - Offhand",
+      "Interstellar Astrarium - Shoulder",
+      "Interstellar Astrarium - Back"
+    ],
+    "Pisces Gemini": [
+      "Pisces Gemini - Head",
+      "Pisces Gemini - Back",
+      "Pisces Gemini - Arms",
+      "Pisces Gemini - Weapon",
+      "Pisces Gemini - Belt"
+    ],
+    "Leonid Luminosity": [
+      "Leonid Luminosity - Head",
+      "Leonid Luminosity - Shoulder",
+      "Leonid Luminosity - Weapon",
+      "Leonid Luminosity - Offhand",
+      "Leonid Luminosity - Mount"
+    ],
+    "Intergalactic Orbliterator": [
+      "Intergalactic Orbliterator - Head",
+      "Intergalactic Orbliterator - Totem",
+      "Intergalactic Orbliterator - Arms",
+      "Intergalactic Orbliterator - Belt",
+      "Planetfall",
+      "Planetfall - Head",
+      "Planetfall - Weapon",
+      "Planetfall - Bracers",
+      "Planetfall - Belt"
     ]
   }
 }
