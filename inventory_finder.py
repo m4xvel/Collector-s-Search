@@ -371,6 +371,7 @@ def build_items(assets: List[Dict], descriptions: Dict[Tuple[str, str], Dict]) -
 class MatchResult:
     target: str
     items: List[InventoryItem]
+    category: str = "Other"
     full_set_count: int = 0
     is_full: bool = True
     missing_parts: List[str] = None
@@ -394,10 +395,17 @@ def search_items(
 
     db_path = Path(__file__).resolve().parent / "dota_sets_db.json"
     sets_db = {}
+    set_to_category = {}
+    
     if db_path.exists():
         try:
             with open(db_path, "r", encoding="utf-8") as f:
-                sets_db = json.load(f)
+                nested_db = json.load(f)
+                # Flatten the database for searching, but keep category info
+                for category, sets in nested_db.items():
+                    for set_name, parts in sets.items():
+                        sets_db[set_name] = parts
+                        set_to_category[set_name] = category
         except Exception:
             pass
 
@@ -465,6 +473,7 @@ def search_items(
         results.append(MatchResult(
             target=target,
             items=matched_items,
+            category=set_to_category.get(target, "Other"),
             full_set_count=total_full_sets,
             is_full=(total_full_sets > 0),
             missing_parts=missing if has_incomplete or total_full_sets == 0 else None,

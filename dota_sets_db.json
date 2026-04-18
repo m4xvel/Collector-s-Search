@@ -1,2148 +1,2177 @@
 {
-  "Test Set": [
-    "Part A",
-    "Part B"
-  ],
-  "Fires of Vashundol": [
-    "Belt of Vashundol",
-    "Bindings of Vashundol",
-    "Broken Blade of Vashundol",
-    "Cloak of Vashundol",
-    "Fires of Vashundol Loading Screen",
-    "Skull of Vashundol",
-    "Tail of Vashundol",
-    "Wings of Vashundol"
-  ],
-  "Armor of the Unyielding Mask": [
-    "Armor of the Unyielding Mask Loading Screen",
-    "Bracers of the Unyielding Mask",
-    "Guise of the Unyielding Mask",
-    "Hakama of the Unyielding Mask",
-    "Plate of the Unyielding Mask"
-  ],
-  "Serpent of the Emerald Sea": [
-    "Armor of the Emerald Sea",
-    "Bracelets of the Emerald Sea",
-    "Crown of the Emerald Sea",
-    "Emerald Sea Cursor Pack",
-    "Heart of the Emerald Sea",
-    "Serpent of the Emerald Sea Loading Screen",
-    "Whip of the Emerald Sea"
-  ],
-  "Flowing Entropy": [
-    "Blade of Flowing Entropy",
-    "Crown of Flowing Entropy",
-    "Flowing Entropy Loading Screen",
-    "Mantle of Flowing Entropy",
-    "Bracers of Flowing Entropy",
-    "Tabard of Flowing Entropy"
-  ],
-  "Echoes of the Eyrie": [
-    "Echoes of the Eyrie Loading Screen",
-    "Greaves of Echoes",
-    "Helm of Echoes",
-    "Sigil of Echoes",
-    "Wrath of Echoes"
-  ],
-  "Brawler of the Glacier Sea": [
-    "Anchor of the Glacier Sea",
-    "Brawler of the Glacier Sea Loading Screen",
-    "Cap of the Glacier Sea",
-    "Coat of the Glacier Sea",
-    "Frozen Sigil of the Glacier Sea",
-    "Hook of the Glacier Sea",
-    "Rudder of the Glacier Sea",
-    "Tusks of the Glacier Sea"
-  ],
-  "Knight of the Burning Scale": [
-    "Blade of the Burning Scale",
-    "Bracers of the Burning Scale",
-    "Cape of the Burning Scale",
-    "Cave of the Burning Scale Loading Screen",
-    "Cuirass of the Burning Scale",
-    "HUD of the Burning Scale",
-    "Helm of the Burning Scale",
-    "Knight of the Burning Scale Loading Screen",
-    "Shadow of the Burning Scale",
-    "Shield of the Burning Scale"
-  ],
-  "Garb of the Cunning Augur": [
-    "Cap of the Cunning Augur",
-    "Cape of the Cunning Augur",
-    "Garb of the Cunning Augur Loading Screen",
-    "Mantle of the Cunning Augur",
-    "Staff of the Cunning Augur"
-  ],
-  "Apostle of Decay": [
-    "Apostle of Decay Loading Screen",
-    "Hood of Decay",
-    "Mask of Decay",
-    "Scythe of Decay",
-    "Vestments of Decay"
-  ],
-  "Flowersong Tempest": [
-    "Flowersong",
-    "Flowersong Beauty",
-    "Flowersong Breeze",
-    "Flowersong Guard",
-    "Flowersong Tempest Loading Screen",
-    "Flowersong Thorns"
-  ],
-  "Beacon of Cerulean Light": [
-    "Beacon of Cerulean Light Loading Screen",
-    "Bracers of Cerulean Light",
-    "Girdle of Cerulean Light",
-    "Mask of Cerulean Light",
-    "Pauldrons of Cerulean Light",
-    "Rod of Beacon's Light",
-    "Span of Cerulean Light"
-  ],
-  "Faceless Rex": [
-    "Faceless Rex – русский",
-    "Faceless Void"
-  ],
-  "Oni Knight the Dark Conqueror": [
-    "Axe of the Dark Conqueror",
-    "Helm of the Dark Conqueror",
-    "Oni Knight the Dark Conqueror Loading Screen",
-    "Shield of the Dark Conqueror",
-    "Spaulders of the Dark Conqueror",
-    "Steed of the Dark Conqueror"
-  ],
-  "Fortified Fabricator": [
-    "Ballista of the Fortified Fabricator",
-    "Cannon of the Fortified Fabricator",
-    "Controls of the Fortified Fabricator",
-    "Fortified Fabricator Loading Screen",
-    "Helmet of the Fortified Fabricator",
-    "Shoulders of the Fortified Fabricator"
-  ],
-  "Diabolical Fiend": [
-    "Armor of the Diabolical Fiend",
-    "Arms of the Diabolical Fiend",
-    "Diabolical Fiend Loading Screen",
-    "Horns of the Diabolical Fiend"
-  ],
-  "Creeping Shadow": [
-    "Belt of the Creeping Shadow",
-    "Blade of the Creeping Shadow",
-    "Cape of the Creeping Shadow",
-    "Creeping Shadow Loading Screen",
-    "Hood of the Creeping Shadow",
-    "Shawl of the Creeping Shadow"
-  ],
-  "Stormwrought Arbiter": [
-    "Belt of the Stormwrought Arbiter",
-    "Bracers of the Stormwrought Arbiter",
-    "Cape of the Stormwrought Arbiter",
-    "Greatsword of the Stormwrought Arbiter",
-    "Helm of the Stormwrought Arbiter",
-    "Pauldron of the Stormwrought Arbiter",
-    "Stormwrought Arbiter Loading Screen"
-  ],
-  "Iceburnt Elegy": [
-    "Crown of the Iceburnt Elegy",
-    "Iceburnt Elegy Loading Screen",
-    "Wings of the Iceburnt Elegy"
-  ],
-  "Wartorn Heavens": [
-    "Belt of the Wartorn Heavens",
-    "Bracers of the Wartorn Heavens",
-    "Helm of the Wartorn Heavens",
-    "Pauldrons of the Wartorn Heavens",
-    "Wartorn Heavens Loading Screen"
-  ],
-  "Heir of Terror": [
-    "Heir of Terror Belt",
-    "Heir of Terror Bracers",
-    "Heir of Terror Crown",
-    "Heir of Terror Loadin Screen",
-    "Heir of Terror Wings"
-  ],
-  "Dirgeful Overlord": [
-    "Armor of the Dirgeful Overlord",
-    "Bracers of the Dirgeful Overlord",
-    "Crown of the Dirgeful Overlord",
-    "Dirgeful Overlord Loading Screen"
-  ],
-  "Nightsilver's Resolve": [
-    "Blades of Nightsilver's Resolve",
-    "Guardian of Nightsilver's Resolve",
-    "Nightsilver's Resolve Loading Screen",
-    "Pauldons of Nightsilver's Resolve",
-    "Shield of Nightsilver's Resolve",
-    "Style of Nightsilver's Resolve"
-  ],
-  "Fractured Envoy": [
-    "Bracers of the Fractured Envoy",
-    "Cape of the Fractured Envoy",
-    "Fractured Envoy Loading Screen",
-    "Helmet of the Fractured Envoy",
-    "Pauldrons of the Fractured Envoy"
-  ],
-  "Rising Glory": [
-    "Belt of Rising Glory",
-    "Bracers of Rising Glory",
-    "Helm of Rising Glory",
-    "Horn of Rising Glory",
-    "Horn of Rising Glory Loading Screen",
-    "Lance of Rising Glory"
-  ],
-  "The Family Values": [
-    "The Family Values Arms",
-    "The Family Values Back",
-    "The Family Values Head",
-    "The Family Values Loading Screen",
-    "The Family Values Shoulders",
-    "The Family Values Tail",
-    "The Family Values Weapon"
-  ],
-  "Atrophic Skitterwing": [
-    "Atrophic Skitterwing – русский"
-  ],
-  "Doomsday Ripper": [
-    "Doomsday Ripper Arms",
-    "Doomsday Ripper Back",
-    "Doomsday Ripper Belt",
-    "Doomsday Ripper Head",
-    "Doomsday Ripper Loading Screen",
-    "Doomsday Ripper Off-Hand",
-    "Doomsday Ripper Shoulder",
-    "Doomsday Ripper Weapon"
-  ],
-  "Hakobi and Tenneko": [
-    "Hakobi and Tenneko",
-    "Hakobi and Tenneko Loading Screen"
-  ],
-  "Jolly Reaver": [
-    "Anchor-hook of the Jolly Reaver",
-    "Belt of the Jolly Reaver",
-    "Cannon of the Jolly Reaver",
-    "Chains of the Jolly Reaver",
-    "Cutlass of the Jolly Reaver",
-    "Hat of the Jolly Reaver",
-    "Jolly Reaver Loading Screen",
-    "Tentacles of the Jolly Reaver"
-  ],
-  "Eternal Testament": [
-    "Blouse of Eternal Testament",
-    "Dress of Eternal Testament",
-    "Eternal Testament Loading Screen",
-    "Ghosts of Eternal Testament",
-    "Veil of Eternal Testament",
-    "Weeds of Eternal Testament"
-  ],
-  "Secrets of the Katekhein": [
-    "Horn of the Katekhein",
-    "Secrets of the Katekhein Loading Screen",
-    "Wings of the Katekhein"
-  ],
-  "Rumrunner's Carronade": [
-    "Bandana of the Rumrunner's Carronade",
-    "Bracers of the Rumrunner's Carronade",
-    "Carriage of the Rumrunner's Carronade",
-    "Culverin of the Rumrunner's Carronade",
-    "Fiery Keg of the Rumrunner's Carronade",
-    "Rumrunner's Carronade Loading Screen",
-    "Sash of the Rumrunner's Carronade"
-  ],
-  "Abyssal Vortex": [
-    "Abyssal Vortex Loading Screen",
-    "Armor of Abyssal Vortex",
-    "Bracer of Abyssal Vortex",
-    "Eidolons of Abyssal Vortex",
-    "Helm of Abyssal Vortex"
-  ],
-  "Samareen Sacrifice": [
-    "Bracers of the Samareen Sacrifice",
-    "Dagger of the Samareen Sacrifice",
-    "Mane of the Samareen Sacrifice",
-    "Samareen Sacrifice Loading Screen",
-    "Shield of the Samareen Sacrifice",
-    "Trident of the Samareen Sacrifice"
-  ],
-  "Seablight Procession": [
-    "Armor of Seablight Procession",
-    "Bracers of Seablight Procession",
-    "Golem of Seablight Procession",
-    "Seablight Procession Loading Screen",
-    "Wraps of Seablight Procession"
-  ],
-  "Corruption of the Virulent Krait": [
-    "Corruption of the Virulent Krait Loading Screen",
-    "Jaws of the Virulent Krait",
-    "Spines of the Virulent Krait",
-    "Spitters of the Virulent Krait",
-    "Tail of the Virulent Krait",
-    "Watcher of the Virulent Krait"
-  ],
-  "Seaborne Reprisal": [
-    "Belt of Seaborne Reprisal",
-    "Claw of Seaborne Reprisal",
-    "Coat of Seaborne Reprisal",
-    "Folds of Seaborne Reprisal",
-    "Ghost Blade of Seaborne Reprisal",
-    "Image of Seaborne Reprisal",
-    "Legs of the Seaborne Reprisal",
-    "Seaborne Reprisal Loading Screen"
-  ],
-  "Pressure Regulator": [
-    "Diving Helm of the Pressure Regulator",
-    "Harpoon of the Pressure Regulator",
-    "Mines of the Pressure Regulator",
-    "Pressure Regulator Loading Screen",
-    "Torpedo of the Pressure Regulator",
-    "Valves of the Pressure Regulator"
-  ],
-  "Meranth Dragoon": [
-    "Meranth Dragoon Armor",
-    "Meranth Dragoon Belt",
-    "Meranth Dragoon Finblade",
-    "Meranth Dragoon Helm",
-    "Meranth Dragoon Loading Screen",
-    "Meranth Dragoon Pauldrons",
-    "Meranth Dragoon Shield"
-  ],
-  "Spoils of the Vodou Rover": [
-    "Beard of the Vodou Rover",
-    "Coat of the Vodou Rover",
-    "Mast of the Vodou Rover",
-    "Pantaloons of the Vodou Rover",
-    "Parrot of the Vodou Rover",
-    "Spoils of the Vodou Rover Loading Screen"
-  ],
-  "Shadowforce Gale": [
-    "Armor of the Shadowforce Gale",
-    "Glaives of the Shadowforce Gale",
-    "Helm of the Shadowforce Gale",
-    "Shadowforce Gale Loading Screen",
-    "Shield of the Shadowforce Gale",
-    "Storm of the Shadowforce Gale"
-  ],
-  "Mechalodon Interdictor": [
-    "Cutter of the Mechalodon Interdictor",
-    "Mask of the Mechalodon Interdictor",
-    "Mechalodon Interdictor Loading Screen",
-    "Subfin Cannons of the Mechalodon Interdictor",
-    "Tailfin of the Mechalodon Interdictor",
-    "Torpedo of the Mechalodon Interdictor"
-  ],
-  "Riptide Raider": [
-    "Armor of the Riptide Raider",
-    "Crown of the Riptide Raider",
-    "Riptide Raider Loading Screen",
-    "Shoulders of the Riptide Raider",
-    "Trident of the Riptide Raider"
-  ],
-  "The Dread Prophet": [
-    "Beard of the Dread Prophet",
-    "Bracers of the Dread Prophet",
-    "Cape of the Dread Prophet",
-    "Coralents of the Dread Prophet",
-    "Pauldrons of the Dread Prophet",
-    "Squid of the Dread Prophet",
-    "Staff of the Dread Prophet"
-  ],
-  "Covenant of the Depths": [
-    "Covenant of the Depths Belt",
-    "Covenant of the Depths Bracers",
-    "Covenant of the Depths Loading Screen",
-    "Covenant of the Depths Mantle",
-    "Covenant of the Depths Mask",
-    "Covenant of the Depths Robes",
-    "Covenant of the Depths Spirit"
-  ],
-  "Sovereign of the Kray Legions": [
-    "Chitin of the Kray Legions",
-    "Crawlers of the Kray Legions",
-    "Jaws of the Kray Legions",
-    "Pincers of the Kray Legions",
-    "Sovereign of the Kray Legions Loading Screen",
-    "Tail of the Kray Legions"
-  ],
-  "Cunning Corsair": [
-    "Cuffs of the Cunning Corsair",
-    "Cunning Corsair Loading Screen",
-    "Dagger of the Cunning Corsair",
-    "Hat of the Cunning Corsair",
-    "Hook of the Cunning Corsair",
-    "Shoulder Pads of the Cunning Corsair",
-    "Tail of the Cunning Corsair"
-  ],
-  "Chitinous Stalker": [
-    "Armor of the Chitinous Stalker",
-    "Oculi of the Chitinous Stalker",
-    "Pincers of the Chitinous Stalker",
-    "Tail of the Chitinous Stalker"
-  ],
-  "Submerged Hazard": [
-    "Submerged Hazard Hull",
-    "Submerged Hazard Laser",
-    "Submerged Hazard Launcher",
-    "Submerged Hazard Loading Screen",
-    "Submerged Hazard Mask",
-    "Submerged Hazard Propeller"
-  ],
-  "Manta Marauder": [
-    "Belt of the Manta Marauder",
-    "Manta Marauder Loading Screen",
-    "Manta Marauder's Manta Ray",
-    "Mask of the Manta Marauder",
-    "Tank of the Manta Marauder"
-  ],
-  "Heiress of the Coastal Kingdom": [
-    "Arrows of the Coastal Kingdom",
-    "Belt of the Coastal Kingdom",
-    "Bow of the Coastal Kingdom",
-    "Bracelets of the Coastal Kingdom",
-    "Braids of the Coastal Kingdom",
-    "Heiress of the Coastal Kingdom Loading Screen",
-    "Necklaces of the Coastal Kingdom",
-    "Pterois of the Coastal Kingdom"
-  ],
-  "Trail of the Sanguine Spectrum": [
-    "Arms of the Sanguine Spectrum",
-    "Back of the Sanguine Spectrum",
-    "Belt of the Sanguine Spectrum",
-    "Blade of the Sanguine Spectrum",
-    "Head of the Sanguine Spectrum",
-    "Off-Hand of the Sanguine Spectrum",
-    "Shoulder of the Sanguine Spectrum"
-  ],
-  "Pitfall Crusader": [
-    "Armor of the Pitfall Crusader",
-    "Blade of the Pitfall Crusader",
-    "Cap of the Pitfall Crusader",
-    "Pitfall Crusader Loading Screen"
-  ],
-  "Insights of the Sapphire Shroud": [
-    "Arms of the Sapphire Shroud",
-    "Belt of the Sapphire Shroud",
-    "Crown of the Sapphire Shroud",
-    "Flower of the Sapphire Shroud",
-    "Mantle of the Sapphire Shroud"
-  ],
-  "Pillar of the Fractured Citadel": [
-    "Arms of the Fractured Citadel",
-    "Belt of the Fractured Citadel",
-    "Flail of the Fractured Citadel",
-    "Head of the Fractured Citadel",
-    "Shoulder of the Fractured Citadel",
-    "Tail of the Fractured Citadel"
-  ],
-  "Forlorn Descent": [
-    "Arms of Forlorn Descent",
-    "Coat of Forlorn Descent",
-    "Flesh Golem of Forlorn Descent",
-    "Forlorn Descent Loading Screen",
-    "Helm of Forlorn Descent"
-  ],
-  "Stonemarch Sovereign": [
-    "Arms of the Stonemarch Sovereign",
-    "Blade of the Stonemarch Sovereign",
-    "Cape of the Stonemarch Sovereign",
-    "Crown of the Stonemarch Sovereign",
-    "Cuirass of the Stonemarch Sovereign",
-    "Pauldrons of the Stonemarch Sovereign",
-    "Stonemarch Sovereign Loading Screen"
-  ],
-  "The Murid Divine": [
-    "Beard of the Murid Divine",
-    "Crown of the Murid Divine",
-    "Legs of the Murid Divine",
-    "Robe of the Murid Divine",
-    "Staff of the Murid Divine",
-    "The Murid Divine Loading Screen"
-  ],
-  "Primer of the Sapper's Guile": [
-    "Arsenal of the Sapper's Guile",
-    "Auxiliary of the Sapper's Guile",
-    "Helm of the Sapper's Guile",
-    "Implements of the Sapper's Guile",
-    "Sack of the Sapper's Guile",
-    "Sign of the Sapper's Guile",
-    "Skip of the Sapper's Guile"
-  ],
-  "Molokau Stalker": [
-    "Appendages of the Molokau Stalker",
-    "Head of the Molokau Stalker",
-    "Plates of the Molokau Stalker",
-    "Tail of the Molokau Stalker",
-    "Ward of the Molokau Stalker"
-  ],
-  "Morbific Provision": [
-    "Belt of Morbific Provision",
-    "Garb of Morbific Provision",
-    "Head of Morbific Provision",
-    "Satchel of Morbific Provision",
-    "Servant of Morbific Provision",
-    "Staff of Morbific Provision"
-  ],
-  "Raptures of the Abyssal Kin": [
-    "Blade of the Abyssal Kin",
-    "Crown of the Abyssal Kin",
-    "Form of the Abyssal Kin",
-    "Wings of the Abyssal Kin"
-  ],
-  "Fate Meridian": [
-    "Arms of Fate Meridian",
-    "Belt of Fate Meridian",
-    "Cape of Fate Meridian",
-    "Crown of Fate Meridian",
-    "Fate Meridian Loading Screen",
-    "Mantle of Fate Meridian",
-    "TI8 Invoker Prism Forge Spirit"
-  ],
-  "Grasp of the Riven Exile": [
-    "Abdomen of the Riven Exile",
-    "Crest of the Riven Exile",
-    "Legs of the Riven Exile",
-    "Mandibles of the Riven Exile",
-    "Spurs of the Riven Exile"
-  ],
-  "Visions of the Lifted Veil": [
-    "Armor of the Lifted Veil",
-    "Belt of the Lifted Veil",
-    "Blade of the Lifted Veil",
-    "Cape of the Lifted Veil",
-    "Helm of the Lifted Veil"
-  ],
-  "Dread Compact": [
-    "Arms of the Dread Compact",
-    "Belt of the Dread Compact",
-    "Cowl of the Dread Compact",
-    "Golem of the Dread Compact",
-    "Mantle of the Dread Compact",
-    "Robes of the Dread Compact",
-    "Staff of the Dread Compact",
-    "Tome of the Dread Compact"
-  ],
-  "Endowments of the Lucent Canopy": [
-    "Arms of the Lucent Canopy",
-    "Charm of the Lucent Canopy",
-    "Crest of the Lucent Canopy",
-    "Haul of the Lucent Canopy",
-    "Off-Hand of the Lucent Canopy",
-    "Ward of the Lucent Canopy"
-  ],
-  "Vespidun Hunter-Killer": [
-    "Armaments of the Vespidun Hunter-Killer",
-    "Cone of the Vespidun Hunter-Killer",
-    "Head of the Vespidun Hunter-Killer",
-    "Payload of the Vespidun Hunter-Killer",
-    "Propellers of the Vespidun Hunter-Killer",
-    "Vespidun Hunter-Killer Loading Screen"
-  ],
-  "Pitmouse Fraternity": [
-    "Pitmouse Fraternity Axe",
-    "Pitmouse Fraternity Bracer",
-    "Pitmouse Fraternity Goggles",
-    "Pitmouse Fraternity Pack",
-    "Pitmouse Fraternity Pauldron",
-    "Pitmouse Fraternity Tail"
-  ],
-  "Fires of the Volcanic Guard": [
-    "Belt of the Volcanic Guard",
-    "Bracers of the Volcanic Guard",
-    "Fires of the Volcanic Guard Loading Screen",
-    "Helm of the Volcanic Guard",
-    "Off-hand Weapon of the Volcanic Guard",
-    "Pauldrons of the Volcanic Guard",
-    "Sword of the Volcanic Guard"
-  ],
-  "Third Awakening": [
-    "Belt of the Third Awakening",
-    "Bracers of the Third Awakening",
-    "Cuirass of the Third Awakening",
-    "Dragon Form of the Third Awakening",
-    "Helm of the Third Awakening",
-    "Shield of the Third Awakening",
-    "Sword of the Third Awakening"
-  ],
-  "Shackles of the Enduring Conscript": [
-    "Armor of the Enduring Conscript",
-    "Axe of the Enduring Conscript",
-    "Beard of the Enduring Conscript",
-    "Belt of the Enduring Conscript",
-    "Bracer of the Enduring Conscript",
-    "Shackles of the Enduring Conscript Loading Screen"
-  ],
-  "Shimmer of the Anointed": [
-    "Armor of the Anointed",
-    "Caripace of the Anointed",
-    "Daggers of the Anointed",
-    "Head of the Anointed",
-    "Shimmer of the Anointed Loading Screen"
-  ],
-  "Cruelties of the Spiral Bore": [
-    "Belt of the Spiral Bore",
-    "Bracer of the Spiral Bore",
-    "Cruelties of the Spiral Bore Loading Screen",
-    "Helm of the Spiral Bore",
-    "Horn of the Spiral Bore",
-    "Mallet of the Spiral Bore"
-  ],
-  "Loaded Prospects": [
-    "Apron of the Loaded Prospects",
-    "Drill-Barrel of the Loaded Prospects",
-    "Gloves of the Loaded Prospects",
-    "Helmet of the Loaded Prospects",
-    "Lantern of the Loaded Prospects",
-    "Loaded Prospects Loading Screen",
-    "Pack of the Loaded Prospects"
-  ],
-  "Ire of Molten Rebirth": [
-    "Beak of Molten Rebirth",
-    "Egg of Molten Rebirth",
-    "Wings of Molten Rebirth"
-  ],
-  "Pattern of the Silken Queen": [
-    "Armor of the Silken Queen",
-    "Crown of the Silken Queen",
-    "Legs of the Silken Queen",
-    "Mandibles of the Silken Queen",
-    "Pattern of the Silken Queen Loading Screen",
-    "Spiderling of the Silken Queen"
-  ],
-  "Dread Ascendance": [
-    "Dread Ascendance Armor",
-    "Dread Ascendance Belt",
-    "Dread Ascendance Bracers",
-    "Dread Ascendance Helm",
-    "Dread Ascendance Loading Screen",
-    "Dread Ascendance Sword",
-    "Dread Ascendance Tail",
-    "Dread Ascendance Wings"
-  ],
-  "The Rat King": [
-    "Bracers of the Rat King",
-    "Crown of the Rat King",
-    "Royal Mount of the Rat King",
-    "Scepter of the Rat King",
-    "Vest of the Rat King"
-  ],
-  "Raiments of the Obsidian Forge": [
-    "Armor of the Obsidian Forge",
-    "Blade of the Obsidian Forge",
-    "Horns of the Obsidian Forge"
-  ],
-  "Legends of Darkheart Pursuit": [
-    "Claws of Darkheart Pursuit",
-    "Head of Darkheart Pursuit",
-    "Legends of Darkheart Pursuit Loading Screen",
-    "Legs of Darkheart Pursuit",
-    "Tail of Darkheart Pursuit",
-    "Wings of Darkheart Pursuit"
-  ],
-  "Twisted Maelstrom": [
-    "Armguards of Twisted Maelstrom",
-    "Armor of Twisted Maelstrom",
-    "Eidelon of Twisted Maelstrom",
-    "Eye of Twisted Maelstrom",
-    "Twisted Maelstrom Loading Screen"
-  ],
-  "Echoes of the Everblack": [
-    "Cape of the Everblack",
-    "Hood of the Everblack",
-    "Mount of the Everblack",
-    "Pauldrons of the Everblack",
-    "Scythe of the Everblack"
-  ],
-  "Allure of the Faeshade Flower": [
-    "Belt of the Faeshade Flower",
-    "Dress of the Faeshade Flower",
-    "Lantern of the Faeshade Flower",
-    "Tiara of the Faeshade Flower",
-    "Wings of the Faeshade Flower"
-  ],
-  "Paean of the Ink Dragon": [
-    "Armor of the Ink Dragon",
-    "Belt of the Ink Dragon",
-    "Brush of the Ink Dragon",
-    "Mask of the Ink Dragon",
-    "Paean of the Ink Dragon Loading Screen"
-  ],
-  "Scorched Amber": [
-    "Scorched Amber Armor",
-    "Scorched Amber Belt",
-    "Scorched Amber Bracer",
-    "Scorched Amber Dragon Form",
-    "Scorched Amber Helm",
-    "Scorched Amber Shield",
-    "Scorched Amber Sword"
-  ],
-  "Priest of the Proudsilver Clan": [
-    "Bracer of the Proudsilver Clan",
-    "Cape of the Proudsilver Clan",
-    "Crown of the Proudsilver Clan",
-    "Mount of the Proudsilver Clan",
-    "Staff of the Proudsilver Clan"
-  ],
-  "The Arts of Mortal Deception": [
-    "Armor of Mortal Deception",
-    "Bracer of Mortal Deception",
-    "Eidelon of Mortal Deception",
-    "Turban of Mortal Deception"
-  ],
-  "Poacher's Bane": [
-    "Armor of the Poacher's Bane",
-    "Bracer of the Poacher's Bane",
-    "Club of the Poacher's Bane",
-    "Head of the Poacher's Bane",
-    "Prey of the Poacher's Bane",
-    "Shell of the Poacher's Bane"
-  ],
-  "Soul of the Brightshroud": [
-    "Armor of the Brightshroud",
-    "Belt of the Brightshroud",
-    "Bracer of the Brightshroud",
-    "Crown of the Brightshroud",
-    "Skirt of the Brightshroud",
-    "Soul of the Brightshroud Loading Screen",
-    "Spirit of the Brightshroud"
-  ],
-  "Curse of the Creeping Vine": [
-    "Armor of the Creeping Vine",
-    "Arms of the Creeping Vine",
-    "Golem of the Creeping Vine",
-    "Head of the Creeping Vine"
-  ],
-  "Pursuit of the Ember Demons": [
-    "Armor of the Ember Demons",
-    "Bracers of the Ember Demons",
-    "Buckler of the Ember Demons",
-    "Helm of the Ember Demons",
-    "Pursuit of the Ember Demons Loading Screen",
-    "Spear of the Ember Demons"
-  ],
-  "Appetites of the Lizard King": [
-    "Appetites of the Lizard King Loading Screen",
-    "Bracer of the Lizard King",
-    "Fins of the Lizard King",
-    "Jaws of the Lizard King",
-    "Pauldron of the Lizard King",
-    "Weapon of the Lizard King"
-  ],
-  "Forbidden Medicine": [
-    "Bracer of Forbidden Medicine",
-    "Crown of Forbidden Medicine",
-    "Dress of Forbidden Medicine",
-    "Forbidden Medicine Loading Screen",
-    "Roots of Forbidden Medicine",
-    "Staff of Forbidden Medicine"
-  ],
-  "Riddle of the Hierophant": [
-    "Back of the Hierophant",
-    "Dress of the Hierophant",
-    "Mask of the Hierophant",
-    "Orb of the Hierophant",
-    "Riddle of the Hierophant Loading Screen"
-  ],
-  "Glimmer of the Sacred Hunt": [
-    "Arrows of the Sacred Hunt",
-    "Bow of the Sacred Hunt",
-    "Bracers of the Sacred Hunt",
-    "Cape of the Sacred Hunt",
-    "Crown of the Sacred Hunt",
-    "Glimmer of the Sacred Hunt Loading Screen",
-    "Shoulders of the Sacred Hunt",
-    "Skirt of the Sacred Hunt"
-  ],
-  "Adornments of the Jade Emissary": [
-    "Arms of the Jade Emissary",
-    "Belt of the Jade Emissary",
-    "Helm of the Jade Emissary",
-    "Serpent of the Jade Emissary",
-    "Staff of the Jade Emissary"
-  ],
-  "Defender of Ruin": [
-    "Armor of the Defender of Ruin",
-    "Back of the Defender of Ruin",
-    "Beast of the Defender of Ruin",
-    "Bracers of the Defender of Ruin",
-    "Helm of the Defender of Ruin",
-    "Weapon of the Defender of Ruin"
-  ],
-  "Gothic Whisper": [
-    "Gothic Whisper Armor",
-    "Gothic Whisper Belt",
-    "Gothic Whisper Blade",
-    "Gothic Whisper Cape",
-    "Gothic Whisper Mask"
-  ],
-  "Avatar of the Impossible Realm": [
-    "Cape of the Impossible Realm",
-    "Garb of the Impossible Realm",
-    "Head of the Impossible Realm",
-    "Staff of the Impossible Realm"
-  ],
-  "Sight of the Kha-Ren Faithful": [
-    "Armor of the Kha-Ren Faithful",
-    "Arms of the Kha-Ren Faithful",
-    "Bow of the Kha-Ren Faithful",
-    "Cape of the Kha-Ren Faithful",
-    "Legs of the Kha-Ren Faithful",
-    "Quiver of the Kha-Ren Faithful",
-    "Sight of the Kha-Ren Faithful Loading Screen",
-    "Style of the Kha-Ren Faithful"
-  ],
-  "Tribal Pathways": [
-    "Tribal Pathways Bracer",
-    "Tribal Pathways Crown",
-    "Tribal Pathways Golem",
-    "Tribal Pathways Lantern",
-    "Tribal Pathways Necklace",
-    "Tribal Pathways Robe",
-    "Tribal Pathways Shoulder",
-    "Tribal Pathways Staff"
-  ],
-  "Directive of the Sunbound": [
-    "Armor of the Sunbound Directive",
-    "Club of the Sunbound Directive",
-    "Cogs of the Sunbound Directive",
-    "Helm of the Sunbound Directive",
-    "Rocket of the Sunbound Directive"
-  ],
-  "Souls Tyrant": [
-    "Souls Tyrant Arms",
-    "Souls Tyrant Head",
-    "Souls Tyrant Loading Screen",
-    "Souls Tyrant Shoulder"
-  ],
-  "Endless Night": [
-    "Endless Night Cape",
-    "Endless Night Head",
-    "Endless Night Loading Screen",
-    "Endless Night Mount",
-    "Endless Night Shoulder",
-    "Endless Night Sword"
-  ],
-  "Dapper Disguise": [
-    "Dapper Disguise Arms",
-    "Dapper Disguise Belt",
-    "Dapper Disguise Cleaver",
-    "Dapper Disguise Hat",
-    "Dapper Disguise Jacket",
-    "Dapper Disguise Loading Screen",
-    "Dapper Disguise Shoulder",
-    "Dapper Disguise Umbrella"
-  ],
-  "Fury of the Bloodforge": [
-    "Belt of the Bloodforge",
-    "Bracer of the Bloodforge",
-    "Cape of the Bloodforge",
-    "Loading Screen of the Bloodforge",
-    "Mask of the Bloodforge",
-    "Off-Hand Weapon of the Bloodforge",
-    "Shoulder of the Bloodforge",
-    "Weapon of the Bloodforge"
-  ],
-  "Automaton Antiquity": [
-    "Automaton Antiquity Back",
-    "Automaton Antiquity Head",
-    "Automaton Antiquity Legs",
-    "Automaton Antiquity Overgrowth",
-    "Automaton Antiquity Spiderling"
-  ],
-  "Tales of the Windward Rogue": [
-    "Coat of the Windward Rogue",
-    "Hat of the Windward Rogue",
-    "Parrot of the Windward Rogue",
-    "Rapier of the Windward Rogue",
-    "Tales of the Windward Rogue Loading Screen"
-  ],
-  "Grim Destiny": [
-    "Armor of Grim Destiny",
-    "Bracers of Grim Destiny",
-    "Cape of Grim Destiny",
-    "Grim Destiny Loading Screen",
-    "Helm of Grim Destiny",
-    "Shoulder of Grim Destiny",
-    "Weapon of Grim Destiny"
-  ],
-  "Distinguished Expeditionary": [
-    "Back of Distinguished Expeditionary",
-    "Coat of Distinguished Expeditionary",
-    "Fist of Distinguished Expeditionary",
-    "Hat of Distinguished Expeditionary",
-    "Knife of Distinguished Expeditionary",
-    "Tusks of Distinguished Expeditionary"
-  ],
-  "Verdant Predator": [
-    "Verdant Predator Back",
-    "Verdant Predator Head",
-    "Verdant Predator Spitters",
-    "Verdant Predator Tail",
-    "Verdant Predator Ward"
-  ],
-  "Prized Acquisitions": [
-    "Prized Acquisitions Compass",
-    "Prized Acquisitions Hat",
-    "Prized Acquisitions Loading Screen",
-    "Prized Acquisitions Mount",
-    "Prized Acquisitions Shoulder"
-  ],
-  "Fowl Omen": [
-    "Fowl Omen Beard",
-    "Fowl Omen Head",
-    "Fowl Omen Scythe",
-    "Fowl Omen Shoulder",
-    "Fowl Omen Skirt"
-  ],
-  "Cinder Sensei": [
-    "Cinder Sensei Belt",
-    "Cinder Sensei Bracer",
-    "Cinder Sensei Off-Hand Weapon",
-    "Cinder Sensei Shoulders",
-    "Cinder Sensei Style",
-    "Cinder Sensei Weapon"
-  ],
-  "Jagged Honor": [
-    "Jagged Honor Banner",
-    "Jagged Honor Blade",
-    "Jagged Honor Bracer",
-    "Jagged Honor Legs",
-    "Jagged Honor Loading Screen",
-    "Jagged Honor Mask"
-  ],
-  "Origin of the Dark Oath": [
-    "Origin of the Dark Oath - Arms",
-    "Origin of the Dark Oath - Legs",
-    "Origin of the Dark Oath - Mask",
-    "Origin of the Dark Oath - Tail",
-    "Origin of the Dark Oath - Wings"
-  ],
-  "Ravenous Abyss": [
-    "Ravenous Abyss - Armor",
-    "Ravenous Abyss - Head",
-    "Ravenous Abyss - Weapon",
-    "Ravenous Abyss Loading Screen"
-  ],
-  "Apocalypse Unbound": [
-    "Apocalypse Unbound - Arms",
-    "Apocalypse Unbound - Head",
-    "Apocalypse Unbound - Shoulder",
-    "Apocalypse Unbound - Tail"
-  ],
-  "Beholden of the Banished Ones": [
-    "Beholden of the Banished Ones - Arms",
-    "Beholden of the Banished Ones - Back",
-    "Beholden of the Banished Ones - Belt",
-    "Beholden of the Banished Ones - Golem",
-    "Beholden of the Banished Ones - Head",
-    "Beholden of the Banished Ones - Off-Hand",
-    "Beholden of the Banished Ones - Shoulder",
-    "Beholden of the Banished Ones - Weapon"
-  ],
-  "Fury of the Righteous Storm": [
-    "Fury of the Righteous Storm - Arms",
-    "Fury of the Righteous Storm - Back",
-    "Fury of the Righteous Storm - Head",
-    "Fury of the Righteous Storm - Kirin",
-    "Fury of the Righteous Storm - Shoulder",
-    "Fury of the Righteous Storm - Weapon"
-  ],
-  "Lineage of the Stormlords": [
-    "Lineage of the Stormlords - Arms",
-    "Lineage of the Stormlords - Back",
-    "Lineage of the Stormlords - Healing Ward",
-    "Lineage of the Stormlords - Legs",
-    "Lineage of the Stormlords - Mask",
-    "Lineage of the Stormlords - Weapon"
-  ],
-  "Silent Slayer": [
-    "Silent Slayer - Belt",
-    "Silent Slayer - Equipment",
-    "Silent Slayer - Head",
-    "Silent Slayer - Off-Hand",
-    "Silent Slayer - Shoulder",
-    "Silent Slayer - Weapon",
-    "Silent Slayer Loading Screen"
-  ],
-  "Mindless Slaughter": [
-    "Mindless Slaughter - Arms",
-    "Mindless Slaughter - Back",
-    "Mindless Slaughter - Belt",
-    "Mindless Slaughter - Hook",
-    "Mindless Slaughter - Mask",
-    "Mindless Slaughter - Off-Hand",
-    "Mindless Slaughter - Shoulder"
-  ],
-  "Heartless Hunt": [
-    "Heartless Hunt - Armor",
-    "Heartless Hunt - Back",
-    "Heartless Hunt - Fowl",
-    "Heartless Hunt - Head",
-    "Heartless Hunt - Off-Hand",
-    "Heartless Hunt - Weapon"
-  ],
-  "Herald of the Ember Eye": [
-    "Herald of the Ember Eye - Armor",
-    "Herald of the Ember Eye - Belt",
-    "Herald of the Ember Eye - Brush",
-    "Herald of the Ember Eye - Mask",
-    "Herald of the Ember Eye Loading Screen"
-  ],
-  "Fissured Flight": [
-    "Fissured Flight - Back",
-    "Fissured Flight - Fire Head",
-    "Fissured Flight - Ice Head",
-    "Fissured Flight - Tail"
-  ],
-  "Flashpoint Proselyte": [
-    "Flashpoint Proselyte - Arms",
-    "Flashpoint Proselyte - Head",
-    "Flashpoint Proselyte - Off-Hand",
-    "Flashpoint Proselyte - Shoulder",
-    "Flashpoint Proselyte - Weapon"
-  ],
-  "Signs of the Allfather": [
-    "Signs of the Allfather - Arms",
-    "Signs of the Allfather - Back",
-    "Signs of the Allfather - Head",
-    "Signs of the Allfather - Neck",
-    "Signs of the Allfather - Shoulder",
-    "Signs of the Allfather - Treant",
-    "Signs of the Allfather - Weapon"
-  ],
-  "Glory of the Elderflame": [
-    "Glory of the Elderflame - Arms",
-    "Glory of the Elderflame - Belt",
-    "Glory of the Elderflame - Head",
-    "Glory of the Elderflame - Neck"
-  ],
-  "Songs of Starfall Glen": [
-    "Songs of Starfall Glen - Arms",
-    "Songs of Starfall Glen - Belt",
-    "Songs of Starfall Glen - Head",
-    "Songs of Starfall Glen - Neck",
-    "Songs of Starfall Glen - Weapon"
-  ],
-  "Ancient Inheritance": [
-    "Ancient Inheritance - Back",
-    "Ancient Inheritance - Belt",
-    "Ancient Inheritance - Neck",
-    "Ancient Inheritance - Shoulder",
-    "Ancient Inheritance - Weapon"
-  ],
-  "Forsworn Legacy": [
-    "Forsworn Legacy - Armor",
-    "Forsworn Legacy - Legs",
-    "Forsworn Legacy - Shield",
-    "Forsworn Legacy - Spear"
-  ],
-  "Spirit of the Sacred Grove": [
-    "Spirit of the Sacred Grove - Arms",
-    "Spirit of the Sacred Grove - Back",
-    "Spirit of the Sacred Grove - Bow",
-    "Spirit of the Sacred Grove - Guardian",
-    "Spirit of the Sacred Grove - Head",
-    "Spirit of the Sacred Grove - Quiver",
-    "Spirit of the Sacred Grove - Shoulder"
-  ],
-  "Evolution of the Infinite": [
-    "Evolution of the Infinite Armor",
-    "Evolution of the Infinite Bracers",
-    "Evolution of the Infinite Eidolon",
-    "Evolution of the Infinite Hood"
-  ],
-  "Beast of the Crimson Ring": [
-    "Beast of the Crimson Ring Armor",
-    "Beast of the Crimson Ring Back",
-    "Beast of the Crimson Ring Bracers",
-    "Beast of the Crimson Ring Helm",
-    "Beast of the Crimson Ring Weapon"
-  ],
-  "Clearcut Cavalier": [
-    "Clearcut Cavalier Armor",
-    "Clearcut Cavalier Back",
-    "Clearcut Cavalier Head",
-    "Clearcut Cavalier Off-Hand",
-    "Clearcut Cavalier Shoulders",
-    "Clearcut Cavalier Weapon"
-  ],
-  "The King Of Thieves": [
-    "The King Of Thieves Belt",
-    "The King Of Thieves Head",
-    "The King Of Thieves Mount",
-    "The King Of Thieves Weapon"
-  ],
-  "Horror from the Deep": [
-    "Horror from the Deep Arms",
-    "Horror from the Deep Back",
-    "Horror from the Deep Belt",
-    "Horror from the Deep Head",
-    "Horror from the Deep Off-Hand",
-    "Horror from the Deep Weapon"
-  ],
-  "Ire of the Ancient Gaoler": [
-    "Ire of the Ancient Gaoler Arms",
-    "Ire of the Ancient Gaoler Back",
-    "Ire of the Ancient Gaoler Head",
-    "Ire of the Ancient Gaoler Shoulder"
-  ],
-  "Talons of the Endless Storm": [
-    "Talons of the Endless Storm Head",
-    "Talons of the Endless Storm Mount",
-    "Talons of the Endless Storm Shield",
-    "Talons of the Endless Storm Shoulder",
-    "Talons of the Endless Storm Weapon"
-  ],
-  "Carousal of the Mystic Masquerade": [
-    "Back of the Mystic Masquerade",
-    "Head of the Mystic Masquerade",
-    "Shoulder of the Mystic Masquerade",
-    "Weapon of the Mystic Masquerade"
-  ],
-  "Crown of Calaphas": [
-    "Crown of Calaphas Armor",
-    "Crown of Calaphas Back",
-    "Crown of Calaphas Belt",
-    "Crown of Calaphas Tail"
-  ],
-  "Wrath of the Fallen": [
-    "Wrath of the Fallen Arms",
-    "Wrath of the Fallen Back",
-    "Wrath of the Fallen Belt",
-    "Wrath of the Fallen Head",
-    "Wrath of the Fallen Loading Screen",
-    "Wrath of the Fallen Shoulder",
-    "Wrath of the Fallen Tail",
-    "Wrath of the Fallen Weapon"
-  ],
-  "Blacksail Cannoneer": [
-    "Blacksail Cannoneer Arms",
-    "Blacksail Cannoneer Back",
-    "Blacksail Cannoneer Hat",
-    "Blacksail Cannoneer Shoulder",
-    "Blacksail Cannoneer Weapon"
-  ],
-  "Secrets of the Celestial": [
-    "Secrets of the Celestial Arms",
-    "Secrets of the Celestial Back",
-    "Secrets of the Celestial Belt",
-    "Secrets of the Celestial Head",
-    "Secrets of the Celestial Loading Screen",
-    "Secrets of the Celestial Shoulder",
-    "Secrets of the Celestial Weapon"
-  ],
-  "Blaze of Oblivion": [
-    "Blaze of Oblivion Back",
-    "Blaze of Oblivion Head",
-    "Blaze of Oblivion Loading Screen",
-    "Blaze of Oblivion Supernova"
-  ],
-  "Master of the Searing Path": [
-    "Master of the Searing Path Arms",
-    "Master of the Searing Path Belt",
-    "Master of the Searing Path Head",
-    "Master of the Searing Path Loading Screen",
-    "Master of the Searing Path Off-Hand",
-    "Master of the Searing Path Shoulder",
-    "Master of the Searing Path Weapon"
-  ],
-  "Steward of the Forbidden Chamber": [
-    "Steward of the Forbidden Chamber Armor",
-    "Steward of the Forbidden Chamber Head",
-    "Steward of the Forbidden Chamber Shoulder"
-  ],
-  "Claszureme Incursion": [
-    "Claszureme Incursion Arms",
-    "Claszureme Incursion Belt",
-    "Claszureme Incursion Head",
-    "Claszureme Incursion Shoulder",
-    "Claszureme Incursion Weapon"
-  ],
-  "Radiant Conqueror": [
-    "Radiant Conqueror Arms",
-    "Radiant Conqueror Back",
-    "Radiant Conqueror Head",
-    "Radiant Conqueror Legs",
-    "Radiant Conqueror Shoulder",
-    "Radiant Conqueror Weapon"
-  ],
-  "Twilight Hex": [
-    "Twilight Hex - Armor",
-    "Twilight Hex - Back",
-    "Twilight Hex - Belt",
-    "Twilight Hex - Head",
-    "Twilight Hex - Offhand"
-  ],
-  "Litany of the Damned": [
-    "Litany of the Damned - Arms",
-    "Litany of the Damned - Back",
-    "Litany of the Damned - Belt",
-    "Litany of the Damned - Head",
-    "Litany of the Damned - Shoulder",
-    "Litany of the Damned - Tail",
-    "Litany of the Damned - Weapon",
-    "Litany of the Damned Loading Screen"
-  ],
-  "Astral Terminus": [
-    "Astral Terminus - Armor",
-    "Astral Terminus - Arms",
-    "Astral Terminus - Eidolon",
-    "Astral Terminus - Head",
-    "Astral Terminus Loading Screen"
-  ],
-  "Caerulean Star": [
-    "Caerulean Star - Arms",
-    "Caerulean Star - Belt",
-    "Caerulean Star - Head",
-    "Caerulean Star - Neck",
-    "Caerulean Star - Weapon"
-  ],
-  "Arcane Inverter": [
-    "Arcane Inverter - Back",
-    "Arcane Inverter - Head",
-    "Arcane Inverter - Misc",
-    "Arcane Inverter - Missile",
-    "Arcane Inverter - Weapon"
-  ],
-  "Creed of the Skullhound": [
-    "Creed of the Skullhound - Armor",
-    "Creed of the Skullhound - Belt",
-    "Creed of the Skullhound - Head",
-    "Creed of the Skullhound - Lupine Form",
-    "Creed of the Skullhound - Shoulder",
-    "Creed of the Skullhound - Summon",
-    "Creed of the Skullhound - Weapon"
-  ],
-  "Desert Bloom": [
-    "Desert Bloom - Arms",
-    "Desert Bloom - Back",
-    "Desert Bloom - Head",
-    "Desert Bloom - Neck",
-    "Desert Bloom - Shoulder",
-    "Desert Bloom - Treant",
-    "Desert Bloom - Weapon",
-    "Desert Bloom Loading Screen"
-  ],
-  "Silence of the Starweaver": [
-    "Silence of the Starweaver - Armor",
-    "Silence of the Starweaver - Back",
-    "Silence of the Starweaver - Head",
-    "Silence of the Starweaver - Weapon"
-  ],
-  "Vision of the Seraph Scion": [
-    "Vision of the Seraph Scion - Head",
-    "Vision of the Seraph Scion - Legs",
-    "Vision of the Seraph Scion - Shoulder",
-    "Vision of the Seraph Scion - Weapon"
-  ],
-  "Anthozoan Assault": [
-    "Anthozoan Assault - Huge",
-    "Anthozoan Assault - Large",
-    "Anthozoan Assault - Medium",
-    "Anthozoan Assault - Tiny",
-    "Anthozoan Assault - Weapon"
-  ],
-  "Eyriebound Imperator": [
-    "Eyriebound Imperator - Arms",
-    "Eyriebound Imperator - Back",
-    "Eyriebound Imperator - Belt",
-    "Eyriebound Imperator - Head",
-    "Eyriebound Imperator - Shoulder",
-    "Eyriebound Imperator - Weapon",
-    "Eyriebound Imperator Loading Screen"
-  ],
-  "Defender of the Brumal Crest": [
-    "Defender of the Brumal Crest - Back",
-    "Defender of the Brumal Crest - Head"
-  ],
-  "Red Sands Marauder": [
-    "Red Sands Marauder - Arms",
-    "Red Sands Marauder - Belt",
-    "Red Sands Marauder - Head",
-    "Red Sands Marauder - Offhand",
-    "Red Sands Marauder - Summon",
-    "Red Sands Marauder - Weapon",
-    "Red Sands Marauder Loading Screen"
-  ],
-  "Indomitable Legacy": [
-    "Indomitable Legacy - Arms",
-    "Indomitable Legacy - Back",
-    "Indomitable Legacy - Belt",
-    "Indomitable Legacy - Head",
-    "Indomitable Legacy - Shoulder",
-    "Indomitable Legacy - Weapon"
-  ],
-  "Footfalls of the Sporefathers": [
-    "Footfalls of the Sporefathers - Back",
-    "Footfalls of the Sporefathers - Belt",
-    "Footfalls of the Sporefathers - Death Ward",
-    "Footfalls of the Sporefathers - Head",
-    "Footfalls of the Sporefathers - Shoulder",
-    "Footfalls of the Sporefathers - Weapon"
-  ],
-  "Darktrench Stalker": [
-    "Darktrench Stalker - Arms",
-    "Darktrench Stalker - Back",
-    "Darktrench Stalker - Head",
-    "Darktrench Stalker - Misc",
-    "Darktrench Stalker - Shoulder",
-    "Darktrench Stalker Loading Screen"
-  ],
-  "Silverwurm Sacrifice": [
-    "Silverwurm Sacrifice - Arms",
-    "Silverwurm Sacrifice - Back",
-    "Silverwurm Sacrifice - Dragon Form",
-    "Silverwurm Sacrifice - Head",
-    "Silverwurm Sacrifice - Off-Hand",
-    "Silverwurm Sacrifice - Shoulder",
-    "Silverwurm Sacrifice - Weapon",
-    "Silverwurm Sacrifice Loading Screen"
-  ],
-  "Scales of the Shadow Walker": [
-    "Scales of the Shadow Walker - Arms",
-    "Scales of the Shadow Walker - Belt",
-    "Scales of the Shadow Walker - Head",
-    "Scales of the Shadow Walker - Shoulder",
-    "Scales of the Shadow Walker - Weapon"
-  ],
-  "Perception of the First Light": [
-    "Perception of the First Light - Armor",
-    "Perception of the First Light - Arms",
-    "Perception of the First Light - Head",
-    "Perception of the First Light - Weapon"
-  ],
-  "Apex Automated": [
-    "Apex Automated - Armor",
-    "Apex Automated - Head",
-    "Apex Automated - Power Cog",
-    "Apex Automated - Rocket",
-    "Apex Automated - Weapon"
-  ],
-  "Test of the Basilisk Lord": [
-    "Test of the Basilisk Lord - Armor",
-    "Test of the Basilisk Lord - Arms",
-    "Test of the Basilisk Lord - Belt",
-    "Test of the Basilisk Lord - Head",
-    "Test of the Basilisk Lord - Weapon",
-    "Test of the Basilisk Lord Loading Screen"
-  ],
-  "Secrets of the Frost Singularity": [
-    "Secrets of the Frost Singularity - Arms",
-    "Secrets of the Frost Singularity - Head",
-    "Secrets of the Frost Singularity - Shoulder",
-    "Secrets of the Frost Singularity - Tail"
-  ],
-  "Perils of the Red Banks": [
-    "Perils of the Red Banks - Arms",
-    "Perils of the Red Banks - Head",
-    "Perils of the Red Banks - Mount",
-    "Perils of the Red Banks - Shoulder",
-    "Perils of the Red Banks - Weapon"
-  ],
-  "The Chained Scribe": [
-    "The Chained Scribe - Armor",
-    "The Chained Scribe - Belt",
-    "The Chained Scribe - Head",
-    "The Chained Scribe - Weapon"
-  ],
-  "Widow of the Undermount Gloom": [
-    "Widow of the Undermount Gloom - Anterior",
-    "Widow of the Undermount Gloom - Back",
-    "Widow of the Undermount Gloom - Head",
-    "Widow of the Undermount Gloom - Legs",
-    "Widow of the Undermount Gloom - Spiderling",
-    "Widow of the Undermount Gloom Loading Screen"
-  ],
-  "Forgotten Fate": [
-    "Forgotten Fate - Armor",
-    "Forgotten Fate - Legs",
-    "Forgotten Fate - Off-Hand",
-    "Forgotten Fate - Weapon"
-  ],
-  "March of the Crackerjack Mage": [
-    "March of the Crackerjack Mage - Back",
-    "March of the Crackerjack Mage - Head",
-    "March of the Crackerjack Mage - Shoulder",
-    "March of the Crackerjack Mage - Weapon"
-  ],
-  "Stranger in the Wandering Isles": [
-    "Stranger in the Wandering Isles - Arms",
-    "Stranger in the Wandering Isles - Back",
-    "Stranger in the Wandering Isles - Head",
-    "Stranger in the Wandering Isles - Legs",
-    "Stranger in the Wandering Isles - Misc",
-    "Stranger in the Wandering Isles - Shoulder",
-    "Stranger in the Wandering Isles - Weapon"
-  ],
-  "Cosmic Concoctioneers": [
-    "Cosmic Concoctioneers - Armor",
-    "Cosmic Concoctioneers - Arms",
-    "Cosmic Concoctioneers - Back",
-    "Cosmic Concoctioneers - Neck",
-    "Cosmic Concoctioneers - Off-Hand",
-    "Cosmic Concoctioneers - Shoulder",
-    "Cosmic Concoctioneers - Weapon"
-  ],
-  "Days of the Demon": [
-    "Days of the Demon - Armor",
-    "Days of the Demon - Belt",
-    "Days of the Demon - Head",
-    "Days of the Demon - Misc",
-    "Days of the Demon - Weapon"
-  ],
-  "Blightfall": [
-    "Blightfall - Back",
-    "Blightfall - Head",
-    "Blightfall - Mount",
-    "Blightfall - Shoulder",
-    "Blightfall - Weapon",
-    "Blightfall Loading Screen"
-  ],
-  "Pyrexae Polymorph Perfected": [
-    "Pyrexae Polymorph Perfected - Arms",
-    "Pyrexae Polymorph Perfected - Back",
-    "Pyrexae Polymorph Perfected - Belt",
-    "Pyrexae Polymorph Perfected - Head",
-    "Pyrexae Polymorph Perfected - Weapon"
-  ],
-  "Wrath of the Celestial Sentinel": [
-    "Wrath of the Celestial Sentinel - Head",
-    "Wrath of the Celestial Sentinel - Mount",
-    "Wrath of the Celestial Sentinel - Off-Hand",
-    "Wrath of the Celestial Sentinel - Shoulder",
-    "Wrath of the Celestial Sentinel - Weapon"
-  ],
-  "Bane of the Deathstalkers": [
-    "Bane of the Deathstalkers - Back",
-    "Bane of the Deathstalkers - Belt",
-    "Bane of the Deathstalkers - Head",
-    "Bane of the Deathstalkers - Shoulder",
-    "Bane of the Deathstalkers - Weapon"
-  ],
-  "Shadowleaf Insurgent": [
-    "Shadowleaf Insurgent - Armor",
-    "Shadowleaf Insurgent - Back",
-    "Shadowleaf Insurgent - Tail",
-    "Shadowleaf Insurgent - Weapon"
-  ],
-  "Scarlet Subversion": [
-    "Scarlet Subversion - Arms",
-    "Scarlet Subversion - Head",
-    "Scarlet Subversion - Offhand Weapon",
-    "Scarlet Subversion - Shoulder",
-    "Scarlet Subversion - Tail",
-    "Scarlet Subversion - Weapon"
-  ],
-  "Whippersnapper": [
-    "Whippersnapper - Armor",
-    "Whippersnapper - Costume",
-    "Whippersnapper - Head",
-    "Whippersnapper - Mount",
-    "Whippersnapper - Weapon"
-  ],
-  "Hounds of Obsession": [
-    "Hounds of Obsession - Arms",
-    "Hounds of Obsession - Head",
-    "Hounds of Obsession - Mount",
-    "Hounds of Obsession - Shoulder",
-    "Hounds of Obsession - Weapon"
-  ],
-  "Seadog's Stash": [
-    "Seadog's Stash - Armor",
-    "Seadog's Stash - Head",
-    "Seadog's Stash - Power Cogs",
-    "Seadog's Stash - Rocket",
-    "Seadog's Stash - Weapon"
-  ],
-  "Starlorn Adjudicator": [
-    "Starlorn Adjudicator - Armor",
-    "Starlorn Adjudicator - Arms",
-    "Starlorn Adjudicator - Head",
-    "Starlorn Adjudicator - Weapon"
-  ],
-  "Spoils of the Shadowveil": [
-    "Spoils of the Shadowveil - Belt",
-    "Spoils of the Shadowveil - Head",
-    "Spoils of the Shadowveil - Misc",
-    "Spoils of the Shadowveil - Shoulder",
-    "Spoils of the Shadowveil - Weapon"
-  ],
-  "Chines of the Inquisitor": [
-    "Chines of the Inquisitor - Arms",
-    "Chines of the Inquisitor - Belt",
-    "Chines of the Inquisitor - Body Head",
-    "Chines of the Inquisitor - Loading Screen",
-    "Chines of the Inquisitor - Shoulder",
-    "Chines of the Inquisitor - Weapon"
-  ],
-  "Trophies of the Hallowed Hunt": [
-    "Trophies of the Hallowed Hunt - Arms",
-    "Trophies of the Hallowed Hunt - Back",
-    "Trophies of the Hallowed Hunt - Belt",
-    "Trophies of the Hallowed Hunt - Head",
-    "Trophies of the Hallowed Hunt - Weapon"
-  ],
-  "Crimson Dawn": [
-    "Crimson Dawn - Back",
-    "Crimson Dawn - Head",
-    "Crimson Dawn - Supernova"
-  ],
-  "Forgotten Station": [
-    "Forgotten Station - Armor",
-    "Forgotten Station - Back",
-    "Forgotten Station - Demon",
-    "Forgotten Station - Head",
-    "Forgotten Station - Weapon"
-  ],
-  "Dirge Amplifier": [
-    "Dirge Amplifier - Armor",
-    "Dirge Amplifier - Arms",
-    "Dirge Amplifier - Flesh Golem",
-    "Dirge Amplifier - Head"
-  ],
-  "Champion of the Fire Lotus": [
-    "Champion of the Fire Lotus - Armor",
-    "Champion of the Fire Lotus - Head",
-    "Champion of the Fire Lotus - Shoulder",
-    "Champion of the Fire Lotus - Weapon"
-  ],
-  "Deathstitch Shaman": [
-    "Deathstitch Shaman - Back",
-    "Deathstitch Shaman - Belt",
-    "Deathstitch Shaman - Death Ward",
-    "Deathstitch Shaman - Head",
-    "Deathstitch Shaman - Shoulder",
-    "Deathstitch Shaman - Weapon"
-  ],
-  "Blue Horizons": [
-    "Blue Horizons - Armor",
-    "Blue Horizons - Back",
-    "Blue Horizons - Head",
-    "Blue Horizons - Loading Screen",
-    "Blue Horizons - Shoulder"
-  ],
-  "Angel of Vex": [
-    "Acolyte of the Lost Arts",
-    "Angel of Vex - Armor",
-    "Angel of Vex - Arms",
-    "Angel of Vex - Back",
-    "Angel of Vex - Head",
-    "Angel of Vex - Shoulder"
-  ],
-  "Dark Behemoth": [
-    "Dark Behemoth - Arms",
-    "Dark Behemoth - Back",
-    "Dark Behemoth - Head",
-    "Dark Behemoth - Legs",
-    "Dark Behemoth - Loading Screen"
-  ],
-  "Astral Origins": [
-    "Astral Origins - Back",
-    "Astral Origins - Belt",
-    "Astral Origins - Loading Screen",
-    "Astral Origins - Neck",
-    "Astral Origins - Shoulder",
-    "Astral Origins - Weapon"
-  ],
-  "Bird of Prey": [
-    "Bird of Prey - Arms",
-    "Bird of Prey - Back",
-    "Bird of Prey - Head",
-    "Bird of Prey - Legs",
-    "Bird of Prey - Shoulder",
-    "Bird of Prey - Weapon"
-  ],
-  "Grand Suppressor": [
-    "Grand Suppressor - Arms",
-    "Grand Suppressor - Belt",
-    "Grand Suppressor - Head",
-    "Grand Suppressor - Off-Hand Weapon",
-    "Grand Suppressor - Shoulder",
-    "Grand Suppressor - Weapon"
-  ],
-  "Darkbrew's Transgression": [
-    "Darkbrew's Transgression - Armor",
-    "Darkbrew's Transgression - Arms",
-    "Darkbrew's Transgression - Back",
-    "Darkbrew's Transgression - Neck",
-    "Darkbrew's Transgression - Off-Hand",
-    "Darkbrew's Transgression - Shoulder",
-    "Darkbrew's Transgression - Weapon"
-  ],
-  "Transcendent Path": [
-    "Transcendent Path - Armor",
-    "Transcendent Path - Back",
-    "Transcendent Path - Head",
-    "Transcendent Path - Loading Screen",
-    "Transcendent Path - Weapon"
-  ],
-  "The Wilding Tiger": [
-    "The Wilding Tiger - Arms",
-    "The Wilding Tiger - Back",
-    "The Wilding Tiger - Head",
-    "The Wilding Tiger - Loading Screen",
-    "The Wilding Tiger - Off-Hand Weapon",
-    "The Wilding Tiger - Shoulder",
-    "The Wilding Tiger - Weapon"
-  ],
-  "Dawn of a Darkness Foretold": [
-    "Dawn of a Darkness Foretold - Arms",
-    "Dawn of a Darkness Foretold - Back",
-    "Dawn of a Darkness Foretold - Belt",
-    "Dawn of a Darkness Foretold - Head",
-    "Dawn of a Darkness Foretold - Shoulder",
-    "Dawn of a Darkness Foretold - Tail",
-    "Dawn of a Darkness Foretold - Weapon"
-  ],
-  "Cursed Cryptbreaker": [
-    "Cursed Cryptbreaker - Arms",
-    "Cursed Cryptbreaker - Back",
-    "Cursed Cryptbreaker - Belt",
-    "Cursed Cryptbreaker - Head",
-    "Cursed Cryptbreaker - Off-Hand Weapon",
-    "Cursed Cryptbreaker - Shoulder",
-    "Cursed Cryptbreaker - Weapon"
-  ],
-  "Feasts of Forever": [
-    "Feasts of Forever - Arms",
-    "Feasts of Forever - Back",
-    "Feasts of Forever - Head",
-    "Feasts of Forever - Legs",
-    "Feasts of Forever - Tail"
-  ],
-  "Darkfeather Factioneer": [
-    "Darkfeather Factioneer - Back",
-    "Darkfeather Factioneer - Belt",
-    "Darkfeather Factioneer - Head",
-    "Darkfeather Factioneer - Shoulder",
-    "Darkfeather Factioneer - Weapon"
-  ],
-  "Freeboot Fortunes": [
-    "Freeboot Fortunes - Arms",
-    "Freeboot Fortunes - Back",
-    "Freeboot Fortunes - Belt",
-    "Freeboot Fortunes - Head",
-    "Freeboot Fortunes - Weapon"
-  ],
-  "Acrimonies of Obsession": [
-    "Acrimonies of Obsession - Head",
-    "Acrimonies of Obsession - Legs",
-    "Acrimonies of Obsession - Shoulder",
-    "Acrimonies of Obsession - Weapon"
-  ],
-  "Sacred Chamber Guardian": [
-    "Sacred Chamber Guardian - Arms",
-    "Sacred Chamber Guardian - Head",
-    "Sacred Chamber Guardian - Off-Hand Weapon",
-    "Sacred Chamber Guardian - Shoulder",
-    "Sacred Chamber Guardian - Weapon"
-  ],
-  "Withering Pain": [
-    "Withering Pain - Back",
-    "Withering Pain - Gloves",
-    "Withering Pain - Head",
-    "Withering Pain - Loading Screen",
-    "Withering Pain - Shoulder",
-    "Withering Pain - Summon",
-    "Withering Pain - Weapon"
-  ],
-  "War Rig Eradicators": [
-    "War Rig Eradicators - Arms",
-    "War Rig Eradicators - Back",
-    "War Rig Eradicators - Belt",
-    "War Rig Eradicators - Head",
-    "War Rig Eradicators - Loading Screen",
-    "War Rig Eradicators - Proximity",
-    "War Rig Eradicators - Rig",
-    "War Rig Eradicators - Shoulder",
-    "War Rig Eradicators - Weapon"
-  ],
-  "Grudges of the Gallows Tree": [
-    "Grudges of the Gallows Tree - Arms",
-    "Grudges of the Gallows Tree - Head",
-    "Grudges of the Gallows Tree - Legs",
-    "Grudges of the Gallows Tree - Shoulder"
-  ],
-  "Brands of the Reaper": [
-    "Brands of the Reaper - Armor",
-    "Brands of the Reaper - Arms",
-    "Brands of the Reaper - Belt",
-    "Brands of the Reaper - Head",
-    "Brands of the Reaper - Off-Hand Weapon",
-    "Brands of the Reaper - Shoulders",
-    "Brands of the Reaper - Weapon"
-  ],
-  "Sublime Equilibrium": [
-    "Sublime Equilibrium - Armor",
-    "Sublime Equilibrium - Belt",
-    "Sublime Equilibrium - Head",
-    "Sublime Equilibrium - Weapon"
-  ],
-  "Unities of Discord": [
-    "Unities of Discord - Head",
-    "Unities of Discord - Mount",
-    "Unities of Discord - Off-Hand",
-    "Unities of Discord - Shoulder",
-    "Unities of Discord - Weapon"
-  ],
-  "Primeval Abomination": [
-    "Primeval Abomination Arms",
-    "Primeval Abomination Back",
-    "Primeval Abomination Head",
-    "Primeval Abomination Legs",
-    "Primeval Abomination Loading Screen"
-  ],
-  "Astral Herald": [
-    "Astral Herald Armor",
-    "Astral Herald Arms",
-    "Astral Herald Head",
-    "Astral Herald Weapon"
-  ],
-  "Spectral Shadow": [
-    "Spectral Shadow Back",
-    "Spectral Shadow Head",
-    "Spectral Shadow Mount",
-    "Spectral Shadow Shoulder",
-    "Spectral Shadow Weapon"
-  ],
-  "Taur Rider": [
-    "Taur Rider Armor",
-    "Taur Rider Arms",
-    "Taur Rider Back",
-    "Taur Rider Head",
-    "Taur Rider Loading Screen",
-    "Taur Rider Offhand",
-    "Taur Rider Shoulders",
-    "Taur Rider Weapons"
-  ],
-  "Crescent Huntress": [
-    "Crescent Huntress Arms",
-    "Crescent Huntress Belt",
-    "Crescent Huntress Head",
-    "Crescent Huntress Shoulder",
-    "Crescent Huntress Weapon"
-  ],
-  "Tyrant of the Veil": [
-    "Tyrant of the Veil Armor",
-    "Tyrant of the Veil Back",
-    "Tyrant of the Veil Helm",
-    "Tyrant of the Veil Shoulder",
-    "Tyrant of the Veil Weapon"
-  ],
-  "Tomo'kan Footsoldier": [
-    "Tomo'kan Footsoldier Armor",
-    "Tomo'kan Footsoldier Back",
-    "Tomo'kan Footsoldier Tail",
-    "Tomo'kan Footsoldier Weapon"
-  ],
-  "Darkwood Eulogy": [
-    "Darkwood Eulogy Armor",
-    "Darkwood Eulogy Belt",
-    "Darkwood Eulogy Head",
-    "Darkwood Eulogy Legs",
-    "Darkwood Eulogy Spirit"
-  ],
-  "Sea Spirit": [
-    "Sea Spirit Back",
-    "Sea Spirit Belt",
-    "Sea Spirit Gloves",
-    "Sea Spirit Head",
-    "Sea Spirit Legs",
-    "Sea Spirit Neck",
-    "Sea Spirit Shoulder",
-    "Sea Spirit Weapon"
-  ],
-  "Triumph of the Imperatrix": [
-    "Triumph of the Imperatrix Arms",
-    "Triumph of the Imperatrix Back",
-    "Triumph of the Imperatrix Head",
-    "Triumph of the Imperatrix Legs",
-    "Triumph of the Imperatrix Shoulder",
-    "Triumph of the Imperatrix Weapon"
-  ],
-  "Beast of Thunder": [
-    "Beast of Thunder Armor",
-    "Beast of Thunder Arms",
-    "Beast of Thunder Head"
-  ],
-  "Ancestral Heritage": [
-    "Ancestral Heritage Back",
-    "Ancestral Heritage Fire Head",
-    "Ancestral Heritage Ice Head",
-    "Ancestral Heritage Tail"
-  ],
-  "Dezun Viper": [
-    "Dezun Viper Arms",
-    "Dezun Viper Back",
-    "Dezun Viper Legs",
-    "Dezun Viper Shoulders",
-    "Dezun Viper Weapon"
-  ],
-  "Brightfist": [
-    "Brightfist Armor",
-    "Brightfist Back",
-    "Brightfist Head",
-    "Brightfist Shoulder"
-  ],
-  "Snailfire": [
-    "Snailfire Armor",
-    "Snailfire Costume",
-    "Snailfire Head",
-    "Snailfire Morty",
-    "Snailfire Weapon"
-  ],
-  "Turstarkuri Pilgrim": [
-    "The Disciple's Path",
-    "Turstarkuri Pilgrim Armor",
-    "Turstarkuri Pilgrim Head",
-    "Turstarkuri Pilgrim Offhand Weapon",
-    "Turstarkuri Pilgrim Weapon"
-  ],
-  "Darkblade Adept": [
-    "Darkblade Adept - Armor",
-    "Darkblade Adept - Head",
-    "Darkblade Adept - Shoulder",
-    "Darkblade Adept - Weapon"
-  ],
-  "Phantom's Facade": [
-    "Exile Unveiled",
-    "Phantom's Facade - Armor",
-    "Phantom's Facade - Head",
-    "Phantom's Facade - Legs",
-    "Phantom's Facade - Weapon"
-  ],
-  "Lotus of the Mountain Bear Clan": [
-    "Lotus of the Mountain Bear Clan - Arms",
-    "Lotus of the Mountain Bear Clan - Back",
-    "Lotus of the Mountain Bear Clan - Head",
-    "Lotus of the Mountain Bear Clan - Shoulder",
-    "Lotus of the Mountain Bear Clan - Tail",
-    "Lotus of the Mountain Bear Clan - Weapon"
-  ],
-  "Martyrdom of the Brineborn": [
-    "Martyrdom of the Brineborn - Armor",
-    "Martyrdom of the Brineborn - Head",
-    "Martyrdom of the Brineborn - Offhand",
-    "Martyrdom of the Brineborn - Tail",
-    "Martyrdom of the Brineborn - Weapon"
-  ],
-  "Elegy of the Reaper": [
-    "Elegy of the Reaper - Armor",
-    "Elegy of the Reaper - Belt",
-    "Elegy of the Reaper - Head",
-    "Elegy of the Reaper - Weapon"
-  ],
-  "Mecha Nyx": [
-    "Mecha Nyx - Back",
-    "Mecha Nyx - Head",
-    "Mecha Nyx - Misc",
-    "Mecha Nyx - Weapon",
-    "Mecha Nyx Loading Screen"
-  ],
-  "Faithful Fortune": [
-    "Faithful Fortune - Armor",
-    "Faithful Fortune - Back",
-    "Faithful Fortune - Head",
-    "Faithful Fortune - Shoulder"
-  ],
-  "Ardalan Arms Race": [
-    "Ardalan Arms Race - Armor",
-    "Ardalan Arms Race - Costume",
-    "Ardalan Arms Race - Head",
-    "Ardalan Arms Race - Mount",
-    "Ardalan Arms Race - Weapon"
-  ],
-  "Dread of Night": [
-    "Dread of Night - Arms",
-    "Dread of Night - Back",
-    "Dread of Night - Head",
-    "Dread of Night - Legs",
-    "Dread of Night - Loading Screen",
-    "Dread of Night - Tail"
-  ],
-  "Blackwing Bandolera": [
-    "Blackwing Bandolera - Armor",
-    "Blackwing Bandolera - Back",
-    "Blackwing Bandolera - Head",
-    "Blackwing Bandolera - Ultimate Form",
-    "Blackwing Bandolera - Weapon"
-  ],
-  "Exquisite Agonies": [
-    "Exquisite Agonies - Back",
-    "Exquisite Agonies - Head",
-    "Exquisite Agonies - Legs",
-    "Exquisite Agonies - Shoulder",
-    "Exquisite Agonies - Weapon"
-  ],
-  "Colossal Terrorpin": [
-    "Colossal Terrorpin - Large",
-    "Colossal Terrorpin - Loading Screen",
-    "Colossal Terrorpin - Medium",
-    "Colossal Terrorpin - Small",
-    "Colossal Terrorpin - Tiny",
-    "Colossal Terrorpin - Weapon"
-  ],
-  "Proselyte of the Sakura Clan": [
-    "Proselyte of the Sakura Clan - Armor",
-    "Proselyte of the Sakura Clan - Head",
-    "Proselyte of the Sakura Clan - Offhand",
-    "Proselyte of the Sakura Clan - Weapon",
-    "The Disciple's Path"
-  ],
-  "Bloodmoon Stalker": [
-    "Bloodmoon Stalker - Crescent Glaive",
-    "Bloodmoon Stalker - Head",
-    "Bloodmoon Stalker - Mount",
-    "Bloodmoon Stalker - Offhand",
-    "Bloodmoon Stalker - Shoulders"
-  ],
-  "Ancient Exile": [
-    "Ancient Exile - Arms",
-    "Ancient Exile - Back",
-    "Ancient Exile - Head",
-    "Ancient Exile - Legs",
-    "Ancient Exile - Ward",
-    "Ancient Exile - Weapon"
-  ],
-  "Aberrant Observer": [
-    "Aberrant Observer - Back",
-    "Aberrant Observer - Belt",
-    "Aberrant Observer - Head",
-    "Aberrant Observer - Hook",
-    "Aberrant Observer - Left Arm",
-    "Aberrant Observer - Offhand",
-    "Aberrant Observer - Right Arm"
-  ],
-  "Igneous Infernal": [
-    "Igneous Infernal - Arms",
-    "Igneous Infernal - Back",
-    "Igneous Infernal - Belt",
-    "Igneous Infernal - Head",
-    "Igneous Infernal - Shoulder",
-    "Igneous Infernal - Tail",
-    "Igneous Infernal - Weapon"
-  ],
-  "Bleeding Edge": [
-    "Bleeding Edge - Arms",
-    "Bleeding Edge - Head",
-    "Bleeding Edge - Off-Hand",
-    "Bleeding Edge - Shoulder",
-    "Bleeding Edge - Weapon"
-  ],
-  "Magus Mimicry": [
-    "Acolyte of the Lost Arts",
-    "Magus Mimicry - Armor",
-    "Magus Mimicry - Arms",
-    "Magus Mimicry - Back",
-    "Magus Mimicry - Forge Spirit",
-    "Magus Mimicry - Head",
-    "Magus Mimicry - Shoulder",
-    "The Good Old Days"
-  ],
-  "Seam Ripper Snuggle Time": [
-    "Seam Ripper Snuggle Time - Arms",
-    "Seam Ripper Snuggle Time - Back",
-    "Seam Ripper Snuggle Time - Belt",
-    "Seam Ripper Snuggle Time - Head",
-    "Seam Ripper Snuggle Time - Loading Screen",
-    "Seam Ripper Snuggle Time - Offhand Weapon",
-    "Seam Ripper Snuggle Time - Pyro Plush",
-    "Seam Ripper Snuggle Time - Shoulder",
-    "Seam Ripper Snuggle Time - Weapon"
-  ],
-  "Angler in the Abyss": [
-    "Angler in the Abyss - Arms",
-    "Angler in the Abyss - Back",
-    "Angler in the Abyss - Head",
-    "Angler in the Abyss - Loading Screen",
-    "Angler in the Abyss - Shoulder",
-    "Angler in the Abyss - Weapon"
-  ],
-  "Phantom Balladeer": [
-    "Phantom Balladeer - Back",
-    "Phantom Balladeer - Head",
-    "Phantom Balladeer - Loading Screen",
-    "Phantom Balladeer - Mount",
-    "Phantom Balladeer - Shoulder",
-    "Phantom Balladeer - Weapon"
-  ],
-  "Bootblack Brawler": [
-    "Bootblack Brawler - Armor",
-    "Bootblack Brawler - Belt",
-    "Bootblack Brawler - Head",
-    "Bootblack Brawler - Loading Screen",
-    "Bootblack Brawler - Misc",
-    "Bootblack Brawler - Weapon"
-  ],
-  "Needlepoint Necromancer": [
-    "Needlepoint Necromancer - Arms",
-    "Needlepoint Necromancer - Back",
-    "Needlepoint Necromancer - Legs",
-    "Needlepoint Necromancer - Misc",
-    "Needlepoint Necromancer - Weapon"
-  ],
-  "Hare of the Cog": [
-    "Hare of the Cog - Armor",
-    "Hare of the Cog - Carrot",
-    "Hare of the Cog - Head",
-    "Hare of the Cog - Misc",
-    "Hare of the Cog - Weapon"
-  ],
-  "Thundervolt": [
-    "Thundervolt - Arms",
-    "Thundervolt - Back",
-    "Thundervolt - Belt",
-    "Thundervolt - Head"
-  ],
-  "Caprine Chimera": [
-    "Caprine Chimera - Arms",
-    "Caprine Chimera - Back",
-    "Caprine Chimera - Shoulder",
-    "Caprine Chimera - Weapon",
-    "Caprine Chimera - Wearable"
-  ],
-  "Canis Crystallum": [
-    "Blueheart Familiar",
-    "Canis Crystallum - Armor",
-    "Canis Crystallum - Head",
-    "Canis Crystallum - Misc",
-    "Canis Crystallum - Tail",
-    "Conduit of the Blueheart"
-  ],
-  "Unchained Entropy": [
-    "Unchained Entropy - Arms",
-    "Unchained Entropy - Head",
-    "Unchained Entropy - Shoulder",
-    "Unchained Entropy - Tail"
-  ],
-  "Undying Love": [
-    "Undying Love - Amalgamation",
-    "Undying Love - Armor",
-    "Undying Love - Arms",
-    "Undying Love - Head"
-  ],
-  "Crystal Colossus": [
-    "Crystal Colossus - Arms",
-    "Crystal Colossus - Belt",
-    "Crystal Colossus - Head",
-    "Crystal Colossus - Loading Screen",
-    "Crystal Colossus - Shoulder",
-    "Crystal Colossus - Tail",
-    "Crystal Colossus - Weapon"
-  ],
-  "Secondhand Sorcery": [
-    "Secondhand Sorcery - Back",
-    "Secondhand Sorcery - Head",
-    "Secondhand Sorcery - Shoulder",
-    "Secondhand Sorcery - Weapon"
-  ],
-  "Glutton of Punishment": [
-    "Glutton of Punishment - Armor",
-    "Glutton of Punishment - Arms",
-    "Glutton of Punishment - Head",
-    "Glutton of Punishment - Offhand",
-    "Glutton of Punishment - Weapon",
-    "The Toy Butcher"
-  ],
-  "Lord of the Sundered Souls": [
-    "Lord of the Sundered Souls - Arms",
-    "Lord of the Sundered Souls - Head",
-    "Lord of the Sundered Souls - Shoulders"
-  ],
-  "Prehistoric Predator": [
-    "Prehistoric Predator - Arms",
-    "Prehistoric Predator - Back",
-    "Prehistoric Predator - Head",
-    "Prehistoric Predator - Legs"
-  ],
-  "Insatiable Seas": [
-    "Insatiable Seas - Anchor",
-    "Insatiable Seas - Belt",
-    "Insatiable Seas - Bracer",
-    "Insatiable Seas - Charms",
-    "Insatiable Seas - Maw",
-    "Insatiable Seas - Ship"
-  ],
-  "The White Widow": [
-    "The White Widow - Back",
-    "The White Widow - Body",
-    "The White Widow - Head",
-    "The White Widow - Legs",
-    "The White Widow - Spiderling"
-  ],
-  "Angel of the Abyss": [
-    "Angel of the Abyss - Armor",
-    "Angel of the Abyss - Fetters",
-    "Angel of the Abyss - Halo",
-    "Angel of the Abyss - Servants"
-  ],
-  "Blinding Bastion": [
-    "Blinding Bastion - Arms",
-    "Blinding Bastion - Back",
-    "Blinding Bastion - Flail",
-    "Blinding Bastion - Head",
-    "Blinding Bastion - Shoulders"
-  ],
-  "Harrow's Harvest": [
-    "Harrow's Harvest - Armor",
-    "Harrow's Harvest - Belt",
-    "Harrow's Harvest - Head",
-    "Harrow's Harvest - Weapon"
-  ],
-  "Seed of Strife": [
-    "Seed of Strife - Arms",
-    "Seed of Strife - Head",
-    "Seed of Strife - Red Panda",
-    "Seed of Strife - Shoulder",
-    "Seed of Strife - The Seed"
-  ],
-  "Laurels of the Dawnstar": [
-    "Laurels of the Dawnstar - Armor",
-    "Laurels of the Dawnstar - Back",
-    "Laurels of the Dawnstar - Cape",
-    "Laurels of the Dawnstar - Head"
-  ],
-  "Sodbustin' Saboteurs": [
-    "Sodbustin' Saboteurs - Boomstick",
-    "Sodbustin' Saboteurs - Farmer Spleen",
-    "Sodbustin' Saboteurs - Farmer Squee",
-    "Sodbustin' Saboteurs - Proximity Mine",
-    "Sodbustin' Saboteurs - Remote Cart",
-    "Sodbustin' Saboteurs - Sign",
-    "Sodbustin' Saboteurs - Sodbusteur",
-    "Sodbustin' Saboteurs - Succulent Spoon"
-  ],
-  "Sins of the Simian Sovereign": [
-    "Sins of the Simian Sovereign - Armor",
-    "Sins of the Simian Sovereign - Crown",
-    "Sins of the Simian Sovereign - Shoulder",
-    "Sins of the Simian Sovereign - Staff"
-  ],
-  "Worship of the Whispered Wing": [
-    "Worship of the Whispered Wing - Arms",
-    "Worship of the Whispered Wing - Belt",
-    "Worship of the Whispered Wing - Head",
-    "Worship of the Whispered Wing - Loading Screen",
-    "Worship of the Whispered Wing - Offhand",
-    "Worship of the Whispered Wing - Shoulder",
-    "Worship of the Whispered Wing - Weapon"
-  ],
-  "Cunning Counterfeit": [
-    "Cunning Counterfeit - Convincing Visage",
-    "Cunning Counterfeit - Decorative Belt",
-    "Cunning Counterfeit - Donkey Arms",
-    "Cunning Counterfeit - Harmless Scepter",
-    "Cunning Counterfeit - Luxuriant Tail",
-    "Cunning Counterfeit - Natural Hide",
-    "Cunning Counterfeit - Saddle Packs"
-  ],
-  "Fluid Frenzy": [
-    "Fluid Frenzy - Arms",
-    "Fluid Frenzy - Back",
-    "Fluid Frenzy - Head",
-    "Fluid Frenzy - Misc",
-    "Fluid Frenzy - Shoulders"
-  ],
-  "Stone Giant Stronghold": [
-    "Stone Giant Stronghold - Castle",
-    "Stone Giant Stronghold - Fortress",
-    "Stone Giant Stronghold - Keep",
-    "Stone Giant Stronghold - Tower",
-    "Stone Giant Stronghold - Weapon"
-  ]
+  "Collector's Cache 2015": {
+    "Fires of Vashundol": [
+      "Belt of Vashundol",
+      "Bindings of Vashundol",
+      "Broken Blade of Vashundol",
+      "Cloak of Vashundol",
+      "Fires of Vashundol Loading Screen",
+      "Skull of Vashundol",
+      "Tail of Vashundol",
+      "Wings of Vashundol"
+    ],
+    "Armor of the Unyielding Mask": [
+      "Armor of the Unyielding Mask Loading Screen",
+      "Bracers of the Unyielding Mask",
+      "Guise of the Unyielding Mask",
+      "Hakama of the Unyielding Mask",
+      "Plate of the Unyielding Mask"
+    ],
+    "Serpent of the Emerald Sea": [
+      "Armor of the Emerald Sea",
+      "Bracelets of the Emerald Sea",
+      "Crown of the Emerald Sea",
+      "Emerald Sea Cursor Pack",
+      "Heart of the Emerald Sea",
+      "Serpent of the Emerald Sea Loading Screen",
+      "Whip of the Emerald Sea"
+    ],
+    "Flowing Entropy": [
+      "Blade of Flowing Entropy",
+      "Crown of Flowing Entropy",
+      "Flowing Entropy Loading Screen",
+      "Mantle of Flowing Entropy",
+      "Bracers of Flowing Entropy",
+      "Tabard of Flowing Entropy"
+    ],
+    "Echoes of the Eyrie": [
+      "Echoes of the Eyrie Loading Screen",
+      "Greaves of Echoes",
+      "Helm of Echoes",
+      "Sigil of Echoes",
+      "Wrath of Echoes"
+    ],
+    "Brawler of the Glacier Sea": [
+      "Anchor of the Glacier Sea",
+      "Brawler of the Glacier Sea Loading Screen",
+      "Cap of the Glacier Sea",
+      "Coat of the Glacier Sea",
+      "Frozen Sigil of the Glacier Sea",
+      "Hook of the Glacier Sea",
+      "Rudder of the Glacier Sea",
+      "Tusks of the Glacier Sea"
+    ],
+    "Knight of the Burning Scale": [
+      "Blade of the Burning Scale",
+      "Bracers of the Burning Scale",
+      "Cape of the Burning Scale",
+      "Cave of the Burning Scale Loading Screen",
+      "Cuirass of the Burning Scale",
+      "HUD of the Burning Scale",
+      "Helm of the Burning Scale",
+      "Knight of the Burning Scale Loading Screen",
+      "Shadow of the Burning Scale",
+      "Shield of the Burning Scale"
+    ],
+    "Garb of the Cunning Augur": [
+      "Cap of the Cunning Augur",
+      "Cape of the Cunning Augur",
+      "Garb of the Cunning Augur Loading Screen",
+      "Mantle of the Cunning Augur",
+      "Staff of the Cunning Augur"
+    ],
+    "Apostle of Decay": [
+      "Apostle of Decay Loading Screen",
+      "Hood of Decay",
+      "Mask of Decay",
+      "Scythe of Decay",
+      "Vestments of Decay"
+    ],
+    "Flowersong Tempest": [
+      "Flowersong",
+      "Flowersong Beauty",
+      "Flowersong Breeze",
+      "Flowersong Guard",
+      "Flowersong Tempest Loading Screen",
+      "Flowersong Thorns"
+    ],
+    "Beacon of Cerulean Light": [
+      "Beacon of Cerulean Light Loading Screen",
+      "Bracers of Cerulean Light",
+      "Girdle of Cerulean Light",
+      "Mask of Cerulean Light",
+      "Pauldrons of Cerulean Light",
+      "Rod of Beacon's Light",
+      "Span of Cerulean Light"
+    ],
+    "Faceless Rex": [
+      "Faceless Rex"
+    ]
+  },
+  "Collector's Cache 2016": {
+    "Oni Knight the Dark Conqueror": [
+      "Axe of the Dark Conqueror",
+      "Helm of the Dark Conqueror",
+      "Oni Knight the Dark Conqueror Loading Screen",
+      "Shield of the Dark Conqueror",
+      "Spaulders of the Dark Conqueror",
+      "Steed of the Dark Conqueror"
+    ],
+    "Fortified Fabricator": [
+      "Ballista of the Fortified Fabricator",
+      "Cannon of the Fortified Fabricator",
+      "Controls of the Fortified Fabricator",
+      "Fortified Fabricator Loading Screen",
+      "Helmet of the Fortified Fabricator",
+      "Shoulders of the Fortified Fabricator"
+    ],
+    "Diabolical Fiend": [
+      "Armor of the Diabolical Fiend",
+      "Arms of the Diabolical Fiend",
+      "Diabolical Fiend Loading Screen",
+      "Horns of the Diabolical Fiend"
+    ],
+    "Creeping Shadow": [
+      "Belt of the Creeping Shadow",
+      "Blade of the Creeping Shadow",
+      "Cape of the Creeping Shadow",
+      "Creeping Shadow Loading Screen",
+      "Hood of the Creeping Shadow",
+      "Shawl of the Creeping Shadow"
+    ],
+    "Stormwrought Arbiter": [
+      "Belt of the Stormwrought Arbiter",
+      "Bracers of the Stormwrought Arbiter",
+      "Cape of the Stormwrought Arbiter",
+      "Greatsword of the Stormwrought Arbiter",
+      "Helm of the Stormwrought Arbiter",
+      "Pauldron of the Stormwrought Arbiter",
+      "Stormwrought Arbiter Loading Screen"
+    ],
+    "Iceburnt Elegy": [
+      "Crown of the Iceburnt Elegy",
+      "Iceburnt Elegy Loading Screen",
+      "Wings of the Iceburnt Elegy"
+    ],
+    "Wartorn Heavens": [
+      "Belt of the Wartorn Heavens",
+      "Bracers of the Wartorn Heavens",
+      "Helm of the Wartorn Heavens",
+      "Pauldrons of the Wartorn Heavens",
+      "Wartorn Heavens Loading Screen"
+    ],
+    "Heir of Terror": [
+      "Heir of Terror Belt",
+      "Heir of Terror Bracers",
+      "Heir of Terror Crown",
+      "Heir of Terror Loadin Screen",
+      "Heir of Terror Wings"
+    ],
+    "Dirgeful Overlord": [
+      "Armor of the Dirgeful Overlord",
+      "Bracers of the Dirgeful Overlord",
+      "Crown of the Dirgeful Overlord",
+      "Dirgeful Overlord Loading Screen"
+    ],
+    "Nightsilver's Resolve": [
+      "Blades of Nightsilver's Resolve",
+      "Guardian of Nightsilver's Resolve",
+      "Nightsilver's Resolve Loading Screen",
+      "Pauldons of Nightsilver's Resolve",
+      "Shield of Nightsilver's Resolve",
+      "Style of Nightsilver's Resolve"
+    ],
+    "Fractured Envoy": [
+      "Bracers of the Fractured Envoy",
+      "Cape of the Fractured Envoy",
+      "Fractured Envoy Loading Screen",
+      "Helmet of the Fractured Envoy",
+      "Pauldrons of the Fractured Envoy"
+    ],
+    "Rising Glory": [
+      "Belt of Rising Glory",
+      "Bracers of Rising Glory",
+      "Helm of Rising Glory",
+      "Horn of Rising Glory",
+      "Horn of Rising Glory Loading Screen",
+      "Lance of Rising Glory"
+    ],
+    "The Family Values": [
+      "The Family Values Arms",
+      "The Family Values Back",
+      "The Family Values Head",
+      "The Family Values Loading Screen",
+      "The Family Values Shoulders",
+      "The Family Values Tail",
+      "The Family Values Weapon"
+    ],
+    "Atrophic Skitterwing": [
+      "Atrophic Skitterwing"
+    ],
+    "Doomsday Ripper": [
+      "Doomsday Ripper Arms",
+      "Doomsday Ripper Back",
+      "Doomsday Ripper Belt",
+      "Doomsday Ripper Head",
+      "Doomsday Ripper Loading Screen",
+      "Doomsday Ripper Off-Hand",
+      "Doomsday Ripper Shoulder",
+      "Doomsday Ripper Weapon"
+    ],
+    "Hakobi and Tenneko": [
+      "Hakobi and Tenneko",
+      "Hakobi and Tenneko Loading Screen"
+    ]
+  },
+  "Collector's Cache 2017": {
+    "Jolly Reaver": [
+      "Anchor-hook of the Jolly Reaver",
+      "Belt of the Jolly Reaver",
+      "Cannon of the Jolly Reaver",
+      "Chains of the Jolly Reaver",
+      "Cutlass of the Jolly Reaver",
+      "Hat of the Jolly Reaver",
+      "Jolly Reaver Loading Screen",
+      "Tentacles of the Jolly Reaver"
+    ],
+    "Eternal Testament": [
+      "Blouse of Eternal Testament",
+      "Dress of Eternal Testament",
+      "Eternal Testament Loading Screen",
+      "Ghosts of Eternal Testament",
+      "Veil of Eternal Testament",
+      "Weeds of Eternal Testament"
+    ],
+    "Secrets of the Katekhein": [
+      "Horn of the Katekhein",
+      "Secrets of the Katekhein Loading Screen",
+      "Wings of the Katekhein"
+    ],
+    "Rumrunner's Carronade": [
+      "Bandana of the Rumrunner's Carronade",
+      "Bracers of the Rumrunner's Carronade",
+      "Carriage of the Rumrunner's Carronade",
+      "Culverin of the Rumrunner's Carronade",
+      "Fiery Keg of the Rumrunner's Carronade",
+      "Rumrunner's Carronade Loading Screen",
+      "Sash of the Rumrunner's Carronade"
+    ],
+    "Abyssal Vortex": [
+      "Abyssal Vortex Loading Screen",
+      "Armor of Abyssal Vortex",
+      "Bracer of Abyssal Vortex",
+      "Eidolons of Abyssal Vortex",
+      "Helm of Abyssal Vortex"
+    ],
+    "Samareen Sacrifice": [
+      "Bracers of the Samareen Sacrifice",
+      "Dagger of the Samareen Sacrifice",
+      "Mane of the Samareen Sacrifice",
+      "Samareen Sacrifice Loading Screen",
+      "Shield of the Samareen Sacrifice",
+      "Trident of the Samareen Sacrifice"
+    ],
+    "Seablight Procession": [
+      "Armor of Seablight Procession",
+      "Bracers of Seablight Procession",
+      "Golem of Seablight Procession",
+      "Seablight Procession Loading Screen",
+      "Wraps of Seablight Procession"
+    ],
+    "Corruption of the Virulent Krait": [
+      "Corruption of the Virulent Krait Loading Screen",
+      "Jaws of the Virulent Krait",
+      "Spines of the Virulent Krait",
+      "Spitters of the Virulent Krait",
+      "Tail of the Virulent Krait",
+      "Watcher of the Virulent Krait"
+    ],
+    "Seaborne Reprisal": [
+      "Belt of Seaborne Reprisal",
+      "Claw of Seaborne Reprisal",
+      "Coat of Seaborne Reprisal",
+      "Folds of Seaborne Reprisal",
+      "Ghost Blade of Seaborne Reprisal",
+      "Image of Seaborne Reprisal",
+      "Legs of the Seaborne Reprisal",
+      "Seaborne Reprisal Loading Screen"
+    ],
+    "Pressure Regulator": [
+      "Diving Helm of the Pressure Regulator",
+      "Harpoon of the Pressure Regulator",
+      "Mines of the Pressure Regulator",
+      "Pressure Regulator Loading Screen",
+      "Torpedo of the Pressure Regulator",
+      "Valves of the Pressure Regulator"
+    ],
+    "Meranth Dragoon": [
+      "Meranth Dragoon Armor",
+      "Meranth Dragoon Belt",
+      "Meranth Dragoon Finblade",
+      "Meranth Dragoon Helm",
+      "Meranth Dragoon Loading Screen",
+      "Meranth Dragoon Pauldrons",
+      "Meranth Dragoon Shield"
+    ],
+    "Spoils of the Vodou Rover": [
+      "Beard of the Vodou Rover",
+      "Coat of the Vodou Rover",
+      "Mast of the Vodou Rover",
+      "Pantaloons of the Vodou Rover",
+      "Parrot of the Vodou Rover",
+      "Spoils of the Vodou Rover Loading Screen"
+    ],
+    "Shadowforce Gale": [
+      "Armor of the Shadowforce Gale",
+      "Glaives of the Shadowforce Gale",
+      "Helm of the Shadowforce Gale",
+      "Shadowforce Gale Loading Screen",
+      "Shield of the Shadowforce Gale",
+      "Storm of the Shadowforce Gale"
+    ],
+    "Mechalodon Interdictor": [
+      "Cutter of the Mechalodon Interdictor",
+      "Mask of the Mechalodon Interdictor",
+      "Mechalodon Interdictor Loading Screen",
+      "Subfin Cannons of the Mechalodon Interdictor",
+      "Tailfin of the Mechalodon Interdictor",
+      "Torpedo of the Mechalodon Interdictor"
+    ],
+    "Riptide Raider": [
+      "Armor of the Riptide Raider",
+      "Crown of the Riptide Raider",
+      "Riptide Raider Loading Screen",
+      "Shoulders of the Riptide Raider",
+      "Trident of the Riptide Raider"
+    ],
+    "The Dread Prophet": [
+      "Beard of the Dread Prophet",
+      "Bracers of the Dread Prophet",
+      "Cape of the Dread Prophet",
+      "Coralents of the Dread Prophet",
+      "Pauldrons of the Dread Prophet",
+      "Squid of the Dread Prophet",
+      "Staff of the Dread Prophet"
+    ],
+    "Covenant of the Depths": [
+      "Covenant of the Depths Belt",
+      "Covenant of the Depths Bracers",
+      "Covenant of the Depths Loading Screen",
+      "Covenant of the Depths Mantle",
+      "Covenant of the Depths Mask",
+      "Covenant of the Depths Robes",
+      "Covenant of the Depths Spirit"
+    ],
+    "Sovereign of the Kray Legions": [
+      "Chitin of the Kray Legions",
+      "Crawlers of the Kray Legions",
+      "Jaws of the Kray Legions",
+      "Pincers of the Kray Legions",
+      "Sovereign of the Kray Legions Loading Screen",
+      "Tail of the Kray Legions"
+    ],
+    "Cunning Corsair": [
+      "Cuffs of the Cunning Corsair",
+      "Cunning Corsair Loading Screen",
+      "Dagger of the Cunning Corsair",
+      "Hat of the Cunning Corsair",
+      "Hook of the Cunning Corsair",
+      "Shoulder Pads of the Cunning Corsair",
+      "Tail of the Cunning Corsair"
+    ],
+    "Chitinous Stalker": [
+      "Armor of the Chitinous Stalker",
+      "Oculi of the Chitinous Stalker",
+      "Pincers of the Chitinous Stalker",
+      "Tail of the Chitinous Stalker"
+    ],
+    "Submerged Hazard": [
+      "Submerged Hazard Hull",
+      "Submerged Hazard Laser",
+      "Submerged Hazard Launcher",
+      "Submerged Hazard Loading Screen",
+      "Submerged Hazard Mask",
+      "Submerged Hazard Propeller"
+    ],
+    "Manta Marauder": [
+      "Belt of the Manta Marauder",
+      "Manta Marauder Loading Screen",
+      "Manta Marauder's Manta Ray",
+      "Mask of the Manta Marauder",
+      "Tank of the Manta Marauder"
+    ],
+    "Heiress of the Coastal Kingdom": [
+      "Arrows of the Coastal Kingdom",
+      "Belt of the Coastal Kingdom",
+      "Bow of the Coastal Kingdom",
+      "Bracelets of the Coastal Kingdom",
+      "Braids of the Coastal Kingdom",
+      "Heiress of the Coastal Kingdom Loading Screen",
+      "Necklaces of the Coastal Kingdom",
+      "Pterois of the Coastal Kingdom"
+    ]
+  },
+  "Collector's Cache I 2018": {
+    "Trail of the Sanguine Spectrum": [
+      "Arms of the Sanguine Spectrum",
+      "Back of the Sanguine Spectrum",
+      "Belt of the Sanguine Spectrum",
+      "Blade of the Sanguine Spectrum",
+      "Head of the Sanguine Spectrum",
+      "Off-Hand of the Sanguine Spectrum",
+      "Shoulder of the Sanguine Spectrum"
+    ],
+    "Pitfall Crusader": [
+      "Armor of the Pitfall Crusader",
+      "Blade of the Pitfall Crusader",
+      "Cap of the Pitfall Crusader",
+      "Pitfall Crusader Loading Screen"
+    ],
+    "Insights of the Sapphire Shroud": [
+      "Arms of the Sapphire Shroud",
+      "Belt of the Sapphire Shroud",
+      "Crown of the Sapphire Shroud",
+      "Flower of the Sapphire Shroud",
+      "Mantle of the Sapphire Shroud"
+    ],
+    "Pillar of the Fractured Citadel": [
+      "Arms of the Fractured Citadel",
+      "Belt of the Fractured Citadel",
+      "Flail of the Fractured Citadel",
+      "Head of the Fractured Citadel",
+      "Shoulder of the Fractured Citadel",
+      "Tail of the Fractured Citadel"
+    ],
+    "Forlorn Descent": [
+      "Arms of Forlorn Descent",
+      "Coat of Forlorn Descent",
+      "Flesh Golem of Forlorn Descent",
+      "Forlorn Descent Loading Screen",
+      "Helm of Forlorn Descent"
+    ],
+    "Stonemarch Sovereign": [
+      "Arms of the Stonemarch Sovereign",
+      "Blade of the Stonemarch Sovereign",
+      "Cape of the Stonemarch Sovereign",
+      "Crown of the Stonemarch Sovereign",
+      "Cuirass of the Stonemarch Sovereign",
+      "Pauldrons of the Stonemarch Sovereign",
+      "Stonemarch Sovereign Loading Screen"
+    ],
+    "The Murid Divine": [
+      "Beard of the Murid Divine",
+      "Crown of the Murid Divine",
+      "Legs of the Murid Divine",
+      "Robe of the Murid Divine",
+      "Staff of the Murid Divine",
+      "The Murid Divine Loading Screen"
+    ],
+    "Primer of the Sapper's Guile": [
+      "Arsenal of the Sapper's Guile",
+      "Auxiliary of the Sapper's Guile",
+      "Helm of the Sapper's Guile",
+      "Implements of the Sapper's Guile",
+      "Sack of the Sapper's Guile",
+      "Sign of the Sapper's Guile",
+      "Skip of the Sapper's Guile"
+    ],
+    "Molokau Stalker": [
+      "Appendages of the Molokau Stalker",
+      "Head of the Molokau Stalker",
+      "Plates of the Molokau Stalker",
+      "Tail of the Molokau Stalker",
+      "Ward of the Molokau Stalker"
+    ],
+    "Morbific Provision": [
+      "Belt of Morbific Provision",
+      "Garb of Morbific Provision",
+      "Head of Morbific Provision",
+      "Satchel of Morbific Provision",
+      "Servant of Morbific Provision",
+      "Staff of Morbific Provision"
+    ],
+    "Raptures of the Abyssal Kin": [
+      "Blade of the Abyssal Kin",
+      "Crown of the Abyssal Kin",
+      "Form of the Abyssal Kin",
+      "Wings of the Abyssal Kin"
+    ],
+    "Fate Meridian": [
+      "Arms of Fate Meridian",
+      "Belt of Fate Meridian",
+      "Cape of Fate Meridian",
+      "Crown of Fate Meridian",
+      "Fate Meridian Loading Screen",
+      "Mantle of Fate Meridian",
+      "TI8 Invoker Prism Forge Spirit"
+    ],
+    "Grasp of the Riven Exile": [
+      "Abdomen of the Riven Exile",
+      "Crest of the Riven Exile",
+      "Legs of the Riven Exile",
+      "Mandibles of the Riven Exile",
+      "Spurs of the Riven Exile"
+    ],
+    "Visions of the Lifted Veil": [
+      "Armor of the Lifted Veil",
+      "Belt of the Lifted Veil",
+      "Blade of the Lifted Veil",
+      "Cape of the Lifted Veil",
+      "Helm of the Lifted Veil"
+    ],
+    "Dread Compact": [
+      "Arms of the Dread Compact",
+      "Belt of the Dread Compact",
+      "Cowl of the Dread Compact",
+      "Golem of the Dread Compact",
+      "Mantle of the Dread Compact",
+      "Robes of the Dread Compact",
+      "Staff of the Dread Compact",
+      "Tome of the Dread Compact"
+    ],
+    "Endowments of the Lucent Canopy": [
+      "Arms of the Lucent Canopy",
+      "Charm of the Lucent Canopy",
+      "Crest of the Lucent Canopy",
+      "Haul of the Lucent Canopy",
+      "Off-Hand of the Lucent Canopy",
+      "Ward of the Lucent Canopy"
+    ],
+    "Vespidun Hunter-Killer": [
+      "Armaments of the Vespidun Hunter-Killer",
+      "Cone of the Vespidun Hunter-Killer",
+      "Head of the Vespidun Hunter-Killer",
+      "Payload of the Vespidun Hunter-Killer",
+      "Propellers of the Vespidun Hunter-Killer",
+      "Vespidun Hunter-Killer Loading Screen"
+    ]
+  },
+  "Collector's Cache II 2018": {
+    "Pitmouse Fraternity": [
+      "Pitmouse Fraternity Axe",
+      "Pitmouse Fraternity Bracer",
+      "Pitmouse Fraternity Goggles",
+      "Pitmouse Fraternity Pack",
+      "Pitmouse Fraternity Pauldron",
+      "Pitmouse Fraternity Tail"
+    ],
+    "Fires of the Volcanic Guard": [
+      "Belt of the Volcanic Guard",
+      "Bracers of the Volcanic Guard",
+      "Fires of the Volcanic Guard Loading Screen",
+      "Helm of the Volcanic Guard",
+      "Off-hand Weapon of the Volcanic Guard",
+      "Pauldrons of the Volcanic Guard",
+      "Sword of the Volcanic Guard"
+    ],
+    "Third Awakening": [
+      "Belt of the Third Awakening",
+      "Bracers of the Third Awakening",
+      "Cuirass of the Third Awakening",
+      "Dragon Form of the Third Awakening",
+      "Helm of the Third Awakening",
+      "Shield of the Third Awakening",
+      "Sword of the Third Awakening"
+    ],
+    "Shackles of the Enduring Conscript": [
+      "Armor of the Enduring Conscript",
+      "Axe of the Enduring Conscript",
+      "Beard of the Enduring Conscript",
+      "Belt of the Enduring Conscript",
+      "Bracer of the Enduring Conscript",
+      "Shackles of the Enduring Conscript Loading Screen"
+    ],
+    "Shimmer of the Anointed": [
+      "Armor of the Anointed",
+      "Caripace of the Anointed",
+      "Daggers of the Anointed",
+      "Head of the Anointed",
+      "Shimmer of the Anointed Loading Screen"
+    ],
+    "Cruelties of the Spiral Bore": [
+      "Belt of the Spiral Bore",
+      "Bracer of the Spiral Bore",
+      "Cruelties of the Spiral Bore Loading Screen",
+      "Helm of the Spiral Bore",
+      "Horn of the Spiral Bore",
+      "Mallet of the Spiral Bore"
+    ],
+    "Loaded Prospects": [
+      "Apron of the Loaded Prospects",
+      "Drill-Barrel of the Loaded Prospects",
+      "Gloves of the Loaded Prospects",
+      "Helmet of the Loaded Prospects",
+      "Lantern of the Loaded Prospects",
+      "Loaded Prospects Loading Screen",
+      "Pack of the Loaded Prospects"
+    ],
+    "Ire of Molten Rebirth": [
+      "Beak of Molten Rebirth",
+      "Egg of Molten Rebirth",
+      "Wings of Molten Rebirth"
+    ],
+    "Pattern of the Silken Queen": [
+      "Armor of the Silken Queen",
+      "Crown of the Silken Queen",
+      "Legs of the Silken Queen",
+      "Mandibles of the Silken Queen",
+      "Pattern of the Silken Queen Loading Screen",
+      "Spiderling of the Silken Queen"
+    ],
+    "Dread Ascendance": [
+      "Dread Ascendance Armor",
+      "Dread Ascendance Belt",
+      "Dread Ascendance Bracers",
+      "Dread Ascendance Helm",
+      "Dread Ascendance Loading Screen",
+      "Dread Ascendance Sword",
+      "Dread Ascendance Tail",
+      "Dread Ascendance Wings"
+    ],
+    "The Rat King": [
+      "Bracers of the Rat King",
+      "Crown of the Rat King",
+      "Royal Mount of the Rat King",
+      "Scepter of the Rat King",
+      "Vest of the Rat King"
+    ],
+    "Raiments of the Obsidian Forge": [
+      "Armor of the Obsidian Forge",
+      "Blade of the Obsidian Forge",
+      "Horns of the Obsidian Forge"
+    ],
+    "Legends of Darkheart Pursuit": [
+      "Claws of Darkheart Pursuit",
+      "Head of Darkheart Pursuit",
+      "Legends of Darkheart Pursuit Loading Screen",
+      "Legs of Darkheart Pursuit",
+      "Tail of Darkheart Pursuit",
+      "Wings of Darkheart Pursuit"
+    ],
+    "Twisted Maelstrom": [
+      "Armguards of Twisted Maelstrom",
+      "Armor of Twisted Maelstrom",
+      "Eidelon of Twisted Maelstrom",
+      "Eye of Twisted Maelstrom",
+      "Twisted Maelstrom Loading Screen"
+    ]
+  },
+  "Collector's Cache I 2019": {
+    "Echoes of the Everblack": [
+      "Cape of the Everblack",
+      "Hood of the Everblack",
+      "Mount of the Everblack",
+      "Pauldrons of the Everblack",
+      "Scythe of the Everblack"
+    ],
+    "Allure of the Faeshade Flower": [
+      "Belt of the Faeshade Flower",
+      "Dress of the Faeshade Flower",
+      "Lantern of the Faeshade Flower",
+      "Tiara of the Faeshade Flower",
+      "Wings of the Faeshade Flower"
+    ],
+    "Paean of the Ink Dragon": [
+      "Armor of the Ink Dragon",
+      "Belt of the Ink Dragon",
+      "Brush of the Ink Dragon",
+      "Mask of the Ink Dragon",
+      "Paean of the Ink Dragon Loading Screen"
+    ],
+    "Scorched Amber": [
+      "Scorched Amber Armor",
+      "Scorched Amber Belt",
+      "Scorched Amber Bracer",
+      "Scorched Amber Dragon Form",
+      "Scorched Amber Helm",
+      "Scorched Amber Shield",
+      "Scorched Amber Sword"
+    ],
+    "Priest of the Proudsilver Clan": [
+      "Bracer of the Proudsilver Clan",
+      "Cape of the Proudsilver Clan",
+      "Crown of the Proudsilver Clan",
+      "Mount of the Proudsilver Clan",
+      "Staff of the Proudsilver Clan"
+    ],
+    "The Arts of Mortal Deception": [
+      "Armor of Mortal Deception",
+      "Bracer of Mortal Deception",
+      "Eidelon of Mortal Deception",
+      "Turban of Mortal Deception"
+    ],
+    "Poacher's Bane": [
+      "Armor of the Poacher's Bane",
+      "Bracer of the Poacher's Bane",
+      "Club of the Poacher's Bane",
+      "Head of the Poacher's Bane",
+      "Prey of the Poacher's Bane",
+      "Shell of the Poacher's Bane"
+    ],
+    "Soul of the Brightshroud": [
+      "Armor of the Brightshroud",
+      "Belt of the Brightshroud",
+      "Bracer of the Brightshroud",
+      "Crown of the Brightshroud",
+      "Skirt of the Brightshroud",
+      "Soul of the Brightshroud Loading Screen",
+      "Spirit of the Brightshroud"
+    ],
+    "Curse of the Creeping Vine": [
+      "Armor of the Creeping Vine",
+      "Arms of the Creeping Vine",
+      "Golem of the Creeping Vine",
+      "Head of the Creeping Vine"
+    ],
+    "Pursuit of the Ember Demons": [
+      "Armor of the Ember Demons",
+      "Bracers of the Ember Demons",
+      "Buckler of the Ember Demons",
+      "Helm of the Ember Demons",
+      "Pursuit of the Ember Demons Loading Screen",
+      "Spear of the Ember Demons"
+    ],
+    "Appetites of the Lizard King": [
+      "Appetites of the Lizard King Loading Screen",
+      "Bracer of the Lizard King",
+      "Fins of the Lizard King",
+      "Jaws of the Lizard King",
+      "Pauldron of the Lizard King",
+      "Weapon of the Lizard King"
+    ],
+    "Forbidden Medicine": [
+      "Bracer of Forbidden Medicine",
+      "Crown of Forbidden Medicine",
+      "Dress of Forbidden Medicine",
+      "Forbidden Medicine Loading Screen",
+      "Roots of Forbidden Medicine",
+      "Staff of Forbidden Medicine"
+    ],
+    "Riddle of the Hierophant": [
+      "Back of the Hierophant",
+      "Dress of the Hierophant",
+      "Mask of the Hierophant",
+      "Orb of the Hierophant",
+      "Riddle of the Hierophant Loading Screen"
+    ],
+    "Glimmer of the Sacred Hunt": [
+      "Arrows of the Sacred Hunt",
+      "Bow of the Sacred Hunt",
+      "Bracers of the Sacred Hunt",
+      "Cape of the Sacred Hunt",
+      "Crown of the Sacred Hunt",
+      "Glimmer of the Sacred Hunt Loading Screen",
+      "Shoulders of the Sacred Hunt",
+      "Skirt of the Sacred Hunt"
+    ],
+    "Adornments of the Jade Emissary": [
+      "Arms of the Jade Emissary",
+      "Belt of the Jade Emissary",
+      "Helm of the Jade Emissary",
+      "Serpent of the Jade Emissary",
+      "Staff of the Jade Emissary"
+    ],
+    "Defender of Ruin": [
+      "Armor of the Defender of Ruin",
+      "Back of the Defender of Ruin",
+      "Beast of the Defender of Ruin",
+      "Bracers of the Defender of Ruin",
+      "Helm of the Defender of Ruin",
+      "Weapon of the Defender of Ruin"
+    ],
+    "Gothic Whisper": [
+      "Gothic Whisper Armor",
+      "Gothic Whisper Belt",
+      "Gothic Whisper Blade",
+      "Gothic Whisper Cape",
+      "Gothic Whisper Mask"
+    ],
+    "Avatar of the Impossible Realm": [
+      "Cape of the Impossible Realm",
+      "Garb of the Impossible Realm",
+      "Head of the Impossible Realm",
+      "Staff of the Impossible Realm"
+    ]
+  },
+  "Collector's Cache II 2019": {
+    "Sight of the Kha-Ren Faithful": [
+      "Armor of the Kha-Ren Faithful",
+      "Arms of the Kha-Ren Faithful",
+      "Bow of the Kha-Ren Faithful",
+      "Cape of the Kha-Ren Faithful",
+      "Legs of the Kha-Ren Faithful",
+      "Quiver of the Kha-Ren Faithful",
+      "Sight of the Kha-Ren Faithful Loading Screen",
+      "Style of the Kha-Ren Faithful"
+    ],
+    "Tribal Pathways": [
+      "Tribal Pathways Bracer",
+      "Tribal Pathways Crown",
+      "Tribal Pathways Golem",
+      "Tribal Pathways Lantern",
+      "Tribal Pathways Necklace",
+      "Tribal Pathways Robe",
+      "Tribal Pathways Shoulder",
+      "Tribal Pathways Staff"
+    ],
+    "Directive of the Sunbound": [
+      "Armor of the Sunbound Directive",
+      "Club of the Sunbound Directive",
+      "Cogs of the Sunbound Directive",
+      "Helm of the Sunbound Directive",
+      "Rocket of the Sunbound Directive"
+    ],
+    "Souls Tyrant": [
+      "Souls Tyrant Arms",
+      "Souls Tyrant Head",
+      "Souls Tyrant Loading Screen",
+      "Souls Tyrant Shoulder"
+    ],
+    "Endless Night": [
+      "Endless Night Cape",
+      "Endless Night Head",
+      "Endless Night Loading Screen",
+      "Endless Night Mount",
+      "Endless Night Shoulder",
+      "Endless Night Sword"
+    ],
+    "Dapper Disguise": [
+      "Dapper Disguise Arms",
+      "Dapper Disguise Belt",
+      "Dapper Disguise Cleaver",
+      "Dapper Disguise Hat",
+      "Dapper Disguise Jacket",
+      "Dapper Disguise Loading Screen",
+      "Dapper Disguise Shoulder",
+      "Dapper Disguise Umbrella"
+    ],
+    "Fury of the Bloodforge": [
+      "Belt of the Bloodforge",
+      "Bracer of the Bloodforge",
+      "Cape of the Bloodforge",
+      "Loading Screen of the Bloodforge",
+      "Mask of the Bloodforge",
+      "Off-Hand Weapon of the Bloodforge",
+      "Shoulder of the Bloodforge",
+      "Weapon of the Bloodforge"
+    ],
+    "Automaton Antiquity": [
+      "Automaton Antiquity Back",
+      "Automaton Antiquity Head",
+      "Automaton Antiquity Legs",
+      "Automaton Antiquity Overgrowth",
+      "Automaton Antiquity Spiderling"
+    ],
+    "Tales of the Windward Rogue": [
+      "Coat of the Windward Rogue",
+      "Hat of the Windward Rogue",
+      "Parrot of the Windward Rogue",
+      "Rapier of the Windward Rogue",
+      "Tales of the Windward Rogue Loading Screen"
+    ],
+    "Grim Destiny": [
+      "Armor of Grim Destiny",
+      "Bracers of Grim Destiny",
+      "Cape of Grim Destiny",
+      "Grim Destiny Loading Screen",
+      "Helm of Grim Destiny",
+      "Shoulder of Grim Destiny",
+      "Weapon of Grim Destiny"
+    ],
+    "Distinguished Expeditionary": [
+      "Back of Distinguished Expeditionary",
+      "Coat of Distinguished Expeditionary",
+      "Fist of Distinguished Expeditionary",
+      "Hat of Distinguished Expeditionary",
+      "Knife of Distinguished Expeditionary",
+      "Tusks of Distinguished Expeditionary"
+    ],
+    "Verdant Predator": [
+      "Verdant Predator Back",
+      "Verdant Predator Head",
+      "Verdant Predator Spitters",
+      "Verdant Predator Tail",
+      "Verdant Predator Ward"
+    ],
+    "Prized Acquisitions": [
+      "Prized Acquisitions Compass",
+      "Prized Acquisitions Hat",
+      "Prized Acquisitions Loading Screen",
+      "Prized Acquisitions Mount",
+      "Prized Acquisitions Shoulder"
+    ],
+    "Fowl Omen": [
+      "Fowl Omen Beard",
+      "Fowl Omen Head",
+      "Fowl Omen Scythe",
+      "Fowl Omen Shoulder",
+      "Fowl Omen Skirt"
+    ],
+    "Cinder Sensei": [
+      "Cinder Sensei Belt",
+      "Cinder Sensei Bracer",
+      "Cinder Sensei Off-Hand Weapon",
+      "Cinder Sensei Shoulders",
+      "Cinder Sensei Style",
+      "Cinder Sensei Weapon"
+    ],
+    "Jagged Honor": [
+      "Jagged Honor Banner",
+      "Jagged Honor Blade",
+      "Jagged Honor Bracer",
+      "Jagged Honor Legs",
+      "Jagged Honor Loading Screen",
+      "Jagged Honor Mask"
+    ]
+  },
+  "Collector's Cache I 2020": {
+    "Origin of the Dark Oath": [
+      "Origin of the Dark Oath - Arms",
+      "Origin of the Dark Oath - Legs",
+      "Origin of the Dark Oath - Mask",
+      "Origin of the Dark Oath - Tail",
+      "Origin of the Dark Oath - Wings"
+    ],
+    "Ravenous Abyss": [
+      "Ravenous Abyss - Armor",
+      "Ravenous Abyss - Head",
+      "Ravenous Abyss - Weapon",
+      "Ravenous Abyss Loading Screen"
+    ],
+    "Apocalypse Unbound": [
+      "Apocalypse Unbound - Arms",
+      "Apocalypse Unbound - Head",
+      "Apocalypse Unbound - Shoulder",
+      "Apocalypse Unbound - Tail"
+    ],
+    "Beholden of the Banished Ones": [
+      "Beholden of the Banished Ones - Arms",
+      "Beholden of the Banished Ones - Back",
+      "Beholden of the Banished Ones - Belt",
+      "Beholden of the Banished Ones - Golem",
+      "Beholden of the Banished Ones - Head",
+      "Beholden of the Banished Ones - Off-Hand",
+      "Beholden of the Banished Ones - Shoulder",
+      "Beholden of the Banished Ones - Weapon"
+    ],
+    "Fury of the Righteous Storm": [
+      "Fury of the Righteous Storm - Arms",
+      "Fury of the Righteous Storm - Back",
+      "Fury of the Righteous Storm - Head",
+      "Fury of the Righteous Storm - Kirin",
+      "Fury of the Righteous Storm - Shoulder",
+      "Fury of the Righteous Storm - Weapon"
+    ],
+    "Lineage of the Stormlords": [
+      "Lineage of the Stormlords - Arms",
+      "Lineage of the Stormlords - Back",
+      "Lineage of the Stormlords - Healing Ward",
+      "Lineage of the Stormlords - Legs",
+      "Lineage of the Stormlords - Mask",
+      "Lineage of the Stormlords - Weapon"
+    ],
+    "Silent Slayer": [
+      "Silent Slayer - Belt",
+      "Silent Slayer - Equipment",
+      "Silent Slayer - Head",
+      "Silent Slayer - Off-Hand",
+      "Silent Slayer - Shoulder",
+      "Silent Slayer - Weapon",
+      "Silent Slayer Loading Screen"
+    ],
+    "Mindless Slaughter": [
+      "Mindless Slaughter - Arms",
+      "Mindless Slaughter - Back",
+      "Mindless Slaughter - Belt",
+      "Mindless Slaughter - Hook",
+      "Mindless Slaughter - Mask",
+      "Mindless Slaughter - Off-Hand",
+      "Mindless Slaughter - Shoulder"
+    ],
+    "Heartless Hunt": [
+      "Heartless Hunt - Armor",
+      "Heartless Hunt - Back",
+      "Heartless Hunt - Fowl",
+      "Heartless Hunt - Head",
+      "Heartless Hunt - Off-Hand",
+      "Heartless Hunt - Weapon"
+    ],
+    "Herald of the Ember Eye": [
+      "Herald of the Ember Eye - Armor",
+      "Herald of the Ember Eye - Belt",
+      "Herald of the Ember Eye - Brush",
+      "Herald of the Ember Eye - Mask",
+      "Herald of the Ember Eye Loading Screen"
+    ],
+    "Fissured Flight": [
+      "Fissured Flight - Back",
+      "Fissured Flight - Fire Head",
+      "Fissured Flight - Ice Head",
+      "Fissured Flight - Tail"
+    ],
+    "Flashpoint Proselyte": [
+      "Flashpoint Proselyte - Arms",
+      "Flashpoint Proselyte - Head",
+      "Flashpoint Proselyte - Off-Hand",
+      "Flashpoint Proselyte - Shoulder",
+      "Flashpoint Proselyte - Weapon"
+    ],
+    "Signs of the Allfather": [
+      "Signs of the Allfather - Arms",
+      "Signs of the Allfather - Back",
+      "Signs of the Allfather - Head",
+      "Signs of the Allfather - Neck",
+      "Signs of the Allfather - Shoulder",
+      "Signs of the Allfather - Treant",
+      "Signs of the Allfather - Weapon"
+    ],
+    "Glory of the Elderflame": [
+      "Glory of the Elderflame - Arms",
+      "Glory of the Elderflame - Belt",
+      "Glory of the Elderflame - Head",
+      "Glory of the Elderflame - Neck"
+    ],
+    "Songs of Starfall Glen": [
+      "Songs of Starfall Glen - Arms",
+      "Songs of Starfall Glen - Belt",
+      "Songs of Starfall Glen - Head",
+      "Songs of Starfall Glen - Neck",
+      "Songs of Starfall Glen - Weapon"
+    ],
+    "Ancient Inheritance": [
+      "Ancient Inheritance - Back",
+      "Ancient Inheritance - Belt",
+      "Ancient Inheritance - Neck",
+      "Ancient Inheritance - Shoulder",
+      "Ancient Inheritance - Weapon"
+    ],
+    "Forsworn Legacy": [
+      "Forsworn Legacy - Armor",
+      "Forsworn Legacy - Legs",
+      "Forsworn Legacy - Shield",
+      "Forsworn Legacy - Spear"
+    ],
+    "Spirit of the Sacred Grove": [
+      "Spirit of the Sacred Grove - Arms",
+      "Spirit of the Sacred Grove - Back",
+      "Spirit of the Sacred Grove - Bow",
+      "Spirit of the Sacred Grove - Guardian",
+      "Spirit of the Sacred Grove - Head",
+      "Spirit of the Sacred Grove - Quiver",
+      "Spirit of the Sacred Grove - Shoulder"
+    ]
+  },
+  "Collector's Cache II 2020": {
+    "Evolution of the Infinite": [
+      "Evolution of the Infinite Armor",
+      "Evolution of the Infinite Bracers",
+      "Evolution of the Infinite Eidolon",
+      "Evolution of the Infinite Hood"
+    ],
+    "Beast of the Crimson Ring": [
+      "Beast of the Crimson Ring Armor",
+      "Beast of the Crimson Ring Back",
+      "Beast of the Crimson Ring Bracers",
+      "Beast of the Crimson Ring Helm",
+      "Beast of the Crimson Ring Weapon"
+    ],
+    "Clearcut Cavalier": [
+      "Clearcut Cavalier Armor",
+      "Clearcut Cavalier Back",
+      "Clearcut Cavalier Head",
+      "Clearcut Cavalier Off-Hand",
+      "Clearcut Cavalier Shoulders",
+      "Clearcut Cavalier Weapon"
+    ],
+    "The King Of Thieves": [
+      "The King Of Thieves Belt",
+      "The King Of Thieves Head",
+      "The King Of Thieves Mount",
+      "The King Of Thieves Weapon"
+    ],
+    "Horror from the Deep": [
+      "Horror from the Deep Arms",
+      "Horror from the Deep Back",
+      "Horror from the Deep Belt",
+      "Horror from the Deep Head",
+      "Horror from the Deep Off-Hand",
+      "Horror from the Deep Weapon"
+    ],
+    "Ire of the Ancient Gaoler": [
+      "Ire of the Ancient Gaoler Arms",
+      "Ire of the Ancient Gaoler Back",
+      "Ire of the Ancient Gaoler Head",
+      "Ire of the Ancient Gaoler Shoulder"
+    ],
+    "Talons of the Endless Storm": [
+      "Talons of the Endless Storm Head",
+      "Talons of the Endless Storm Mount",
+      "Talons of the Endless Storm Shield",
+      "Talons of the Endless Storm Shoulder",
+      "Talons of the Endless Storm Weapon"
+    ],
+    "Carousal of the Mystic Masquerade": [
+      "Back of the Mystic Masquerade",
+      "Head of the Mystic Masquerade",
+      "Shoulder of the Mystic Masquerade",
+      "Weapon of the Mystic Masquerade"
+    ],
+    "Crown of Calaphas": [
+      "Crown of Calaphas Armor",
+      "Crown of Calaphas Back",
+      "Crown of Calaphas Belt",
+      "Crown of Calaphas Tail"
+    ],
+    "Wrath of the Fallen": [
+      "Wrath of the Fallen Arms",
+      "Wrath of the Fallen Back",
+      "Wrath of the Fallen Belt",
+      "Wrath of the Fallen Head",
+      "Wrath of the Fallen Loading Screen",
+      "Wrath of the Fallen Shoulder",
+      "Wrath of the Fallen Tail",
+      "Wrath of the Fallen Weapon"
+    ],
+    "Blacksail Cannoneer": [
+      "Blacksail Cannoneer Arms",
+      "Blacksail Cannoneer Back",
+      "Blacksail Cannoneer Hat",
+      "Blacksail Cannoneer Shoulder",
+      "Blacksail Cannoneer Weapon"
+    ],
+    "Secrets of the Celestial": [
+      "Secrets of the Celestial Arms",
+      "Secrets of the Celestial Back",
+      "Secrets of the Celestial Belt",
+      "Secrets of the Celestial Head",
+      "Secrets of the Celestial Loading Screen",
+      "Secrets of the Celestial Shoulder",
+      "Secrets of the Celestial Weapon"
+    ],
+    "Blaze of Oblivion": [
+      "Blaze of Oblivion Back",
+      "Blaze of Oblivion Head",
+      "Blaze of Oblivion Loading Screen",
+      "Blaze of Oblivion Supernova"
+    ],
+    "Master of the Searing Path": [
+      "Master of the Searing Path Arms",
+      "Master of the Searing Path Belt",
+      "Master of the Searing Path Head",
+      "Master of the Searing Path Loading Screen",
+      "Master of the Searing Path Off-Hand",
+      "Master of the Searing Path Shoulder",
+      "Master of the Searing Path Weapon"
+    ],
+    "Steward of the Forbidden Chamber": [
+      "Steward of the Forbidden Chamber Armor",
+      "Steward of the Forbidden Chamber Head",
+      "Steward of the Forbidden Chamber Shoulder"
+    ],
+    "Claszureme Incursion": [
+      "Claszureme Incursion Arms",
+      "Claszureme Incursion Belt",
+      "Claszureme Incursion Head",
+      "Claszureme Incursion Shoulder",
+      "Claszureme Incursion Weapon"
+    ],
+    "Radiant Conqueror": [
+      "Radiant Conqueror Arms",
+      "Radiant Conqueror Back",
+      "Radiant Conqueror Head",
+      "Radiant Conqueror Legs",
+      "Radiant Conqueror Shoulder",
+      "Radiant Conqueror Weapon"
+    ]
+  },
+  "Collector's Cache I 2021": {
+    "Twilight Hex": [
+      "Twilight Hex - Armor",
+      "Twilight Hex - Back",
+      "Twilight Hex - Belt",
+      "Twilight Hex - Head",
+      "Twilight Hex - Offhand"
+    ],
+    "Litany of the Damned": [
+      "Litany of the Damned - Arms",
+      "Litany of the Damned - Back",
+      "Litany of the Damned - Belt",
+      "Litany of the Damned - Head",
+      "Litany of the Damned - Shoulder",
+      "Litany of the Damned - Tail",
+      "Litany of the Damned - Weapon",
+      "Litany of the Damned Loading Screen"
+    ],
+    "Astral Terminus": [
+      "Astral Terminus - Armor",
+      "Astral Terminus - Arms",
+      "Astral Terminus - Eidolon",
+      "Astral Terminus - Head",
+      "Astral Terminus Loading Screen"
+    ],
+    "Caerulean Star": [
+      "Caerulean Star - Arms",
+      "Caerulean Star - Belt",
+      "Caerulean Star - Head",
+      "Caerulean Star - Neck",
+      "Caerulean Star - Weapon"
+    ],
+    "Arcane Inverter": [
+      "Arcane Inverter - Back",
+      "Arcane Inverter - Head",
+      "Arcane Inverter - Misc",
+      "Arcane Inverter - Missile",
+      "Arcane Inverter - Weapon"
+    ],
+    "Creed of the Skullhound": [
+      "Creed of the Skullhound - Armor",
+      "Creed of the Skullhound - Belt",
+      "Creed of the Skullhound - Head",
+      "Creed of the Skullhound - Lupine Form",
+      "Creed of the Skullhound - Shoulder",
+      "Creed of the Skullhound - Summon",
+      "Creed of the Skullhound - Weapon"
+    ],
+    "Desert Bloom": [
+      "Desert Bloom - Arms",
+      "Desert Bloom - Back",
+      "Desert Bloom - Head",
+      "Desert Bloom - Neck",
+      "Desert Bloom - Shoulder",
+      "Desert Bloom - Treant",
+      "Desert Bloom - Weapon",
+      "Desert Bloom Loading Screen"
+    ],
+    "Silence of the Starweaver": [
+      "Silence of the Starweaver - Armor",
+      "Silence of the Starweaver - Back",
+      "Silence of the Starweaver - Head",
+      "Silence of the Starweaver - Weapon"
+    ],
+    "Eyriebound Imperator": [
+      "Eyriebound Imperator - Arms",
+      "Eyriebound Imperator - Back",
+      "Eyriebound Imperator - Belt",
+      "Eyriebound Imperator - Head",
+      "Eyriebound Imperator - Shoulder",
+      "Eyriebound Imperator - Weapon",
+      "Eyriebound Imperator Loading Screen"
+    ],
+    "Anthozoan Assault": [
+      "Anthozoan Assault - Huge",
+      "Anthozoan Assault - Large",
+      "Anthozoan Assault - Medium",
+      "Anthozoan Assault - Tiny",
+      "Anthozoan Assault - Weapon"
+    ],
+    "Vision of the Seraph Scion": [
+      "Vision of the Seraph Scion - Head",
+      "Vision of the Seraph Scion - Legs",
+      "Vision of the Seraph Scion - Shoulder",
+      "Vision of the Seraph Scion - Weapon"
+    ],
+    "Defender of the Brumal Crest": [
+      "Defender of the Brumal Crest - Back",
+      "Defender of the Brumal Crest - Head"
+    ],
+    "Red Sands Marauder": [
+      "Red Sands Marauder - Arms",
+      "Red Sands Marauder - Belt",
+      "Red Sands Marauder - Head",
+      "Red Sands Marauder - Offhand",
+      "Red Sands Marauder - Summon",
+      "Red Sands Marauder - Weapon",
+      "Red Sands Marauder Loading Screen"
+    ],
+    "Indomitable Legacy": [
+      "Indomitable Legacy - Arms",
+      "Indomitable Legacy - Back",
+      "Indomitable Legacy - Belt",
+      "Indomitable Legacy - Head",
+      "Indomitable Legacy - Shoulder",
+      "Indomitable Legacy - Weapon"
+    ],
+    "Footfalls of the Sporefathers": [
+      "Footfalls of the Sporefathers - Back",
+      "Footfalls of the Sporefathers - Belt",
+      "Footfalls of the Sporefathers - Death Ward",
+      "Footfalls of the Sporefathers - Head",
+      "Footfalls of the Sporefathers - Shoulder",
+      "Footfalls of the Sporefathers - Weapon"
+    ],
+    "Darktrench Stalker": [
+      "Darktrench Stalker - Arms",
+      "Darktrench Stalker - Back",
+      "Darktrench Stalker - Head",
+      "Darktrench Stalker - Misc",
+      "Darktrench Stalker - Shoulder",
+      "Darktrench Stalker Loading Screen"
+    ]
+  },
+  "Collector's Cache II 2021": {
+    "Silverwurm Sacrifice": [
+      "Silverwurm Sacrifice - Arms",
+      "Silverwurm Sacrifice - Back",
+      "Silverwurm Sacrifice - Dragon Form",
+      "Silverwurm Sacrifice - Head",
+      "Silverwurm Sacrifice - Off-Hand",
+      "Silverwurm Sacrifice - Shoulder",
+      "Silverwurm Sacrifice - Weapon",
+      "Silverwurm Sacrifice Loading Screen"
+    ],
+    "Scales of the Shadow Walker": [
+      "Scales of the Shadow Walker - Arms",
+      "Scales of the Shadow Walker - Belt",
+      "Scales of the Shadow Walker - Head",
+      "Scales of the Shadow Walker - Shoulder",
+      "Scales of the Shadow Walker - Weapon"
+    ],
+    "Perception of the First Light": [
+      "Perception of the First Light - Armor",
+      "Perception of the First Light - Arms",
+      "Perception of the First Light - Head",
+      "Perception of the First Light - Weapon"
+    ],
+    "Apex Automated": [
+      "Apex Automated - Armor",
+      "Apex Automated - Head",
+      "Apex Automated - Power Cog",
+      "Apex Automated - Rocket",
+      "Apex Automated - Weapon"
+    ],
+    "Test of the Basilisk Lord": [
+      "Test of the Basilisk Lord - Armor",
+      "Test of the Basilisk Lord - Arms",
+      "Test of the Basilisk Lord - Belt",
+      "Test of the Basilisk Lord - Head",
+      "Test of the Basilisk Lord - Weapon",
+      "Test of the Basilisk Lord Loading Screen"
+    ],
+    "Secrets of the Frost Singularity": [
+      "Secrets of the Frost Singularity - Arms",
+      "Secrets of the Frost Singularity - Head",
+      "Secrets of the Frost Singularity - Shoulder",
+      "Secrets of the Frost Singularity - Tail"
+    ],
+    "Perils of the Red Banks": [
+      "Perils of the Red Banks - Arms",
+      "Perils of the Red Banks - Head",
+      "Perils of the Red Banks - Mount",
+      "Perils of the Red Banks - Shoulder",
+      "Perils of the Red Banks - Weapon"
+    ],
+    "The Chained Scribe": [
+      "The Chained Scribe - Armor",
+      "The Chained Scribe - Belt",
+      "The Chained Scribe - Head",
+      "The Chained Scribe - Weapon"
+    ],
+    "Widow of the Undermount Gloom": [
+      "Widow of the Undermount Gloom - Anterior",
+      "Widow of the Undermount Gloom - Back",
+      "Widow of the Undermount Gloom - Head",
+      "Widow of the Undermount Gloom - Legs",
+      "Widow of the Undermount Gloom - Spiderling",
+      "Widow of the Undermount Gloom Loading Screen"
+    ],
+    "Forgotten Fate": [
+      "Forgotten Fate - Armor",
+      "Forgotten Fate - Legs",
+      "Forgotten Fate - Off-Hand",
+      "Forgotten Fate - Weapon"
+    ],
+    "March of the Crackerjack Mage": [
+      "March of the Crackerjack Mage - Back",
+      "March of the Crackerjack Mage - Head",
+      "March of the Crackerjack Mage - Shoulder",
+      "March of the Crackerjack Mage - Weapon"
+    ],
+    "Stranger in the Wandering Isles": [
+      "Stranger in the Wandering Isles - Arms",
+      "Stranger in the Wandering Isles - Back",
+      "Stranger in the Wandering Isles - Head",
+      "Stranger in the Wandering Isles - Legs",
+      "Stranger in the Wandering Isles - Misc",
+      "Stranger in the Wandering Isles - Shoulder",
+      "Stranger in the Wandering Isles - Weapon"
+    ],
+    "Cosmic Concoctioneers": [
+      "Cosmic Concoctioneers - Armor",
+      "Cosmic Concoctioneers - Arms",
+      "Cosmic Concoctioneers - Back",
+      "Cosmic Concoctioneers - Neck",
+      "Cosmic Concoctioneers - Off-Hand",
+      "Cosmic Concoctioneers - Shoulder",
+      "Cosmic Concoctioneers - Weapon"
+    ],
+    "Days of the Demon": [
+      "Days of the Demon - Armor",
+      "Days of the Demon - Belt",
+      "Days of the Demon - Head",
+      "Days of the Demon - Misc",
+      "Days of the Demon - Weapon"
+    ],
+    "Blightfall": [
+      "Blightfall - Back",
+      "Blightfall - Head",
+      "Blightfall - Mount",
+      "Blightfall - Shoulder",
+      "Blightfall - Weapon",
+      "Blightfall Loading Screen"
+    ],
+    "Pyrexae Polymorph Perfected": [
+      "Pyrexae Polymorph Perfected - Arms",
+      "Pyrexae Polymorph Perfected - Back",
+      "Pyrexae Polymorph Perfected - Belt",
+      "Pyrexae Polymorph Perfected - Head",
+      "Pyrexae Polymorph Perfected - Weapon"
+    ],
+    "Wrath of the Celestial Sentinel": [
+      "Wrath of the Celestial Sentinel - Head",
+      "Wrath of the Celestial Sentinel - Mount",
+      "Wrath of the Celestial Sentinel - Off-Hand",
+      "Wrath of the Celestial Sentinel - Shoulder",
+      "Wrath of the Celestial Sentinel - Weapon"
+    ],
+    "Bane of the Deathstalkers": [
+      "Bane of the Deathstalkers - Back",
+      "Bane of the Deathstalkers - Belt",
+      "Bane of the Deathstalkers - Head",
+      "Bane of the Deathstalkers - Shoulder",
+      "Bane of the Deathstalkers - Weapon"
+    ]
+  },
+  "Collector's Cache I 2022": {
+    "Shadowleaf Insurgent": [
+      "Shadowleaf Insurgent - Armor",
+      "Shadowleaf Insurgent - Back",
+      "Shadowleaf Insurgent - Tail",
+      "Shadowleaf Insurgent - Weapon"
+    ],
+    "Scarlet Subversion": [
+      "Scarlet Subversion - Arms",
+      "Scarlet Subversion - Head",
+      "Scarlet Subversion - Offhand Weapon",
+      "Scarlet Subversion - Shoulder",
+      "Scarlet Subversion - Tail",
+      "Scarlet Subversion - Weapon"
+    ],
+    "Whippersnapper": [
+      "Whippersnapper - Armor",
+      "Whippersnapper - Costume",
+      "Whippersnapper - Head",
+      "Whippersnapper - Mount",
+      "Whippersnapper - Weapon"
+    ],
+    "Hounds of Obsession": [
+      "Hounds of Obsession - Arms",
+      "Hounds of Obsession - Head",
+      "Hounds of Obsession - Mount",
+      "Hounds of Obsession - Shoulder",
+      "Hounds of Obsession - Weapon"
+    ],
+    "Seadog's Stash": [
+      "Seadog's Stash - Armor",
+      "Seadog's Stash - Head",
+      "Seadog's Stash - Power Cogs",
+      "Seadog's Stash - Rocket",
+      "Seadog's Stash - Weapon"
+    ],
+    "Starlorn Adjudicator": [
+      "Starlorn Adjudicator - Armor",
+      "Starlorn Adjudicator - Arms",
+      "Starlorn Adjudicator - Head",
+      "Starlorn Adjudicator - Weapon"
+    ],
+    "Spoils of the Shadowveil": [
+      "Spoils of the Shadowveil - Belt",
+      "Spoils of the Shadowveil - Head",
+      "Spoils of the Shadowveil - Misc",
+      "Spoils of the Shadowveil - Shoulder",
+      "Spoils of the Shadowveil - Weapon"
+    ],
+    "Chines of the Inquisitor": [
+      "Chines of the Inquisitor - Arms",
+      "Chines of the Inquisitor - Belt",
+      "Chines of the Inquisitor - Body Head",
+      "Chines of the Inquisitor - Loading Screen",
+      "Chines of the Inquisitor - Shoulder",
+      "Chines of the Inquisitor - Weapon"
+    ],
+    "Trophies of the Hallowed Hunt": [
+      "Trophies of the Hallowed Hunt - Arms",
+      "Trophies of the Hallowed Hunt - Back",
+      "Trophies of the Hallowed Hunt - Belt",
+      "Trophies of the Hallowed Hunt - Head",
+      "Trophies of the Hallowed Hunt - Weapon"
+    ],
+    "Crimson Dawn": [
+      "Crimson Dawn - Back",
+      "Crimson Dawn - Head",
+      "Crimson Dawn - Supernova"
+    ],
+    "Forgotten Station": [
+      "Forgotten Station - Armor",
+      "Forgotten Station - Back",
+      "Forgotten Station - Demon",
+      "Forgotten Station - Head",
+      "Forgotten Station - Weapon"
+    ],
+    "Dirge Amplifier": [
+      "Dirge Amplifier - Armor",
+      "Dirge Amplifier - Arms",
+      "Dirge Amplifier - Flesh Golem",
+      "Dirge Amplifier - Head"
+    ],
+    "Champion of the Fire Lotus": [
+      "Champion of the Fire Lotus - Armor",
+      "Champion of the Fire Lotus - Head",
+      "Champion of the Fire Lotus - Shoulder",
+      "Champion of the Fire Lotus - Weapon"
+    ],
+    "Deathstitch Shaman": [
+      "Deathstitch Shaman - Back",
+      "Deathstitch Shaman - Belt",
+      "Deathstitch Shaman - Death Ward",
+      "Deathstitch Shaman - Head",
+      "Deathstitch Shaman - Shoulder",
+      "Deathstitch Shaman - Weapon"
+    ],
+    "Blue Horizons": [
+      "Blue Horizons - Armor",
+      "Blue Horizons - Back",
+      "Blue Horizons - Head",
+      "Blue Horizons - Loading Screen",
+      "Blue Horizons - Shoulder"
+    ],
+    "Angel of Vex": [
+      "Acolyte of the Lost Arts",
+      "Angel of Vex - Armor",
+      "Angel of Vex - Arms",
+      "Angel of Vex - Back",
+      "Angel of Vex - Head",
+      "Angel of Vex - Shoulder"
+    ],
+    "Dark Behemoth": [
+      "Dark Behemoth - Arms",
+      "Dark Behemoth - Back",
+      "Dark Behemoth - Head",
+      "Dark Behemoth - Legs",
+      "Dark Behemoth - Loading Screen"
+    ],
+    "Astral Origins": [
+      "Astral Origins - Back",
+      "Astral Origins - Belt",
+      "Astral Origins - Loading Screen",
+      "Astral Origins - Neck",
+      "Astral Origins - Shoulder",
+      "Astral Origins - Weapon"
+    ]
+  },
+  "Collector's Cache II 2022": {
+    "Bird of Prey": [
+      "Bird of Prey - Arms",
+      "Bird of Prey - Back",
+      "Bird of Prey - Head",
+      "Bird of Prey - Legs",
+      "Bird of Prey - Shoulder",
+      "Bird of Prey - Weapon"
+    ],
+    "Grand Suppressor": [
+      "Grand Suppressor - Arms",
+      "Grand Suppressor - Belt",
+      "Grand Suppressor - Head",
+      "Grand Suppressor - Off-Hand Weapon",
+      "Grand Suppressor - Shoulder",
+      "Grand Suppressor - Weapon"
+    ],
+    "Darkbrew's Transgression": [
+      "Darkbrew's Transgression - Armor",
+      "Darkbrew's Transgression - Arms",
+      "Darkbrew's Transgression - Back",
+      "Darkbrew's Transgression - Neck",
+      "Darkbrew's Transgression - Off-Hand",
+      "Darkbrew's Transgression - Shoulder",
+      "Darkbrew's Transgression - Weapon"
+    ],
+    "Transcendent Path": [
+      "Transcendent Path - Armor",
+      "Transcendent Path - Back",
+      "Transcendent Path - Head",
+      "Transcendent Path - Loading Screen",
+      "Transcendent Path - Weapon"
+    ],
+    "The Wilding Tiger": [
+      "The Wilding Tiger - Arms",
+      "The Wilding Tiger - Back",
+      "The Wilding Tiger - Head",
+      "The Wilding Tiger - Loading Screen",
+      "The Wilding Tiger - Off-Hand Weapon",
+      "The Wilding Tiger - Shoulder",
+      "The Wilding Tiger - Weapon"
+    ],
+    "Dawn of a Darkness Foretold": [
+      "Dawn of a Darkness Foretold - Arms",
+      "Dawn of a Darkness Foretold - Back",
+      "Dawn of a Darkness Foretold - Belt",
+      "Dawn of a Darkness Foretold - Head",
+      "Dawn of a Darkness Foretold - Shoulder",
+      "Dawn of a Darkness Foretold - Tail",
+      "Dawn of a Darkness Foretold - Weapon"
+    ],
+    "Cursed Cryptbreaker": [
+      "Cursed Cryptbreaker - Arms",
+      "Cursed Cryptbreaker - Back",
+      "Cursed Cryptbreaker - Belt",
+      "Cursed Cryptbreaker - Head",
+      "Cursed Cryptbreaker - Off-Hand Weapon",
+      "Cursed Cryptbreaker - Shoulder",
+      "Cursed Cryptbreaker - Weapon"
+    ],
+    "Feasts of Forever": [
+      "Feasts of Forever - Arms",
+      "Feasts of Forever - Back",
+      "Feasts of Forever - Head",
+      "Feasts of Forever - Legs",
+      "Feasts of Forever - Tail"
+    ],
+    "Darkfeather Factioneer": [
+      "Darkfeather Factioneer - Back",
+      "Darkfeather Factioneer - Belt",
+      "Darkfeather Factioneer - Head",
+      "Darkfeather Factioneer - Shoulder",
+      "Darkfeather Factioneer - Weapon"
+    ],
+    "Withering Pain": [
+      "Withering Pain - Back",
+      "Withering Pain - Gloves",
+      "Withering Pain - Head",
+      "Withering Pain - Loading Screen",
+      "Withering Pain - Shoulder",
+      "Withering Pain - Summon",
+      "Withering Pain - Weapon"
+    ],
+    "Freeboot Fortunes": [
+      "Freeboot Fortunes - Arms",
+      "Freeboot Fortunes - Back",
+      "Freeboot Fortunes - Belt",
+      "Freeboot Fortunes - Head",
+      "Freeboot Fortunes - Weapon"
+    ],
+    "Acrimonies of Obsession": [
+      "Acrimonies of Obsession - Head",
+      "Acrimonies of Obsession - Legs",
+      "Acrimonies of Obsession - Shoulder",
+      "Acrimonies of Obsession - Weapon"
+    ],
+    "Sacred Chamber Guardian": [
+      "Sacred Chamber Guardian - Arms",
+      "Sacred Chamber Guardian - Head",
+      "Sacred Chamber Guardian - Off-Hand Weapon",
+      "Sacred Chamber Guardian - Shoulder",
+      "Sacred Chamber Guardian - Weapon"
+    ],
+    "War Rig Eradicators": [
+      "War Rig Eradicators - Arms",
+      "War Rig Eradicators - Back",
+      "War Rig Eradicators - Belt",
+      "War Rig Eradicators - Head",
+      "War Rig Eradicators - Loading Screen",
+      "War Rig Eradicators - Proximity",
+      "War Rig Eradicators - Rig",
+      "War Rig Eradicators - Shoulder",
+      "War Rig Eradicators - Weapon"
+    ],
+    "Grudges of the Gallows Tree": [
+      "Grudges of the Gallows Tree - Arms",
+      "Grudges of the Gallows Tree - Head",
+      "Grudges of the Gallows Tree - Legs",
+      "Grudges of the Gallows Tree - Shoulder"
+    ],
+    "Brands of the Reaper": [
+      "Brands of the Reaper - Armor",
+      "Brands of the Reaper - Arms",
+      "Brands of the Reaper - Belt",
+      "Brands of the Reaper - Head",
+      "Brands of the Reaper - Off-Hand Weapon",
+      "Brands of the Reaper - Shoulders",
+      "Brands of the Reaper - Weapon"
+    ],
+    "Sublime Equilibrium": [
+      "Sublime Equilibrium - Armor",
+      "Sublime Equilibrium - Belt",
+      "Sublime Equilibrium - Head",
+      "Sublime Equilibrium - Weapon"
+    ],
+    "Unities of Discord": [
+      "Unities of Discord - Head",
+      "Unities of Discord - Mount",
+      "Unities of Discord - Off-Hand",
+      "Unities of Discord - Shoulder",
+      "Unities of Discord - Weapon"
+    ]
+  },
+  "Collector's Cache 2023": {
+    "Primeval Abomination": [
+      "Primeval Abomination Arms",
+      "Primeval Abomination Back",
+      "Primeval Abomination Head",
+      "Primeval Abomination Legs",
+      "Primeval Abomination Loading Screen"
+    ],
+    "Astral Herald": [
+      "Astral Herald Armor",
+      "Astral Herald Arms",
+      "Astral Herald Head",
+      "Astral Herald Weapon"
+    ],
+    "Spectral Shadow": [
+      "Spectral Shadow Back",
+      "Spectral Shadow Head",
+      "Spectral Shadow Mount",
+      "Spectral Shadow Shoulder",
+      "Spectral Shadow Weapon"
+    ],
+    "Taur Rider": [
+      "Taur Rider Armor",
+      "Taur Rider Arms",
+      "Taur Rider Back",
+      "Taur Rider Head",
+      "Taur Rider Loading Screen",
+      "Taur Rider Offhand",
+      "Taur Rider Shoulders",
+      "Taur Rider Weapons"
+    ],
+    "Crescent Huntress": [
+      "Crescent Huntress Arms",
+      "Crescent Huntress Belt",
+      "Crescent Huntress Head",
+      "Crescent Huntress Shoulder",
+      "Crescent Huntress Weapon"
+    ],
+    "Tyrant of the Veil": [
+      "Tyrant of the Veil Armor",
+      "Tyrant of the Veil Back",
+      "Tyrant of the Veil Helm",
+      "Tyrant of the Veil Shoulder",
+      "Tyrant of the Veil Weapon"
+    ],
+    "Tomo'kan Footsoldier": [
+      "Tomo'kan Footsoldier Armor",
+      "Tomo'kan Footsoldier Back",
+      "Tomo'kan Footsoldier Tail",
+      "Tomo'kan Footsoldier Weapon"
+    ],
+    "Darkwood Eulogy": [
+      "Darkwood Eulogy Armor",
+      "Darkwood Eulogy Belt",
+      "Darkwood Eulogy Head",
+      "Darkwood Eulogy Legs",
+      "Darkwood Eulogy Spirit"
+    ],
+    "Sea Spirit": [
+      "Sea Spirit Back",
+      "Sea Spirit Belt",
+      "Sea Spirit Gloves",
+      "Sea Spirit Head",
+      "Sea Spirit Legs",
+      "Sea Spirit Neck",
+      "Sea Spirit Shoulder",
+      "Sea Spirit Weapon"
+    ],
+    "Triumph of the Imperatrix": [
+      "Triumph of the Imperatrix Arms",
+      "Triumph of the Imperatrix Back",
+      "Triumph of the Imperatrix Head",
+      "Triumph of the Imperatrix Legs",
+      "Triumph of the Imperatrix Shoulder",
+      "Triumph of the Imperatrix Weapon"
+    ],
+    "Beast of Thunder": [
+      "Beast of Thunder Armor",
+      "Beast of Thunder Arms",
+      "Beast of Thunder Head"
+    ],
+    "Ancestral Heritage": [
+      "Ancestral Heritage Back",
+      "Ancestral Heritage Fire Head",
+      "Ancestral Heritage Ice Head",
+      "Ancestral Heritage Tail"
+    ],
+    "Dezun Viper": [
+      "Dezun Viper Arms",
+      "Dezun Viper Back",
+      "Dezun Viper Legs",
+      "Dezun Viper Shoulders",
+      "Dezun Viper Weapon"
+    ],
+    "Brightfist": [
+      "Brightfist Armor",
+      "Brightfist Back",
+      "Brightfist Head",
+      "Brightfist Shoulder"
+    ],
+    "Snailfire": [
+      "Snailfire Armor",
+      "Snailfire Costume",
+      "Snailfire Head",
+      "Snailfire Morty",
+      "Snailfire Weapon"
+    ],
+    "Turstarkuri Pilgrim": [
+      "The Disciple's Path",
+      "Turstarkuri Pilgrim Armor",
+      "Turstarkuri Pilgrim Head",
+      "Turstarkuri Pilgrim Offhand Weapon",
+      "Turstarkuri Pilgrim Weapon"
+    ]
+  },
+  "Collector's Cache I 2024": {
+    "Darkblade Adept": [
+      "Darkblade Adept - Armor",
+      "Darkblade Adept - Head",
+      "Darkblade Adept - Shoulder",
+      "Darkblade Adept - Weapon"
+    ],
+    "Phantom's Facade": [
+      "Exile Unveiled",
+      "Phantom's Facade - Armor",
+      "Phantom's Facade - Head",
+      "Phantom's Facade - Legs",
+      "Phantom's Facade - Weapon"
+    ],
+    "Lotus of the Mountain Bear Clan": [
+      "Lotus of the Mountain Bear Clan - Arms",
+      "Lotus of the Mountain Bear Clan - Back",
+      "Lotus of the Mountain Bear Clan - Head",
+      "Lotus of the Mountain Bear Clan - Shoulder",
+      "Lotus of the Mountain Bear Clan - Tail",
+      "Lotus of the Mountain Bear Clan - Weapon"
+    ],
+    "Martyrdom of the Brineborn": [
+      "Martyrdom of the Brineborn - Armor",
+      "Martyrdom of the Brineborn - Head",
+      "Martyrdom of the Brineborn - Offhand",
+      "Martyrdom of the Brineborn - Tail",
+      "Martyrdom of the Brineborn - Weapon"
+    ],
+    "Elegy of the Reaper": [
+      "Elegy of the Reaper - Armor",
+      "Elegy of the Reaper - Belt",
+      "Elegy of the Reaper - Head",
+      "Elegy of the Reaper - Weapon"
+    ],
+    "Mecha Nyx": [
+      "Mecha Nyx - Back",
+      "Mecha Nyx - Head",
+      "Mecha Nyx - Misc",
+      "Mecha Nyx - Weapon",
+      "Mecha Nyx Loading Screen"
+    ],
+    "Faithful Fortune": [
+      "Faithful Fortune - Armor",
+      "Faithful Fortune - Back",
+      "Faithful Fortune - Head",
+      "Faithful Fortune - Shoulder"
+    ],
+    "Ardalan Arms Race": [
+      "Ardalan Arms Race - Armor",
+      "Ardalan Arms Race - Costume",
+      "Ardalan Arms Race - Head",
+      "Ardalan Arms Race - Mount",
+      "Ardalan Arms Race - Weapon"
+    ],
+    "Dread of Night": [
+      "Dread of Night - Arms",
+      "Dread of Night - Back",
+      "Dread of Night - Head",
+      "Dread of Night - Legs",
+      "Dread of Night - Loading Screen",
+      "Dread of Night - Tail"
+    ],
+    "Blackwing Bandolera": [
+      "Blackwing Bandolera - Armor",
+      "Blackwing Bandolera - Back",
+      "Blackwing Bandolera - Head",
+      "Blackwing Bandolera - Ultimate Form",
+      "Blackwing Bandolera - Weapon"
+    ],
+    "Exquisite Agonies": [
+      "Exquisite Agonies - Back",
+      "Exquisite Agonies - Head",
+      "Exquisite Agonies - Legs",
+      "Exquisite Agonies - Shoulder",
+      "Exquisite Agonies - Weapon"
+    ],
+    "Colossal Terrorpin": [
+      "Colossal Terrorpin - Large",
+      "Colossal Terrorpin - Loading Screen",
+      "Colossal Terrorpin - Medium",
+      "Colossal Terrorpin - Small",
+      "Colossal Terrorpin - Tiny",
+      "Colossal Terrorpin - Weapon"
+    ],
+    "Proselyte of the Sakura Clan": [
+      "Proselyte of the Sakura Clan - Armor",
+      "Proselyte of the Sakura Clan - Head",
+      "Proselyte of the Sakura Clan - Offhand",
+      "Proselyte of the Sakura Clan - Weapon",
+      "The Disciple's Path"
+    ],
+    "Bloodmoon Stalker": [
+      "Bloodmoon Stalker - Crescent Glaive",
+      "Bloodmoon Stalker - Head",
+      "Bloodmoon Stalker - Mount",
+      "Bloodmoon Stalker - Offhand",
+      "Bloodmoon Stalker - Shoulders"
+    ],
+    "Ancient Exile": [
+      "Ancient Exile - Arms",
+      "Ancient Exile - Back",
+      "Ancient Exile - Head",
+      "Ancient Exile - Legs",
+      "Ancient Exile - Ward",
+      "Ancient Exile - Weapon"
+    ],
+    "Aberrant Observer": [
+      "Aberrant Observer - Back",
+      "Aberrant Observer - Belt",
+      "Aberrant Observer - Head",
+      "Aberrant Observer - Hook",
+      "Aberrant Observer - Left Arm",
+      "Aberrant Observer - Offhand",
+      "Aberrant Observer - Right Arm"
+    ]
+  },
+  "Collector's Cache II 2024": {
+    "Igneous Infernal": [
+      "Igneous Infernal - Arms",
+      "Igneous Infernal - Back",
+      "Igneous Infernal - Belt",
+      "Igneous Infernal - Head",
+      "Igneous Infernal - Shoulder",
+      "Igneous Infernal - Tail",
+      "Igneous Infernal - Weapon"
+    ],
+    "Bleeding Edge": [
+      "Bleeding Edge - Arms",
+      "Bleeding Edge - Head",
+      "Bleeding Edge - Off-Hand",
+      "Bleeding Edge - Shoulder",
+      "Bleeding Edge - Weapon"
+    ],
+    "Magus Mimicry": [
+      "Acolyte of the Lost Arts",
+      "Magus Mimicry - Armor",
+      "Magus Mimicry - Arms",
+      "Magus Mimicry - Back",
+      "Magus Mimicry - Forge Spirit",
+      "Magus Mimicry - Head",
+      "Magus Mimicry - Shoulder",
+      "The Good Old Days"
+    ],
+    "Seam Ripper Snuggle Time": [
+      "Seam Ripper Snuggle Time - Arms",
+      "Seam Ripper Snuggle Time - Back",
+      "Seam Ripper Snuggle Time - Belt",
+      "Seam Ripper Snuggle Time - Head",
+      "Seam Ripper Snuggle Time - Loading Screen",
+      "Seam Ripper Snuggle Time - Offhand Weapon",
+      "Seam Ripper Snuggle Time - Pyro Plush",
+      "Seam Ripper Snuggle Time - Shoulder",
+      "Seam Ripper Snuggle Time - Weapon"
+    ],
+    "Angler in the Abyss": [
+      "Angler in the Abyss - Arms",
+      "Angler in the Abyss - Back",
+      "Angler in the Abyss - Head",
+      "Angler in the Abyss - Loading Screen",
+      "Angler in the Abyss - Shoulder",
+      "Angler in the Abyss - Weapon"
+    ],
+    "Phantom Balladeer": [
+      "Phantom Balladeer - Back",
+      "Phantom Balladeer - Head",
+      "Phantom Balladeer - Loading Screen",
+      "Phantom Balladeer - Mount",
+      "Phantom Balladeer - Shoulder",
+      "Phantom Balladeer - Weapon"
+    ],
+    "Bootblack Brawler": [
+      "Bootblack Brawler - Armor",
+      "Bootblack Brawler - Belt",
+      "Bootblack Brawler - Head",
+      "Bootblack Brawler - Loading Screen",
+      "Bootblack Brawler - Misc",
+      "Bootblack Brawler - Weapon"
+    ],
+    "Needlepoint Necromancer": [
+      "Needlepoint Necromancer - Arms",
+      "Needlepoint Necromancer - Back",
+      "Needlepoint Necromancer - Legs",
+      "Needlepoint Necromancer - Misc",
+      "Needlepoint Necromancer - Weapon"
+    ],
+    "Hare of the Cog": [
+      "Hare of the Cog - Armor",
+      "Hare of the Cog - Carrot",
+      "Hare of the Cog - Head",
+      "Hare of the Cog - Misc",
+      "Hare of the Cog - Weapon"
+    ],
+    "Thundervolt": [
+      "Thundervolt - Arms",
+      "Thundervolt - Back",
+      "Thundervolt - Belt",
+      "Thundervolt - Head"
+    ],
+    "Caprine Chimera": [
+      "Caprine Chimera - Arms",
+      "Caprine Chimera - Back",
+      "Caprine Chimera - Shoulder",
+      "Caprine Chimera - Weapon",
+      "Caprine Chimera - Wearable"
+    ],
+    "Canis Crystallum": [
+      "Blueheart Familiar",
+      "Canis Crystallum - Armor",
+      "Canis Crystallum - Head",
+      "Canis Crystallum - Misc",
+      "Canis Crystallum - Tail",
+      "Conduit of the Blueheart"
+    ],
+    "Unchained Entropy": [
+      "Unchained Entropy - Arms",
+      "Unchained Entropy - Head",
+      "Unchained Entropy - Shoulder",
+      "Unchained Entropy - Tail"
+    ],
+    "Undying Love": [
+      "Undying Love - Amalgamation",
+      "Undying Love - Armor",
+      "Undying Love - Arms",
+      "Undying Love - Head"
+    ],
+    "Crystal Colossus": [
+      "Crystal Colossus - Arms",
+      "Crystal Colossus - Belt",
+      "Crystal Colossus - Head",
+      "Crystal Colossus - Loading Screen",
+      "Crystal Colossus - Shoulder",
+      "Crystal Colossus - Tail",
+      "Crystal Colossus - Weapon"
+    ],
+    "Secondhand Sorcery": [
+      "Secondhand Sorcery - Back",
+      "Secondhand Sorcery - Head",
+      "Secondhand Sorcery - Shoulder",
+      "Secondhand Sorcery - Weapon"
+    ]
+  },
+  "Collector's Cache 2025": {
+    "Glutton of Punishment": [
+      "Glutton of Punishment - Armor",
+      "Glutton of Punishment - Arms",
+      "Glutton of Punishment - Head",
+      "Glutton of Punishment - Offhand",
+      "Glutton of Punishment - Weapon",
+      "The Toy Butcher"
+    ],
+    "Lord of the Sundered Souls": [
+      "Lord of the Sundered Souls - Arms",
+      "Lord of the Sundered Souls - Head",
+      "Lord of the Sundered Souls - Shoulders"
+    ],
+    "Prehistoric Predator": [
+      "Prehistoric Predator - Arms",
+      "Prehistoric Predator - Back",
+      "Prehistoric Predator - Head",
+      "Prehistoric Predator - Legs"
+    ],
+    "Insatiable Seas": [
+      "Insatiable Seas - Anchor",
+      "Insatiable Seas - Belt",
+      "Insatiable Seas - Bracer",
+      "Insatiable Seas - Charms",
+      "Insatiable Seas - Maw",
+      "Insatiable Seas - Ship"
+    ],
+    "The White Widow": [
+      "The White Widow - Back",
+      "The White Widow - Body",
+      "The White Widow - Head",
+      "The White Widow - Legs",
+      "The White Widow - Spiderling"
+    ],
+    "Angel of the Abyss": [
+      "Angel of the Abyss - Armor",
+      "Angel of the Abyss - Fetters",
+      "Angel of the Abyss - Halo",
+      "Angel of the Abyss - Servants"
+    ],
+    "Blinding Bastion": [
+      "Blinding Bastion - Arms",
+      "Blinding Bastion - Back",
+      "Blinding Bastion - Flail",
+      "Blinding Bastion - Head",
+      "Blinding Bastion - Shoulders"
+    ],
+    "Harrow's Harvest": [
+      "Harrow's Harvest - Armor",
+      "Harrow's Harvest - Belt",
+      "Harrow's Harvest - Head",
+      "Harrow's Harvest - Weapon"
+    ],
+    "Seed of Strife": [
+      "Seed of Strife - Arms",
+      "Seed of Strife - Head",
+      "Seed of Strife - Red Panda",
+      "Seed of Strife - Shoulder",
+      "Seed of Strife - The Seed"
+    ],
+    "Laurels of the Dawnstar": [
+      "Laurels of the Dawnstar - Armor",
+      "Laurels of the Dawnstar - Back",
+      "Laurels of the Dawnstar - Cape",
+      "Laurels of the Dawnstar - Head"
+    ],
+    "Sodbustin' Saboteurs": [
+      "Sodbustin' Saboteurs - Boomstick",
+      "Sodbustin' Saboteurs - Farmer Spleen",
+      "Sodbustin' Saboteurs - Farmer Squee",
+      "Sodbustin' Saboteurs - Proximity Mine",
+      "Sodbustin' Saboteurs - Remote Cart",
+      "Sodbustin' Saboteurs - Sign",
+      "Sodbustin' Saboteurs - Sodbusteur",
+      "Sodbustin' Saboteurs - Succulent Spoon"
+    ],
+    "Sins of the Simian Sovereign": [
+      "Sins of the Simian Sovereign - Armor",
+      "Sins of the Simian Sovereign - Crown",
+      "Sins of the Simian Sovereign - Shoulder",
+      "Sins of the Simian Sovereign - Staff"
+    ],
+    "Worship of the Whispered Wing": [
+      "Worship of the Whispered Wing - Arms",
+      "Worship of the Whispered Wing - Belt",
+      "Worship of the Whispered Wing - Head",
+      "Worship of the Whispered Wing - Loading Screen",
+      "Worship of the Whispered Wing - Offhand",
+      "Worship of the Whispered Wing - Shoulder",
+      "Worship of the Whispered Wing - Weapon"
+    ],
+    "Cunning Counterfeit": [
+      "Cunning Counterfeit - Convincing Visage",
+      "Cunning Counterfeit - Decorative Belt",
+      "Cunning Counterfeit - Donkey Arms",
+      "Cunning Counterfeit - Harmless Scepter",
+      "Cunning Counterfeit - Luxuriant Tail",
+      "Cunning Counterfeit - Natural Hide",
+      "Cunning Counterfeit - Saddle Packs"
+    ],
+    "Fluid Frenzy": [
+      "Fluid Frenzy - Arms",
+      "Fluid Frenzy - Back",
+      "Fluid Frenzy - Head",
+      "Fluid Frenzy - Misc",
+      "Fluid Frenzy - Shoulders"
+    ],
+    "Stone Giant Stronghold": [
+      "Stone Giant Stronghold - Castle",
+      "Stone Giant Stronghold - Fortress",
+      "Stone Giant Stronghold - Keep",
+      "Stone Giant Stronghold - Tower",
+      "Stone Giant Stronghold - Weapon"
+    ]
+  }
 }

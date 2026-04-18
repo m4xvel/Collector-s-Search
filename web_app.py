@@ -92,6 +92,40 @@ body {
     radial-gradient(circle at 100% 100%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
   padding: 40px 20px;
   line-height: 1.5;
+  scroll-behavior: smooth;
+}
+
+.category-header {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.category-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.category-header .count-badge {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  padding: 2px 10px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.category-header:first-of-type {
+  margin-top: 0;
 }
 
 .wrap {
@@ -893,35 +927,56 @@ def render_page(
     const sortSelect = document.getElementById('js-sort');
     const togglePartialsBtn = document.getElementById('toggle-partials');
     let cards = Array.from(grid.getElementsByClassName('card'));
+    let headers = Array.from(grid.getElementsByClassName('category-header'));
 
     const update = () => {{
       const query = filterInput.value.toLowerCase();
       const sortBy = sortSelect.value;
+      const showPartials = document.body.classList.contains('show-partials');
 
+      // Filter cards
       cards.forEach(card => {{
         const target = card.dataset.target || '';
-        card.style.display = target.includes(query) ? '' : 'none';
+        const isFull = card.dataset.full === 'true';
+        let visible = target.includes(query);
+        if (!showPartials && !isFull) visible = false;
+        card.style.display = visible ? '' : 'none';
       }});
 
-      const sorted = [...cards].sort((a, b) => {{
-        if (document.body.classList.contains('show-partials')) {{
-          const isFullA = a.dataset.full === 'true';
-          const isFullB = b.dataset.full === 'true';
-          if (isFullA !== isFullB) return isFullA ? 1 : -1;
-        }}
-
-        if (sortBy === 'name') return a.dataset.target.localeCompare(b.dataset.target);
-        if (sortBy.startsWith('price')) {{
-            const pA = parseFloat(a.dataset.price) || 0;
-            const pB = parseFloat(b.dataset.price) || 0;
-            if (pA === 0 && pB !== 0) return 1;
-            if (pB === 0 && pA !== 0) return -1;
-            return sortBy === 'price_desc' ? pB - pA : pA - pB;
-        }}
-        if (sortBy === 'count') return parseInt(b.dataset.count) - parseInt(a.dataset.count);
-        return 0;
+      // Filter headers (hide if no visible cards in category)
+      headers.forEach(header => {{
+        const category = header.dataset.category;
+        const hasVisible = cards.some(c => c.dataset.category === category && c.style.display !== 'none');
+        header.style.display = hasVisible ? '' : 'none';
       }});
-      sorted.forEach(node => grid.appendChild(node));
+
+      // Only sort within categories if the grid remains grouped
+      // To keep them grouped, we would need to re-append category by category
+      const grouped = headers.filter(h => h.style.display !== 'none').map(header => {{
+        const category = header.dataset.category;
+        const catCards = cards.filter(c => c.dataset.category === category && c.style.display !== 'none');
+        
+        catCards.sort((a, b) => {{
+          if (sortBy === 'name') return a.dataset.target.localeCompare(b.dataset.target);
+          if (sortBy.startsWith('price')) {{
+              const pA = parseFloat(a.dataset.price) || 0;
+              const pB = parseFloat(b.dataset.price) || 0;
+              if (pA === 0 && pB !== 0) return 1;
+              if (pB === 0 && pA !== 0) return -1;
+              return sortBy === 'price_desc' ? pB - pA : pA - pB;
+          }}
+          if (sortBy === 'count') return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+          return 0;
+        }});
+        
+        return {{ header, cards: catCards }};
+      }});
+
+      grid.innerHTML = '';
+      grouped.forEach(group => {{
+        grid.appendChild(group.header);
+        group.cards.forEach(card => grid.appendChild(card));
+      }});
     }};
 
     filterInput.addEventListener('input', update);
@@ -933,6 +988,7 @@ def render_page(
         update();
       }});
     }}
+    update();
   }}
   </script>
 </body>
@@ -1019,6 +1075,7 @@ class AppHandler(BaseHTTPRequestHandler):
                 matches.append({
                     "target": row.target,
                     "items": row.items,
+                    "category": row.category,
                     "price_label": price_info["label"] if row.is_full else "Неполный сет",
                     "price_value": price_info["value"] if row.is_full else 0,
                     "total_units": row.total_units,
@@ -1028,7 +1085,9 @@ class AppHandler(BaseHTTPRequestHandler):
                     "missing_parts": row.missing_parts
                 })
 
-            matches.sort(key=lambda x: (x["is_full"], x["target"].lower()))
+            # Sort by category (year) then by full/not full, then by name
+            # Natural sort for categories "Cache 2015", "Cache 2016"...
+            matches.sort(key=lambda x: (x["category"], not x["is_full"], x["target"].lower()))
             result_data = {
                 "steam_id": steam_id,
                 "matched_count": len([m for m in matches if m["is_full"]]),
@@ -1037,43 +1096,57 @@ class AppHandler(BaseHTTPRequestHandler):
                 "total_price_label": _format_price(total_value, currency),
             }
             
-            # Generate the final HTML slice using the existing render_page logic (parts of it)
-            # Actually, let's just use the result_html generation logic from render_page
-            # I will refactor a bit to avoid code duplication if possible, but for now I'll inline the logic
+            # Grouping by category for HTML generation
+            by_category = {}
+            for m in matches:
+                cat = m["category"]
+                if cat not in by_category: by_category[cat] = []
+                by_category[cat].append(m)
+
             cards_html = ""
-            for item_data in result_data["matches"]:
-                grouped_items = {}
-                for itm in item_data["items"]:
-                    key = (itm.display_name, itm.icon_url, itm.rarity_name, itm.rarity_color, itm.name_color)
-                    if key not in grouped_items:
-                        grouped_items[key] = {"display_name": itm.display_name, "icon_url": itm.icon_url, 
-                                            "rarity_name": itm.rarity_name, "rarity_color": itm.rarity_color, 
-                                            "name_color": itm.name_color, "amount": 0}
-                    grouped_items[key]["amount"] += itm.amount
+            for cat_name, cat_matches in by_category.items():
+                # Add category header
+                full_in_cat = len([m for m in cat_matches if m["is_full"]])
+                cards_html += f"""
+                <div class="category-header" data-category="{html.escape(cat_name)}">
+                    <h2>{html.escape(cat_name)}</h2>
+                    <span class="count-badge">{full_in_cat} сетов в этой группе</span>
+                </div>
+                """
+                
+                for item_data in cat_matches:
+                    grouped_items = {}
+                    for itm in item_data["items"]:
+                        key = (itm.display_name, itm.icon_url, itm.rarity_name, itm.rarity_color, itm.name_color)
+                        if key not in grouped_items:
+                            grouped_items[key] = {"display_name": itm.display_name, "icon_url": itm.icon_url, 
+                                                "rarity_name": itm.rarity_name, "rarity_color": itm.rarity_color, 
+                                                "name_color": itm.name_color, "amount": 0}
+                        grouped_items[key]["amount"] += itm.amount
 
-                items_html = ""
-                for itm in grouped_items.values():
-                    is_bundle = itm['display_name'].lower() == item_data['target'].lower()
-                    bundle_class = "is-bundle" if is_bundle else ""
-                    bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
-                    rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
-                    name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
-                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
-                
-                for part in (item_data.get("missing_parts") or []):
-                    items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
-                
-                count_badge = f'<div class="set-count">Полных сетов: {item_data["full_set_count"]}</div>' if item_data["full_set_count"] > 0 else ""
-                
-                total_set_price = float(item_data["price_value"]) * item_data["full_set_count"]
-                if item_data["full_set_count"] > 1 and item_data["price_value"] > 0:
-                    main_label = f"{total_set_price:,.0f} ".replace(',', ' ') + currency
-                    unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
-                else:
-                    main_label = item_data['price_label']
-                    unit_label = ""
+                    items_html = ""
+                    for itm in grouped_items.values():
+                        is_bundle = itm['display_name'].lower() == item_data['target'].lower()
+                        bundle_class = "is-bundle" if is_bundle else ""
+                        bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                        rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
+                        name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
+                        items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
+                    
+                    for part in (item_data.get("missing_parts") or []):
+                        items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
+                    
+                    count_badge = f'<div class="set-count">Полных сетов: {item_data["full_set_count"]}</div>' if item_data["full_set_count"] > 0 else ""
+                    
+                    total_set_price = float(item_data["price_value"]) * item_data["full_set_count"]
+                    if item_data["full_set_count"] > 1 and item_data["price_value"] > 0:
+                        formatted_price = f"{total_set_price:,.0f} ".replace(',', ' ') + currency
+                        unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
+                    else:
+                        formatted_price = item_data['price_label']
+                        unit_label = ""
 
-                cards_html += f"""<div class="card" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}"><div class="card-header"><h3 class="target-name">{html.escape(item_data['target'])}</h3>{count_badge}<div class="price"><div style="display: flex; align-items: center; gap: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>{html.escape(main_label)}</div>{unit_label}</div></div><div class="item-list">{items_html}</div></div>"""
+                    cards_html += f"""<div class="card" data-category="{html.escape(cat_name)}" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}"><div class="card-header"><h3 class="target-name">{html.escape(item_data['target'])}</h3>{count_badge}<div class="price"><div style="display: flex; align-items: center; gap: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>{html.escape(formatted_price)}</div>{unit_label}</div></div><div class="item-list">{items_html}</div></div>"""
 
             final_html = f"""
             <div class="result-controls">
