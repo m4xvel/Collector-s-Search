@@ -32,6 +32,7 @@ from inventory_finder import (
     _pick_best_catalog_item,
     _format_price,
 )
+import re
 
 BASE_DIR = Path(__file__).resolve().parent
 NAMES_FILE = BASE_DIR / "names_example.txt"
@@ -95,37 +96,15 @@ body {
   scroll-behavior: smooth;
 }
 
-.category-header {
-  grid-column: 1 / -1;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.category-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--ink);
-  letter-spacing: -0.01em;
-}
-
-.category-header .count-badge {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  color: var(--ink-muted);
-  padding: 2px 10px;
-  border-radius: 99px;
-  font-size: 0.8rem;
+.card-category-label {
+  font-size: 0.65rem;
   font-weight: 600;
-}
-
-.category-header:first-of-type {
-  margin-top: 0;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  display: block;
+  opacity: 0.8;
 }
 
 .wrap {
@@ -725,7 +704,6 @@ def render_page(
                 # but we'll try to match the label format
                 price_main_label = item_data['price_label'] # This is "X RUB"
                 # If it already contains "RUB", we'll try to update the number
-                import re
                 main_label = re.sub(r'[\d\s\.]+', f'{total_set_price:,.0f} '.replace(',', ' '), item_data['price_label'])
                 unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
             else:
@@ -735,12 +713,14 @@ def render_page(
             # Data attributes for client-side sorting/filtering
             cards_html += f"""
             <div class="card" 
+                 data-category="{html.escape(item_data.get('category', 'Other'))}"
                  data-target="{html.escape(item_data['target'].lower())}"
                  data-price="{item_data['price_value']}"
                  data-count="{item_data['total_units']}"
                  data-rarity="{html.escape(item_data['rarity'].lower())}"
                  data-full="{str(item_data['is_full']).lower()}">
               <div class="card-header">
+                <span class="card-category-label">{html.escape(item_data.get('category', 'Other'))}</span>
                 <h3 class="target-name">{html.escape(item_data['target'])}</h3>
                 {count_badge}
                 <div class="price">
@@ -944,40 +924,27 @@ def render_page(
         card.style.display = visible ? '' : 'none';
       }});
 
-      // Filter headers (hide if no visible cards in category)
-      headers.forEach(header => {{
-        const category = header.dataset.category;
-        const hasVisible = cards.some(c => c.dataset.category === category && c.style.display !== 'none');
-        header.style.display = hasVisible ? '' : 'none';
-      }});
-
-      // Only sort within categories if the grid remains grouped
-      // To keep them grouped, we would need to re-append category by category
-      const grouped = headers.filter(h => h.style.display !== 'none').map(header => {{
-        const category = header.dataset.category;
-        const catCards = cards.filter(c => c.dataset.category === category && c.style.display !== 'none');
-        
-        catCards.sort((a, b) => {{
-          if (sortBy === 'name') return a.dataset.target.localeCompare(b.dataset.target);
-          if (sortBy.startsWith('price')) {{
-              const pA = parseFloat(a.dataset.price) || 0;
-              const pB = parseFloat(b.dataset.price) || 0;
-              if (pA === 0 && pB !== 0) return 1;
-              if (pB === 0 && pA !== 0) return -1;
-              return sortBy === 'price_desc' ? pB - pA : pA - pB;
-          }}
-          if (sortBy === 'count') return parseInt(b.dataset.count) - parseInt(a.dataset.count);
-          return 0;
-        }});
-        
-        return {{ header, cards: catCards }};
+      // Sort all visible cards
+      const visibleCards = cards.filter(c => c.style.display !== 'none');
+      visibleCards.sort((a, b) => {{
+        if (sortBy === 'name') {{
+            const catComp = a.dataset.category.localeCompare(b.dataset.category);
+            if (catComp !== 0) return catComp;
+            return a.dataset.target.localeCompare(b.dataset.target);
+        }}
+        if (sortBy.startsWith('price')) {{
+            const pA = parseFloat(a.dataset.price) || 0;
+            const pB = parseFloat(b.dataset.price) || 0;
+            if (pA === 0 && pB !== 0) return 1;
+            if (pB === 0 && pA !== 0) return -1;
+            return sortBy === 'price_desc' ? pB - pA : pA - pB;
+        }}
+        if (sortBy === 'count') return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+        return 0;
       }});
 
       grid.innerHTML = '';
-      grouped.forEach(group => {{
-        grid.appendChild(group.header);
-        group.cards.forEach(card => grid.appendChild(card));
-      }});
+      visibleCards.forEach(card => grid.appendChild(card));
     }};
 
     filterInput.addEventListener('input', update);
@@ -1097,62 +1064,62 @@ class AppHandler(BaseHTTPRequestHandler):
                 "total_price_label": _format_price(total_value, currency),
             }
             
-            # Grouping by category for HTML generation
-            by_category = {}
-            for m in matches:
-                cat = m["category"]
-                if cat not in by_category: by_category[cat] = []
-                by_category[cat].append(m)
-
+            # Flat cards generation
             cards_html = ""
-            for cat_name, cat_matches in by_category.items():
-                # Add category header
-                full_in_cat = len([m for m in cat_matches if m["is_full"]])
-                cards_html += f"""
-                <div class="category-header" data-category="{html.escape(cat_name)}">
-                    <h2>{html.escape(cat_name)}</h2>
-                    <span class="count-badge">{full_in_cat} сетов в этой группе</span>
-                </div>
-                """
+            for item_data in matches:
+                cat_name = item_data.get("category", "Other")
+                grouped_items = {}
+                for itm in item_data["items"]:
+                    key = itm.display_name.lower().strip()
+                    if key not in grouped_items:
+                        grouped_items[key] = {
+                            "display_name": itm.display_name,
+                            "icon_url": itm.icon_url, 
+                            "rarity_name": itm.rarity_name, 
+                            "rarity_color": itm.rarity_color, 
+                            "name_color": itm.name_color, 
+                            "amount": 0
+                        }
+                    grouped_items[key]["amount"] += itm.amount
+
+                items_html = ""
+                for itm in grouped_items.values():
+                    is_bundle = itm['display_name'].lower() == item_data['target'].lower()
+                    bundle_class = "is-bundle" if is_bundle else ""
+                    bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                    rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
+                    name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
+                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
                 
-                for item_data in cat_matches:
-                    grouped_items = {}
-                    for itm in item_data["items"]:
-                        key = itm.display_name.lower().strip()
-                        if key not in grouped_items:
-                            grouped_items[key] = {
-                                "display_name": itm.display_name,
-                                "icon_url": itm.icon_url, 
-                                "rarity_name": itm.rarity_name, 
-                                "rarity_color": itm.rarity_color, 
-                                "name_color": itm.name_color, 
-                                "amount": 0
-                            }
-                        grouped_items[key]["amount"] += itm.amount
+                for part in (item_data.get("missing_parts") or []):
+                    items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
+                
+                count_badge = f'<div class="set-count">Полных сетов: {item_data["full_set_count"]}</div>' if item_data["full_set_count"] > 0 else ""
+                
+                total_set_price = float(item_data["price_value"]) * item_data["full_set_count"]
+                if item_data["full_set_count"] > 1 and item_data["price_value"] > 0:
+                    formatted_price = f"{total_set_price:,.0f} ".replace(',', ' ') + currency
+                    unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
+                else:
+                    formatted_price = item_data['price_label']
+                    unit_label = ""
 
-                    items_html = ""
-                    for itm in grouped_items.values():
-                        is_bundle = itm['display_name'].lower() == item_data['target'].lower()
-                        bundle_class = "is-bundle" if is_bundle else ""
-                        bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
-                        rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
-                        name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
-                        items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
-                    
-                    for part in (item_data.get("missing_parts") or []):
-                        items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
-                    
-                    count_badge = f'<div class="set-count">Полных сетов: {item_data["full_set_count"]}</div>' if item_data["full_set_count"] > 0 else ""
-                    
-                    total_set_price = float(item_data["price_value"]) * item_data["full_set_count"]
-                    if item_data["full_set_count"] > 1 and item_data["price_value"] > 0:
-                        formatted_price = f"{total_set_price:,.0f} ".replace(',', ' ') + currency
-                        unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
-                    else:
-                        formatted_price = item_data['price_label']
-                        unit_label = ""
-
-                    cards_html += f"""<div class="card" data-category="{html.escape(cat_name)}" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}"><div class="card-header"><h3 class="target-name">{html.escape(item_data['target'])}</h3>{count_badge}<div class="price"><div style="display: flex; align-items: center; gap: 6px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>{html.escape(formatted_price)}</div>{unit_label}</div></div><div class="item-list">{items_html}</div></div>"""
+                cards_html += f"""
+                <div class="card" data-category="{html.escape(cat_name)}" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}">
+                    <div class="card-header">
+                        <span class="card-category-label">{html.escape(cat_name)}</span>
+                        <h3 class="target-name">{html.escape(item_data['target'])}</h3>
+                        {count_badge}
+                        <div class="price">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                                {html.escape(formatted_price)}
+                            </div>
+                            {unit_label}
+                        </div>
+                    </div>
+                    <div class="item-list">{items_html}</div>
+                </div>"""
 
             final_html = f"""
             <div class="result-controls">
