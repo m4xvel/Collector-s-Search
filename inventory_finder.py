@@ -46,6 +46,7 @@ class InventoryItem:
     name_color: str = ""
     rarity_name: str = ""
     rarity_color: str = ""
+    is_giftable: bool = False
 
 
 
@@ -346,6 +347,17 @@ def build_items(assets: List[Dict], descriptions: Dict[Tuple[str, str], Dict]) -
 
         name_color = str(desc.get("name_color", "")).strip()
 
+        # Check for giftability in descriptions
+        is_giftable = False
+        desc_list = desc.get("descriptions")
+        if isinstance(desc_list, list):
+            for d_attr in desc_list:
+                if isinstance(d_attr, dict):
+                    val = str(d_attr.get("value", "")).lower()
+                    if "may be gifted once" in val or "can be gifted once" in val or "можно подарить один раз" in val:
+                        is_giftable = True
+                        break
+
         items.append(
             InventoryItem(
                 asset_id=str(asset.get("assetid", "")),
@@ -357,6 +369,7 @@ def build_items(assets: List[Dict], descriptions: Dict[Tuple[str, str], Dict]) -
                 name_color=name_color,
                 rarity_name=rarity_name,
                 rarity_color=rarity_color,
+                is_giftable=is_giftable,
             )
         )
 

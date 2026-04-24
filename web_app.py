@@ -245,6 +245,22 @@ button:active {
   border-radius: 4px;
   text-transform: uppercase;
   margin-top: 4px;
+  display: inline-block;
+}
+
+.giftable-tag {
+  background: transparent;
+  border: 1px solid #6366f1;
+  color: #818cf8; /* Lighter indigo for better readability on dark without background */
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: inline-block;
+  margin-right: 4px;
+  opacity: 0.8;
 }
 #loading-overlay {
   position: fixed;
@@ -641,7 +657,8 @@ def render_page(
             # Pick the first icon/rarity for the bunch
             grouped_items = {}
             for itm in item_data["items"]:
-                key = itm.display_name.lower().strip()
+                # Group by name AND giftability to separate them in UI
+                key = (itm.display_name.lower().strip(), itm.is_giftable)
                 if key not in grouped_items:
                     grouped_items[key] = {
                         "display_name": itm.display_name,
@@ -649,6 +666,7 @@ def render_page(
                         "rarity_name": itm.rarity_name,
                         "rarity_color": itm.rarity_color,
                         "name_color": itm.name_color,
+                        "is_giftable": itm.is_giftable,
                         "amount": 0
                     }
                 grouped_items[key]["amount"] += itm.amount
@@ -658,6 +676,7 @@ def render_page(
                 is_bundle = itm['display_name'].lower() == item_data['target'].lower()
                 bundle_class = "is-bundle" if is_bundle else ""
                 bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                gift_tag = '<div class="giftable-tag" title="Этот предмет можно подарить один раз">МОЖНО ПОДАРИТЬ</div>' if itm['is_giftable'] else ""
                 
                 rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
                 name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
@@ -668,7 +687,10 @@ def render_page(
                   <div class="item-info">
                     <div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div>
                     <div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>
-                    {bundle_tag}
+                    <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                      {gift_tag}
+                      {bundle_tag}
+                    </div>
                   </div>
                   <div class="item-amount">×{itm['amount']}</div>
                 </div>
@@ -1070,14 +1092,16 @@ class AppHandler(BaseHTTPRequestHandler):
                 cat_name = item_data.get("category", "Other")
                 grouped_items = {}
                 for itm in item_data["items"]:
-                    key = itm.display_name.lower().strip()
+                    # Group by name AND giftability to separate them in UI
+                    key = (itm.display_name.lower().strip(), itm.is_giftable)
                     if key not in grouped_items:
                         grouped_items[key] = {
                             "display_name": itm.display_name,
                             "icon_url": itm.icon_url, 
                             "rarity_name": itm.rarity_name, 
                             "rarity_color": itm.rarity_color, 
-                            "name_color": itm.name_color, 
+                            "name_color": itm.name_color,
+                            "is_giftable": itm.is_giftable,
                             "amount": 0
                         }
                     grouped_items[key]["amount"] += itm.amount
@@ -1087,9 +1111,10 @@ class AppHandler(BaseHTTPRequestHandler):
                     is_bundle = itm['display_name'].lower() == item_data['target'].lower()
                     bundle_class = "is-bundle" if is_bundle else ""
                     bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                    gift_tag = '<div class="giftable-tag" title="Этот предмет можно подарить один раз">МОЖНО ПОДАРИТЬ</div>' if itm['is_giftable'] else ""
                     rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
                     name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
-                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>{bundle_tag}</div><div class="item-amount">×{itm['amount']}</div></div>"""
+                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div><div style="display: flex; flex-wrap: wrap; gap: 4px;">{gift_tag}{bundle_tag}</div></div><div class="item-amount">×{itm['amount']}</div></div>"""
                 
                 for part in (item_data.get("missing_parts") or []):
                     items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
