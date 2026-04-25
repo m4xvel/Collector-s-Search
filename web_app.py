@@ -398,6 +398,7 @@ a.chip:hover {
   transition: transform 0.2s, border-color 0.2s;
   position: relative;
   overflow: hidden;
+  cursor: copy;
 }
 
 .card:hover {
@@ -407,6 +408,57 @@ a.chip:hover {
 
 .card-header {
   margin-bottom: 20px;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-bg, rgba(16, 185, 129, 0.65));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.card-overlay.visible {
+  opacity: 1;
+}
+
+.card-overlay svg {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  animation: scale-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes scale-in {
+  0% { transform: scale(0) rotate(-15deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  background: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  z-index: 5;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
 }
 
 .target-name {
@@ -1223,6 +1275,85 @@ def render_page(
         }});
       }});
     }}
+
+    // Card click to copy
+    grid.addEventListener('click', (e) => {{
+        const card = e.target.closest('.card');
+        if (card) {{
+            const target = card.dataset.target || '';
+            const category = card.dataset.category || '';
+            const price = parseFloat(card.dataset.price) || 0;
+            const count = parseInt(card.dataset.count) || 1;
+            
+            const capitalizedTarget = target.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+            let copyText = `Название: ${{capitalizedTarget}}\n`;
+            if (category !== 'Items' && category !== 'Other') {{
+                copyText += `Категория: ${{category}}\n`;
+            }}
+            if (count > 1) {{
+                copyText += `Количество: ${{count}} шт.\n`;
+            }}
+            if (price > 0) {{
+                const total = price * count;
+                copyText += `Цена: ${{price.toLocaleString('ru-RU')}} RUB`;
+                if (count > 1) {{
+                    copyText += ` (Общая: ${{total.toLocaleString('ru-RU')}} RUB)`;
+                }}
+                copyText += `\n`;
+            }}
+            
+            navigator.clipboard.writeText(copyText.trim()).then(() => {{
+                // Ripple effect
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                
+                const diameter = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = `${{diameter}}px`;
+                ripple.style.left = `${{x - diameter/2}}px`;
+                ripple.style.top = `${{y - diameter/2}}px`;
+                
+                card.appendChild(ripple);
+
+                // Determine category color for overlay
+                let colorRgba = 'rgba(176, 195, 217, 0.65)'; // Sets default
+                if (category === 'Arcanas') colorRgba = 'rgba(173, 229, 92, 0.65)';
+                else if (category === 'Personas') colorRgba = 'rgba(211, 44, 230, 0.65)';
+                else if (category === 'Items') colorRgba = 'rgba(79, 195, 247, 0.65)';
+
+                // Overlay effect
+                let overlay = card.querySelector('.card-overlay');
+                if (!overlay) {{
+                    overlay = document.createElement('div');
+                    overlay.className = 'card-overlay';
+                    overlay.innerHTML = `
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>СКОПИРОВАНО</span>
+                    `;
+                    card.appendChild(overlay);
+                }}
+                
+                overlay.style.setProperty('--overlay-bg', colorRgba);
+                
+                // Trigger reflow for animation
+                void overlay.offsetWidth;
+                overlay.classList.add('visible');
+                
+                // Cleanup
+                setTimeout(() => {{
+                    overlay.classList.remove('visible');
+                    setTimeout(() => ripple.remove(), 300);
+                }}, 1000);
+            }});
+        }}
+    }});
+
     update();
   }}
   </script>
