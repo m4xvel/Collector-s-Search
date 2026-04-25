@@ -658,10 +658,18 @@ def fetch_market_prices(
             continue
         name = item.get("market_hash_name", "")
         price_str = item.get("price", "")
+        volume_str = item.get("volume", "0")
         if not name or not price_str:
             continue
         try:
             price = float(price_str)
+            volume = int(volume_str)
+            
+            # Фильтр накрученных цен (фейковых листингов):
+            # Если продается мало штук (< 3) и цена огромная (> 30 000 руб) — пропускаем
+            if volume < 3 and price > 30_000:
+                continue
+
             if price > 0:
                 prices[name] = price
         except (ValueError, TypeError):
