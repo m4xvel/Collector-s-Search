@@ -1416,9 +1416,10 @@ class AppHandler(BaseHTTPRequestHandler):
                     bundle_class = "is-bundle" if itm['is_bundle'] else ""
                     bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if itm['is_bundle'] else ""
                     gift_tag = '<div class="giftable-tag" title="Этот предмет можно подарить один раз">МОЖНО ПОДАРИТЬ</div>' if itm['is_giftable'] else ""
+                    trade_tag = '<div class="tradable-tag" title="Этот предмет можно обменять">МОЖНО ОБМЕНЯТЬ</div>' if itm['is_tradable'] else ""
                     rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
                     name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
-                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div><div style="display: flex; flex-wrap: wrap; gap: 4px;">{gift_tag}{bundle_tag}</div></div><div class="item-amount">x{itm['amount']}</div></div>"""
+                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div><div style="display: flex; flex-wrap: wrap; gap: 4px;">{trade_tag}{gift_tag}{bundle_tag}</div></div><div class="item-amount">x{itm['amount']}</div></div>"""
                 
                 for part in (item_data.get("missing_parts") or []):
                     items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
