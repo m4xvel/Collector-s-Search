@@ -47,6 +47,8 @@ class InventoryItem:
     rarity_name: str = ""
     rarity_color: str = ""
     is_giftable: bool = False
+    is_tradable: bool = False
+    is_bundle: bool = False
 
 
 
@@ -260,6 +262,8 @@ _QUALITY_PREFIXES = (
     "Infused ",
     "Auspicious ",
     "Unusual ",
+    "Bundle of ",
+    "Бандл: ",
 )
 
 
@@ -370,6 +374,8 @@ def build_items(assets: List[Dict], descriptions: Dict[Tuple[str, str], Dict]) -
                 rarity_name=rarity_name,
                 rarity_color=rarity_color,
                 is_giftable=is_giftable,
+                is_tradable=desc.get("tradable") == 1,
+                is_bundle="bundle" in item_type.lower() or "бандл" in item_type.lower() or "full set" in item_type.lower(),
             )
         )
 
@@ -403,20 +409,34 @@ def search_items(
         progress_callback(60, "Сопоставление предметов с базой сетов...")
 
     db_path = Path(__file__).resolve().parent / "dota_sets_db.json"
+    arcana_path = Path(__file__).resolve().parent / "arcanas_db.json"
+    persona_path = Path(__file__).resolve().parent / "personas_db.json"
+    
     sets_db = {}
     set_to_category = {}
-    
-    if db_path.exists():
-        try:
-            with open(db_path, "r", encoding="utf-8") as f:
-                nested_db = json.load(f)
-                # Flatten the database for searching, but keep category info
-                for category, sets in nested_db.items():
-                    for set_name, parts in sets.items():
-                        sets_db[set_name] = parts
-                        set_to_category[set_name] = category
-        except Exception:
-            pass
+
+    def load_db(path: Path):
+        if path.exists():
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    nested = json.load(f)
+                    for category, sets in nested.items():
+                        for set_name, parts in sets.items():
+                            # Priority logic: Arcanas > Personas > Cache (default)
+                            # We only overwrite if the new category is higher priority
+                            current_cat = set_to_category.get(set_name)
+                            if current_cat in ["Arcanas", "Personas"] and category not in ["Arcanas", "Personas"]:
+                                continue # Keep existing high priority
+                            
+                            sets_db[set_name] = parts
+                            set_to_category[set_name] = category
+            except Exception:
+                pass
+
+    # Load in order of priority (lowest to highest so highest overwrites)
+    load_db(db_path)
+    load_db(persona_path)
+    load_db(arcana_path)
 
     search_targets = targets if targets is not None else sorted(sets_db.keys())
     
@@ -437,17 +457,26 @@ def search_items(
             results.append(MatchResult(target=target, items=[], is_full=False, full_set_count=0))
             continue
         
-        # 1. Gather all unique items matching the target name exactly (Bundles)
-        bundle_items = [i for i in matched_items if needle in i.exact_fields]
+        # 1. Gather all unique items matching the target name exactly
+        # An item is a "Bundle" if it matches the target name AND (it's not a part OR it's explicitly a bundle)
+        bundle_items = []
+        is_single_item_set = (len(required_parts) == 1 and required_parts[0].lower() == needle)
+        
+        for i in matched_items:
+            if needle in i.exact_fields:
+                if not is_single_item_set or i.is_bundle:
+                    # If it's a multi-part set, a match on the target name is always a bundle.
+                    # If it's a single-item set, it's only a bundle if Steam says so.
+                    bundle_items.append(i)
+        
         sets_from_bundles = sum(i.amount for i in bundle_items)
         
         if not required_parts:
             # If not in DB, assume any match IS a full set (e.g. Courier)
-            sets_from_parts = sum(i.amount for i in matched_items if i not in bundle_items)
             results.append(MatchResult(
                 target=target,
                 items=matched_items,
-                full_set_count=sets_from_bundles + sets_from_parts,
+                full_set_count=sum(i.amount for i in matched_items),
                 is_full=True
             ))
             continue
@@ -455,9 +484,8 @@ def search_items(
         # 2. Count parts from individual items
         part_counts = {p.lower(): 0 for p in required_parts}
         for item in matched_items:
-            # If it's a bundle, we already counted it. 
-            # Note: We check if it matches the bundle name exactly.
-            if needle in item.exact_fields:
+            # If it's already counted as a bundle, don't count it as a part
+            if item in bundle_items:
                 continue
             
             # Check if this item matches any of the required parts

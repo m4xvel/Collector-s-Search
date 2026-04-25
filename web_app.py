@@ -262,6 +262,48 @@ button:active {
   margin-right: 4px;
   opacity: 0.8;
 }
+
+.tradable-tag {
+  background: transparent;
+  border: 1px solid #ade55c;
+  color: #ade55c;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: inline-block;
+  margin-right: 4px;
+  opacity: 0.9;
+}
+
+.card[data-category="Arcanas"] {
+  border-color: #ADE55C !important;
+  box-shadow: 0 0 15px rgba(173, 229, 92, 0.15) !important;
+}
+
+.card[data-category="Arcanas"] .target-name {
+  color: #ADE55C !important;
+}
+
+.card[data-category="Personas"] {
+  border-color: #D32CE6 !important;
+  box-shadow: 0 0 15px rgba(211, 44, 230, 0.15) !important;
+}
+
+.card[data-category="Personas"] .target-name {
+  color: #D32CE6 !important;
+}
+
+.card[data-category*="Cache"], .card[data-category="Other"] {
+  border-color: #B0C3D9 !important;
+  box-shadow: 0 0 15px rgba(176, 195, 217, 0.1) !important;
+}
+
+.card[data-category*="Cache"] .target-name, .card[data-category="Other"] .target-name {
+  color: #B0C3D9 !important;
+}
 #loading-overlay {
   position: fixed;
   inset: 0;
@@ -316,19 +358,21 @@ button:active {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .chip {
-  background: var(--panel);
+  background: var(--surface);
   border: 1px solid var(--border);
-  padding: 8px 16px;
+  padding: 8px 20px;
   border-radius: 99px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   color: var(--ink);
   display: inline-flex;
   align-items: center;
+  height: 38px;
   transition: border-color 0.2s, background-color 0.2s;
 }
 a.chip:hover {
@@ -340,6 +384,7 @@ a.chip:hover {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 24px;
+  grid-auto-rows: 1fr;
 }
 
 .card {
@@ -468,23 +513,69 @@ body:not(.show-partials) .card[data-full="false"] {
   cursor: pointer;
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 8px 16px;
-  border-radius: 99px;
+  padding: 10px 16px;
+  border-radius: 12px;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--ink-muted);
   transition: all 0.2s;
+  height: 42px;
 }
 
 .toggle-partials:hover {
-  border-color: var(--accent);
+  border-color: var(--ink);
   color: var(--ink);
 }
 
 .toggle-partials.active {
-  background: var(--accent-glow);
+  background: rgba(16, 185, 129, 0.1);
   border-color: var(--accent);
   color: var(--accent);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 99px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  transition: all 0.2s;
+  user-select: none;
+  height: 38px;
+}
+
+.filter-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+/* Specific hovers per category */
+.filter-btn[data-type="arcanas"]:hover { border-color: #ADE55C; color: #ADE55C; }
+.filter-btn[data-type="personas"]:hover { border-color: #D32CE6; color: #D32CE6; }
+.filter-btn[data-type="sets"]:hover { border-color: #B0C3D9; color: #B0C3D9; }
+
+.filter-btn.active[data-type="arcanas"] {
+  background: rgba(173, 229, 92, 0.15);
+  border-color: #ADE55C;
+  color: #ADE55C;
+}
+
+.filter-btn.active[data-type="personas"] {
+  background: rgba(211, 44, 230, 0.15);
+  border-color: #D32CE6;
+  color: #D32CE6;
+}
+
+.filter-btn.active[data-type="sets"] {
+  background: rgba(176, 195, 217, 0.1);
+  border-color: #B0C3D9;
+  color: #B0C3D9;
 }
 
 @media (max-width: 600px) {
@@ -657,8 +748,8 @@ def render_page(
             # Pick the first icon/rarity for the bunch
             grouped_items = {}
             for itm in item_data["items"]:
-                # Group by name AND giftability to separate them in UI
-                key = (itm.display_name.lower().strip(), itm.is_giftable)
+                # Group by name, giftability, tradability AND bundle status
+                key = (itm.display_name.lower().strip(), itm.is_giftable, itm.is_tradable, itm.is_bundle)
                 if key not in grouped_items:
                     grouped_items[key] = {
                         "display_name": itm.display_name,
@@ -667,16 +758,18 @@ def render_page(
                         "rarity_color": itm.rarity_color,
                         "name_color": itm.name_color,
                         "is_giftable": itm.is_giftable,
+                        "is_tradable": itm.is_tradable,
+                        "is_bundle": itm.is_bundle,
                         "amount": 0
                     }
                 grouped_items[key]["amount"] += itm.amount
 
             items_html = ""
             for itm in grouped_items.values():
-                is_bundle = itm['display_name'].lower() == item_data['target'].lower()
-                bundle_class = "is-bundle" if is_bundle else ""
-                bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                bundle_class = "is-bundle" if itm['is_bundle'] else ""
+                bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if itm['is_bundle'] else ""
                 gift_tag = '<div class="giftable-tag" title="Этот предмет можно подарить один раз">МОЖНО ПОДАРИТЬ</div>' if itm['is_giftable'] else ""
+                trade_tag = '<div class="tradable-tag" title="Этот предмет можно обменять">МОЖНО ОБМЕНЯТЬ</div>' if itm['is_tradable'] else ""
                 
                 rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
                 name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
@@ -688,11 +781,12 @@ def render_page(
                     <div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div>
                     <div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div>
                     <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+                      {trade_tag}
                       {gift_tag}
                       {bundle_tag}
                     </div>
                   </div>
-                  <div class="item-amount">×{itm['amount']}</div>
+                  <div class="item-amount">x{itm['amount']}</div>
                 </div>
                 """
             
@@ -728,6 +822,19 @@ def render_page(
                 main_label = item_data['price_label']
                 unit_label = ""
 
+            # Hide prices for Arcanas and Personas
+            price_html = ""
+            if item_data.get("category") not in ["Arcanas", "Personas"]:
+                price_html = f"""
+                <div class="price">
+                  <div style="display: flex; align-items: center; gap: 6px;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" x2="16" y2="12"></line></svg>
+                    {html.escape(main_label)}
+                  </div>
+                  {unit_label}
+                </div>
+                """
+
             # Data attributes for client-side sorting/filtering
             cards_html += f"""
             <div class="card" 
@@ -741,13 +848,7 @@ def render_page(
                 <span class="card-category-label">{html.escape(item_data.get('category', 'Other'))}</span>
                 <h3 class="target-name">{html.escape(item_data['target'])}</h3>
                 {count_badge}
-                <div class="price">
-                  <div style="display: flex; align-items: center; gap: 6px;">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                    {html.escape(main_label)}
-                  </div>
-                  {unit_label}
-                </div>
+                {price_html}
               </div>
               <div class="item-list">
                 {items_html}
@@ -758,15 +859,26 @@ def render_page(
         result_html = f"""
         <div class="result-controls">
           <div class="stats">
-            <a href="https://steamcommunity.com/profiles/{html.escape(str(result['steam_id']))}" target="_blank" class="chip" title="Открыть профиль Steam">SteamID: {html.escape(str(result['steam_id']))}</a>
-            <span class="chip" style="color: var(--accent)">Найдено полных: {result['matched_count']}</span>
-            <span class="chip" style="color: var(--gold)">Общая стоимость: {result['total_price_label']}</span>
+            <a href="https://steamcommunity.com/profiles/{html.escape(str(result['steam_id']))}" target="_blank" class="chip" style="margin-right: 10px;" title="Открыть профиль Steam">SteamID: {html.escape(str(result['steam_id']))}</a>
+            
+            <div class="filter-btn active" data-type="sets" data-partial="{result['partial_count']}">
+                <span>Сеты ({result['matched_count']})</span>
+            </div>
+            <div class="filter-btn" data-type="arcanas" data-partial="{result.get('arcana_partial', 0)}">
+                <span>Арканы ({result.get('arcana_count', 0)})</span>
+            </div>
+            <div class="filter-btn" data-type="personas" data-partial="{result.get('persona_partial', 0)}">
+                <span>Личности ({result.get('persona_count', 0)})</span>
+            </div>
+
+            <span class="chip" style="color: var(--gold); margin-left: 10px;">Общая стоимость: {result['total_price_label']}</span>
+          </div>
+          
+          <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-start; margin-top: 10px; align-items: center;">
             <button id="toggle-partials" class="toggle-partials" title="Показать неполные сеты">
               <span>Неполные ({result['partial_count']})</span>
             </button>
-          </div>
-          
-          <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-end;">
+            <div style="flex-grow: 1;"></div>
             <input id="js-filter" type="text" placeholder="Фильтр по названию..." style="max-width: 250px; padding: 10px 14px; font-size: 0.9rem;">
             <select id="js-sort" style="padding: 10px 14px; font-size: 0.9rem; border-radius: 12px;">
               <option value="name">По названию</option>
@@ -933,23 +1045,34 @@ def render_page(
       const sortBy = sortSelect.value;
       const showPartials = document.body.classList.contains('show-partials');
 
-      // Filter cards
+      const activeFilter = document.querySelector('.filter-btn.active').dataset.type;
+
       cards.forEach(card => {{
         const target = card.dataset.target || '';
+        const category = card.dataset.category || 'Other';
         const isFull = card.dataset.full === 'true';
+        
         let visible = target.includes(query);
-        if (!showPartials && !isFull) visible = false;
+        
+        if (activeFilter === 'arcanas') {{
+            if (category !== 'Arcanas') visible = false;
+        }} else if (activeFilter === 'personas') {{
+            if (category !== 'Personas') visible = false;
+        }} else {{
+            if (category === 'Arcanas' || category === 'Personas') visible = false;
+            if (!showPartials && !isFull) visible = false;
+        }}
+        
         card.style.display = visible ? '' : 'none';
       }});
 
       // Sort all visible cards
       const visibleCards = cards.filter(c => c.style.display !== 'none');
       visibleCards.sort((a, b) => {{
-        // If showPartials is active, prioritize incomplete sets at the top
         if (showPartials) {{
             const fullA = a.dataset.full === 'true';
             const fullB = b.dataset.full === 'true';
-            if (fullA !== fullB) return fullA ? 1 : -1; // Incomplete (false) comes first
+            if (fullA !== fullB) return fullA ? 1 : -1;
         }}
 
         if (sortBy === 'name') {{
@@ -970,6 +1093,22 @@ def render_page(
       visibleCards.forEach(card => grid.appendChild(card));
     }};
 
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    filterBtns.forEach(btn => {{
+        btn.addEventListener('click', () => {{
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update partial count display
+            if (togglePartialsBtn) {{
+                const count = btn.dataset.partial || '0';
+                togglePartialsBtn.querySelector('span').innerText = `Неполные (${{count}})`;
+            }}
+            
+            update();
+        }});
+    }});
+
     filterInput.addEventListener('input', update);
     sortSelect.addEventListener('change', update);
     if (togglePartialsBtn) {{
@@ -985,7 +1124,6 @@ def render_page(
 </body>
 </html>
 """
-
 class AppHandler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         parsed = urllib.parse.urlparse(self.path)
@@ -1057,7 +1195,7 @@ class AppHandler(BaseHTTPRequestHandler):
             for row in matched_rows:
                 price_info = rich_prices.get(row.target, {"label": "n/a", "value": 0})
                 price_val = float(price_info.get("value", 0))
-                if row.full_set_count > 0:
+                if row.full_set_count > 0 and row.category not in ["Arcanas", "Personas"]:
                     total_value += (price_val * row.full_set_count)
                 if "RUB" in price_info["label"].upper(): currency = "RUB"
                 elif "USD" in price_info["label"].upper(): currency = "USD"
@@ -1078,10 +1216,24 @@ class AppHandler(BaseHTTPRequestHandler):
             # Sort by category (year) then by full/not full, then by name
             # Natural sort for categories "Cache 2015", "Cache 2016"...
             matches.sort(key=lambda x: (x["category"], not x["is_full"], x["target"].lower()))
+            
+            arcana_count = len([m for m in matches if m["category"] == "Arcanas" and m["is_full"]])
+            arcana_partial = len([m for m in matches if m["category"] == "Arcanas" and not m["is_full"]])
+            
+            persona_count = len([m for m in matches if m["category"] == "Personas" and m["is_full"]])
+            persona_partial = len([m for m in matches if m["category"] == "Personas" and not m["is_full"]])
+            
+            set_count = len([m for m in matches if m["category"] not in ["Arcanas", "Personas"] and m["is_full"]])
+            set_partial = len([m for m in matches if m["category"] not in ["Arcanas", "Personas"] and not m["is_full"]])
+
             result_data = {
                 "steam_id": steam_id,
-                "matched_count": len([m for m in matches if m["is_full"]]),
-                "partial_count": len([m for m in matches if not m["is_full"]]),
+                "matched_count": set_count,
+                "partial_count": set_partial,
+                "arcana_count": arcana_count,
+                "arcana_partial": arcana_partial,
+                "persona_count": persona_count,
+                "persona_partial": persona_partial,
                 "matches": matches,
                 "total_price_label": _format_price(total_value, currency),
             }
@@ -1092,8 +1244,8 @@ class AppHandler(BaseHTTPRequestHandler):
                 cat_name = item_data.get("category", "Other")
                 grouped_items = {}
                 for itm in item_data["items"]:
-                    # Group by name AND giftability to separate them in UI
-                    key = (itm.display_name.lower().strip(), itm.is_giftable)
+                    # Group by name, giftability, tradability AND bundle status
+                    key = (itm.display_name.lower().strip(), itm.is_giftable, itm.is_tradable, itm.is_bundle)
                     if key not in grouped_items:
                         grouped_items[key] = {
                             "display_name": itm.display_name,
@@ -1101,20 +1253,21 @@ class AppHandler(BaseHTTPRequestHandler):
                             "rarity_name": itm.rarity_name, 
                             "rarity_color": itm.rarity_color, 
                             "name_color": itm.name_color,
-                            "is_giftable": itm.is_giftable,
-                            "amount": 0
-                        }
+                        "is_giftable": itm.is_giftable,
+                        "is_tradable": itm.is_tradable,
+                        "is_bundle": itm.is_bundle,
+                        "amount": 0
+                    }
                     grouped_items[key]["amount"] += itm.amount
 
                 items_html = ""
                 for itm in grouped_items.values():
-                    is_bundle = itm['display_name'].lower() == item_data['target'].lower()
-                    bundle_class = "is-bundle" if is_bundle else ""
-                    bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if is_bundle else ""
+                    bundle_class = "is-bundle" if itm['is_bundle'] else ""
+                    bundle_tag = '<div class="bundle-tag">БАНДЛ</div>' if itm['is_bundle'] else ""
                     gift_tag = '<div class="giftable-tag" title="Этот предмет можно подарить один раз">МОЖНО ПОДАРИТЬ</div>' if itm['is_giftable'] else ""
                     rarity_style = f"color: #{itm['rarity_color']};" if itm['rarity_color'] else ""
                     name_style = f"color: #{itm['name_color']}; font-weight: 700;" if itm['name_color'] else ""
-                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div><div style="display: flex; flex-wrap: wrap; gap: 4px;">{gift_tag}{bundle_tag}</div></div><div class="item-amount">×{itm['amount']}</div></div>"""
+                    items_html += f"""<div class="item {bundle_class}"><img class="item-img" src="{html.escape(itm['icon_url'] or '')}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(itm['display_name'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(itm['rarity_name'])}</div><div style="display: flex; flex-wrap: wrap; gap: 4px;">{gift_tag}{bundle_tag}</div></div><div class="item-amount">x{itm['amount']}</div></div>"""
                 
                 for part in (item_data.get("missing_parts") or []):
                     items_html += f"""<div class="item missing"><div class="item-info"><div class="item-name" style="color: var(--ink-muted)">{html.escape(part)}</div><div class="item-rarity">Отсутствует</div></div></div>"""
@@ -1129,19 +1282,25 @@ class AppHandler(BaseHTTPRequestHandler):
                     formatted_price = item_data['price_label']
                     unit_label = ""
 
+                # Hide prices for Arcanas and Personas
+                price_html = ""
+                if cat_name not in ["Arcanas", "Personas"]:
+                    price_html = f"""
+                        <div class="price">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" x2="16" y2="12"></line></svg>
+                                {html.escape(formatted_price)}
+                            </div>
+                            {unit_label}
+                        </div>"""
+
                 cards_html += f"""
                 <div class="card" data-category="{html.escape(cat_name)}" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}">
                     <div class="card-header">
                         <span class="card-category-label">{html.escape(cat_name)}</span>
                         <h3 class="target-name">{html.escape(item_data['target'])}</h3>
                         {count_badge}
-                        <div class="price">
-                            <div style="display: flex; align-items: center; gap: 6px;">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
-                                {html.escape(formatted_price)}
-                            </div>
-                            {unit_label}
-                        </div>
+                        {price_html}
                     </div>
                     <div class="item-list">{items_html}</div>
                 </div>"""
@@ -1149,12 +1308,25 @@ class AppHandler(BaseHTTPRequestHandler):
             final_html = f"""
             <div class="result-controls">
                 <div class="stats">
-                    <a href="https://steamcommunity.com/profiles/{result_data['steam_id']}" target="_blank" class="chip">SteamID: {result_data['steam_id']}</a>
-                    <span class="chip" style="color: var(--accent)">Найдено полных: {result_data['matched_count']}</span>
-                    <span class="chip" style="color: var(--gold)">Общая стоимость: {result_data['total_price_label']}</span>
-                    <button id="toggle-partials" class="toggle-partials"><span>Неполные ({result_data['partial_count']})</span></button>
+                    <a href="https://steamcommunity.com/profiles/{result_data['steam_id']}" target="_blank" class="chip" style="margin-right: 10px;">SteamID: {result_data['steam_id']}</a>
+                    
+                    <div class="filter-btn active" data-type="sets" data-partial="{result_data['partial_count']}">
+                        <span>Сеты ({result_data['matched_count']})</span>
+                    </div>
+                    <div class="filter-btn" data-type="arcanas" data-partial="{result_data['arcana_partial']}">
+                        <span>Арканы ({result_data['arcana_count']})</span>
+                    </div>
+                    <div class="filter-btn" data-type="personas" data-partial="{result_data['persona_partial']}">
+                        <span>Личности ({result_data['persona_count']})</span>
+                    </div>
+
+                    <span class="chip" style="color: var(--gold); margin-left: 10px;">Общая стоимость: {result_data['total_price_label']}</span>
                 </div>
-                <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-end;">
+                <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-start; margin-top: 10px; align-items: center;">
+                    <button id="toggle-partials" class="toggle-partials">
+                        <span>Неполные ({result_data['partial_count']})</span>
+                    </button>
+                    <div style="flex-grow: 1;"></div>
                     <input id="js-filter" type="text" placeholder="Фильтр по названию..." style="max-width: 250px;">
                     <select id="js-sort"><option value="name">По названию</option><option value="price_desc">Дороже</option><option value="price_asc">Дешевле</option><option value="count">По количеству</option></select>
                 </div>
