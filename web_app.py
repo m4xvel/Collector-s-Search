@@ -1294,7 +1294,7 @@ def render_page(
             copyText += '\\n';
 
             if (price > 0) {{
-                const formatPrice = (p) => p.toLocaleString('en-US', {{minimumFractionDigits: 2, maximumFractionDigits: 2}}).replace(/,/g, ' ').replace(/\.00$/, '');
+                const formatPrice = (p) => p.toLocaleString('en-US', {{minimumFractionDigits: 2, maximumFractionDigits: 2}}).replace(/,/g, ' ').replace(/\\.00$/, '');
                 const total = price * count;
                 copyText += `   Цена: ${{formatPrice(price)}} RUB`;
                 if (count > 1) {{
