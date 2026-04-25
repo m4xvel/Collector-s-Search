@@ -672,6 +672,33 @@ body:not(.show-partials) .card[data-full="false"] {
   vertical-align: middle;
   margin-right: 8px;
 }
+
+.copy-report-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--ink-muted);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+}
+
+.copy-report-btn:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.copy-report-btn.copied {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(16, 185, 129, 0.1);
+}
 """
 
 def fetch_rich_prices(
@@ -1118,6 +1145,22 @@ def render_page(
         update();
       }});
     }}
+
+    const copyBtn = document.getElementById('copy-report');
+    if (copyBtn) {{
+      copyBtn.addEventListener('click', () => {{
+        const text = document.getElementById('report-text').value;
+        navigator.clipboard.writeText(text).then(() => {{
+          const originalContent = copyBtn.innerHTML;
+          copyBtn.classList.add('copied');
+          copyBtn.querySelector('span').innerText = 'Скопировано!';
+          setTimeout(() => {{
+            copyBtn.classList.remove('copied');
+            copyBtn.innerHTML = originalContent;
+          }}, 2000);
+        }});
+      }});
+    }}
     update();
   }}
   </script>
@@ -1237,6 +1280,114 @@ class AppHandler(BaseHTTPRequestHandler):
                 "matches": matches,
                 "total_price_label": _format_price(total_value, currency),
             }
+
+            # Generate Report Text
+            report_lines = []
+            report_lines.append("🌟 ОТЧЕТ COLLECTOR'S SEARCH 🌟")
+            report_lines.append("──────────────────────────────")
+            report_lines.append(f"👤 Профиль: {steam_id}")
+            report_lines.append(f"💰 Общая стоимость: {result_data['total_price_label']}")
+            report_lines.append(f"📦 Полных наборов: {result_data['matched_count']}")
+            report_lines.append(f"🟢 Арканы: {result_data['arcana_count']} | 🟣 Личности: {result_data['persona_count']}")
+            report_lines.append("──────────────────────────────")
+            report_lines.append("")
+
+            def add_section(title, category_filter, include_partial=True, show_price=False):
+                sec_matches = [m for m in matches if m["category"] == category_filter]
+                if not include_partial:
+                    sec_matches = [m for m in sec_matches if m["is_full"]]
+                
+                if not sec_matches:
+                    return
+
+                report_lines.append(title)
+                # Sort sets by price value if needed
+                if show_price:
+                    sec_matches.sort(key=lambda x: float(x.get("price_value", 0)), reverse=True)
+
+                for idx, m in enumerate(sec_matches, 1):
+                    status = "Полный сет" if m["is_full"] else f"Неполный: {len(m['items'])}/{len(m['items']) + len(m.get('missing_parts', []))}"
+                    line = f"{idx}. {m['target']} ({status})"
+                    if category_filter not in ["Arcanas", "Personas"] and m["category"] != "Other":
+                        line = f"{idx}. {m['target']} ({m['category']})"
+                    report_lines.append(line)
+                    
+                    if show_price and m["is_full"] and float(m["price_value"]) > 0:
+                        report_lines.append(f"   Цена: {m['price_label']}")
+                    
+                    # Group items to avoid duplicates
+                    grouped = {}
+                    for itm in m["items"]:
+                        key = (itm.display_name, itm.is_giftable, itm.is_tradable, itm.is_bundle)
+                        if key not in grouped:
+                            grouped[key] = {"name": itm.display_name, "gift": itm.is_giftable, "trade": itm.is_tradable, "bundle": itm.is_bundle, "count": 0}
+                        grouped[key]["count"] += itm.amount
+
+                    for itm_data in grouped.values():
+                        tags = []
+                        if itm_data["bundle"]: tags.append("[БАНДЛ]")
+                        if itm_data["gift"]: tags.append("[МОЖНО ПОДАРИТЬ]")
+                        if itm_data["trade"]: tags.append("[МОЖНО ОБМЕНЯТЬ]")
+                        
+                        display_name = itm_data["name"]
+                        # Strip set name prefix if it's there
+                        if display_name.lower().startswith(m["target"].lower() + " - "):
+                            display_name = display_name[len(m["target"]) + 3:]
+                        
+                        # If name matches set name exactly, don't repeat it
+                        if display_name.lower() == m["target"].lower():
+                            display_name = ""
+                        
+                        tag_str = " ".join(tags)
+                        if display_name:
+                            report_lines.append(f"   • {display_name} {tag_str}".strip())
+                        elif tag_str:
+                            report_lines.append(f"   • {tag_str}")
+
+                    if not m["is_full"] and m.get("missing_parts"):
+                        report_lines.append(f"   Отсутствует: {', '.join(m['missing_parts'])}")
+                    report_lines.append("")
+
+            add_section("[🟢 АРКАНЫ]", "Arcanas", include_partial=True, show_price=False)
+            add_section("[🟣 ЛИЧНОСТИ]", "Personas", include_partial=True, show_price=False)
+            
+            # Group all other sets
+            other_matches = [m for m in matches if m["category"] not in ["Arcanas", "Personas"] and m["is_full"]]
+            if other_matches:
+                report_lines.append("[📦 СЕТЫ] (Сортировка по цене)")
+                other_matches.sort(key=lambda x: float(x.get("price_value", 0)), reverse=True)
+                for idx, m in enumerate(other_matches, 1):
+                    report_lines.append(f"{idx}. {m['target']} ({m['category']})")
+                    if float(m["price_value"]) > 0:
+                        report_lines.append(f"   Цена: {m['price_label']}")
+                    
+                    grouped = {}
+                    for itm in m["items"]:
+                        key = (itm.display_name, itm.is_giftable, itm.is_tradable, itm.is_bundle)
+                        if key not in grouped:
+                            grouped[key] = {"name": itm.display_name, "gift": itm.is_giftable, "trade": itm.is_tradable, "bundle": itm.is_bundle, "count": 0}
+                        grouped[key]["count"] += itm.amount
+
+                    for itm_data in grouped.values():
+                        tags = []
+                        if itm_data["bundle"]: tags.append("[БАНДЛ]")
+                        if itm_data["gift"]: tags.append("[МОЖНО ПОДАРИТЬ]")
+                        if itm_data["trade"]: tags.append("[МОЖНО ОБМЕНЯТЬ]")
+                        
+                        display_name = itm_data["name"]
+                        if display_name.lower().startswith(m["target"].lower() + " - "):
+                            display_name = display_name[len(m["target"]) + 3:]
+                        if display_name.lower() == m["target"].lower():
+                            display_name = ""
+                        
+                        tag_str = " ".join(tags)
+                        if display_name:
+                            report_lines.append(f"   • {display_name} {tag_str}".strip())
+                        elif tag_str:
+                            report_lines.append(f"   • {tag_str}")
+                    report_lines.append("")
+
+            report_text = "\n".join(report_lines)
             
             # Flat cards generation
             cards_html = ""
@@ -1326,11 +1477,16 @@ class AppHandler(BaseHTTPRequestHandler):
                     <button id="toggle-partials" class="toggle-partials">
                         <span>Неполные ({result_data['partial_count']})</span>
                     </button>
+                    <button id="copy-report" class="copy-report-btn" title="Копировать полный отчет">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                        <span>Копировать отчет</span>
+                    </button>
                     <div style="flex-grow: 1;"></div>
                     <input id="js-filter" type="text" placeholder="Фильтр по названию..." style="max-width: 250px;">
                     <select id="js-sort"><option value="name">По названию</option><option value="price_desc">Дороже</option><option value="price_asc">Дешевле</option><option value="count">По количеству</option></select>
                 </div>
             </div>
+            <textarea id="report-text" style="display:none;">{html.escape(report_text)}</textarea>
             <div id="results-grid" class="grid">{cards_html}</div>
             """
             task.complete(final_html)
