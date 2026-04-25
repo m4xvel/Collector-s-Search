@@ -587,6 +587,43 @@ body:not(.show-partials) .card[data-full="false"] {
   color: #4FC3F7;
 }
 
+/* Beautiful Price Summary Tags */
+.totals-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-right: auto;
+}
+
+.total-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 26, 0.4);
+  border: 1px solid var(--c);
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--c);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2), inset 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: default;
+}
+
+.total-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--c), inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.total-label {
+  color: var(--ink-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
 .card[data-category="Items"] {
   border-color: #4FC3F7 !important;
   box-shadow: 0 0 15px rgba(79, 195, 247, 0.15) !important;
@@ -594,6 +631,11 @@ body:not(.show-partials) .card[data-full="false"] {
 
 .card[data-category="Items"] .target-name {
   color: #4FC3F7 !important;
+}
+
+@media (max-width: 800px) {
+  .result-controls { flex-direction: column; align-items: stretch; }
+  .totals-group { margin-left: 0; justify-content: flex-start; flex-wrap: wrap; }
 }
 
 @media (max-width: 600px) {
@@ -1582,8 +1624,9 @@ class AppHandler(BaseHTTPRequestHandler):
                 </div>"""
 
             final_html = f"""
-            <div class="result-controls">
-                <div class="stats">
+            <div class="result-controls" style="display: flex; flex-direction: column; gap: 16px;">
+                <!-- Row 1: Filters -->
+                <div class="stats" style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center; width: 100%;">
                     <a href="https://steamcommunity.com/profiles/{result_data['steam_id']}" target="_blank" class="chip" style="margin-right: 10px;">SteamID: {result_data['steam_id']}</a>
                     
                     <div class="filter-btn active" data-type="sets" data-partial="{result_data['partial_count']}">
@@ -1598,14 +1641,25 @@ class AppHandler(BaseHTTPRequestHandler):
                     <div class="filter-btn" data-type="items" data-partial="0">
                         <span>Предметы ({result_data['items_count']})</span>
                     </div>
-
-                    <span class="chip" style="color: var(--gold); margin-left: 10px;">Сеты: {result_data['total_price_label']}</span>
-                    <span class="chip" style="color: #4FC3F7;">Предметы: {result_data['items_price_label']}</span>
-                </div>
-                <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-start; margin-top: 10px; align-items: center;">
-                    <button id="toggle-partials" class="toggle-partials">
+                    <button id="toggle-partials" class="toggle-partials" style="margin-left: auto;">
                         <span>Неполные ({result_data['partial_count']})</span>
                     </button>
+                </div>
+
+                <!-- Row 2: Totals -->
+                <div class="totals-group" style="display: flex; gap: 12px; align-items: center; width: 100%; margin: 0;">
+                    <div class="total-item" style="--c: var(--gold);">
+                        <span class="total-label">Сеты</span>
+                        <span>{result_data['total_price_label']}</span>
+                    </div>
+                    <div class="total-item" style="--c: #4FC3F7;">
+                        <span class="total-label">Предметы</span>
+                        <span>{result_data['items_price_label']}</span>
+                    </div>
+                </div>
+
+                <!-- Row 3: Controls -->
+                <div class="controls" style="display: flex; gap: 12px; width: 100%; justify-content: flex-start; align-items: center;">
                     <button id="copy-report" class="copy-report-btn" title="Копировать полный отчет">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
                         <span>Копировать отчет</span>
