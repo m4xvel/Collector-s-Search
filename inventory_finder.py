@@ -48,7 +48,9 @@ class InventoryItem:
     rarity_color: str = ""
     is_giftable: bool = False
     is_tradable: bool = False
+    is_marketable: bool = False
     is_bundle: bool = False
+    market_hash_name: str = ""
 
 
 
@@ -375,7 +377,9 @@ def build_items(assets: List[Dict], descriptions: Dict[Tuple[str, str], Dict]) -
                 rarity_color=rarity_color,
                 is_giftable=is_giftable,
                 is_tradable=desc.get("tradable") == 1,
+                is_marketable=desc.get("marketable") == 1,
                 is_bundle="bundle" in item_type.lower() or "бандл" in item_type.lower() or "full set" in item_type.lower(),
+                market_hash_name=market_hash_name,
             )
         )
 
@@ -624,4 +628,44 @@ def fetch_collectorsshop_prices(targets: List[str]) -> Dict[str, str]:
     return prices
 
 
+def fetch_market_prices(
+    progress_callback: Callable[[int, str], None] | None = None
+) -> Dict[str, float]:
+    """Fetch all Dota 2 item prices from market.dota2.net.
+
+    Returns a dict mapping market_hash_name -> price in RUB.
+    Only items with a valid price are included.
+    """
+    url = "https://market.dota2.net/api/v2/prices/RUB.json"
+    if progress_callback:
+        progress_callback(85, "Загрузка цен с маркета...")
+
+    try:
+        payload = _http_get_json(url)
+    except SteamInventoryError:
+        return {}
+
+    if not payload.get("success"):
+        return {}
+
+    items = payload.get("items")
+    if not isinstance(items, list):
+        return {}
+
+    prices: Dict[str, float] = {}
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+        name = item.get("market_hash_name", "")
+        price_str = item.get("price", "")
+        if not name or not price_str:
+            continue
+        try:
+            price = float(price_str)
+            if price > 0:
+                prices[name] = price
+        except (ValueError, TypeError):
+            continue
+
+    return prices
 

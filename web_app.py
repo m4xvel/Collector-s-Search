@@ -22,6 +22,7 @@ from inventory_finder import (
     build_items,
     fetch_collectorsshop_prices,
     fetch_dota_inventory,
+    fetch_market_prices,
     resolve_steam_id,
     search_items,
     extract_price_value,
@@ -578,6 +579,23 @@ body:not(.show-partials) .card[data-full="false"] {
   color: #B0C3D9;
 }
 
+.filter-btn[data-type="items"]:hover { border-color: #4FC3F7; color: #4FC3F7; }
+
+.filter-btn.active[data-type="items"] {
+  background: rgba(79, 195, 247, 0.15);
+  border-color: #4FC3F7;
+  color: #4FC3F7;
+}
+
+.card[data-category="Items"] {
+  border-color: #4FC3F7 !important;
+  box-shadow: 0 0 15px rgba(79, 195, 247, 0.15) !important;
+}
+
+.card[data-category="Items"] .target-name {
+  color: #4FC3F7 !important;
+}
+
 @media (max-width: 600px) {
   .form-footer { flex-direction: column; align-items: stretch; }
   .controls { flex-direction: column; align-items: flex-start; }
@@ -1085,8 +1103,10 @@ def render_page(
             if (category !== 'Arcanas') visible = false;
         }} else if (activeFilter === 'personas') {{
             if (category !== 'Personas') visible = false;
+        }} else if (activeFilter === 'items') {{
+            if (category !== 'Items') visible = false;
         }} else {{
-            if (category === 'Arcanas' || category === 'Personas') visible = false;
+            if (category === 'Arcanas' || category === 'Personas' || category === 'Items') visible = false;
             if (!showPartials && !isFull) visible = false;
         }}
         
@@ -1256,6 +1276,62 @@ class AppHandler(BaseHTTPRequestHandler):
                     "missing_parts": row.missing_parts
                 })
 
+            # --- Items category: ALL tradable+marketable items with a price ---
+            task.update(82, "Сбор предметов...")
+
+            loose_items = [
+                itm for itm in items
+                if itm.is_tradable
+                and itm.is_marketable
+            ]
+
+            # Fetch market prices
+            market_prices = fetch_market_prices(progress_callback=task.update)
+            task.update(90, "Обработка предметов...")
+
+            # Group loose items by market_hash_name
+            loose_grouped = {}
+            for itm in loose_items:
+                mhn = itm.market_hash_name or itm.display_name
+                if mhn not in loose_grouped:
+                    loose_grouped[mhn] = {
+                        "display_name": itm.display_name,
+                        "icon_url": itm.icon_url,
+                        "rarity_name": itm.rarity_name,
+                        "rarity_color": itm.rarity_color,
+                        "name_color": itm.name_color,
+                        "market_hash_name": mhn,
+                        "amount": 0,
+                    }
+                loose_grouped[mhn]["amount"] += itm.amount
+
+            # Build item matches (only items with a price on market)
+            items_total_value = 0.0
+            items_count = 0
+            for mhn, grp in loose_grouped.items():
+                price = market_prices.get(mhn, 0)
+                if price <= 0:
+                    continue
+                item_total = price * grp["amount"]
+                items_total_value += item_total
+                items_count += 1
+                price_label = _format_price(price, "RUB")
+                matches.append({
+                    "target": grp["display_name"],
+                    "items": [],
+                    "category": "Items",
+                    "price_label": price_label,
+                    "price_value": price,
+                    "total_units": grp["amount"],
+                    "full_set_count": grp["amount"],
+                    "rarity": grp["rarity_name"],
+                    "is_full": True,
+                    "missing_parts": None,
+                    "icon_url": grp["icon_url"],
+                    "name_color": grp["name_color"],
+                    "rarity_color": grp["rarity_color"],
+                })
+
             # Sort by category (year) then by full/not full, then by name
             # Natural sort for categories "Cache 2015", "Cache 2016"...
             matches.sort(key=lambda x: (x["category"], not x["is_full"], x["target"].lower()))
@@ -1266,8 +1342,10 @@ class AppHandler(BaseHTTPRequestHandler):
             persona_count = len([m for m in matches if m["category"] == "Personas" and m["is_full"]])
             persona_partial = len([m for m in matches if m["category"] == "Personas" and not m["is_full"]])
             
-            set_count = len([m for m in matches if m["category"] not in ["Arcanas", "Personas"] and m["is_full"]])
-            set_partial = len([m for m in matches if m["category"] not in ["Arcanas", "Personas"] and not m["is_full"]])
+            set_count = len([m for m in matches if m["category"] not in ["Arcanas", "Personas", "Items"] and m["is_full"]])
+            set_partial = len([m for m in matches if m["category"] not in ["Arcanas", "Personas", "Items"] and not m["is_full"]])
+
+            items_price_label = _format_price(items_total_value, "RUB")
 
             result_data = {
                 "steam_id": steam_id,
@@ -1277,6 +1355,8 @@ class AppHandler(BaseHTTPRequestHandler):
                 "arcana_partial": arcana_partial,
                 "persona_count": persona_count,
                 "persona_partial": persona_partial,
+                "items_count": items_count,
+                "items_price_label": items_price_label,
                 "matches": matches,
                 "total_price_label": _format_price(total_value, currency),
             }
@@ -1289,6 +1369,7 @@ class AppHandler(BaseHTTPRequestHandler):
             report_lines.append(f"💰 Общая стоимость: {result_data['total_price_label']}")
             report_lines.append(f"📦 Полных наборов: {result_data['matched_count']}")
             report_lines.append(f"🟢 Арканы: {result_data['arcana_count']} | 🟣 Личности: {result_data['persona_count']}")
+            report_lines.append(f"🔵 Предметы: {result_data['items_count']} | Стоимость: {result_data['items_price_label']}")
             report_lines.append("──────────────────────────────")
             report_lines.append("")
 
@@ -1393,6 +1474,47 @@ class AppHandler(BaseHTTPRequestHandler):
             cards_html = ""
             for item_data in matches:
                 cat_name = item_data.get("category", "Other")
+
+                # Items category: simplified card with item photo
+                if cat_name == "Items":
+                    icon_url = html.escape(item_data.get("icon_url", "") or "")
+                    name_color = item_data.get("name_color", "")
+                    rarity_color = item_data.get("rarity_color", "")
+                    rarity_name = item_data.get("rarity", "")
+                    name_style = f"color: #{name_color}; font-weight: 700;" if name_color else ""
+                    rarity_style = f"color: #{rarity_color};" if rarity_color else ""
+                    amount = item_data.get("total_units", 1)
+                    price_val = float(item_data.get("price_value", 0))
+                    
+                    total_item_price = price_val * amount
+                    if amount > 1 and price_val > 0:
+                        formatted_price = f"{total_item_price:,.0f} ".replace(',', ' ') + "RUB"
+                        unit_label = f'<div class="price-unit">за 1 шт: {item_data["price_label"]}</div>'
+                    else:
+                        formatted_price = item_data['price_label']
+                        unit_label = ""
+
+                    price_html = f"""
+                        <div class="price">
+                            <div style="display: flex; align-items: center; gap: 6px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" x2="16" y2="12"></line></svg>
+                                {html.escape(formatted_price)}
+                            </div>
+                            {unit_label}
+                        </div>"""
+
+                    item_row = f"""<div class="item"><img class="item-img" src="{icon_url}" loading="lazy"><div class="item-info"><div class="item-name" style="{name_style}">{html.escape(item_data['target'])}</div><div class="item-rarity" style="{rarity_style}">{html.escape(rarity_name)}</div></div><div class="item-amount">x{amount}</div></div>"""
+
+                    cards_html += f"""
+                    <div class="card" data-category="Items" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{amount}" data-rarity="{html.escape(rarity_name.lower())}" data-full="true">
+                        <div class="card-header">
+                            <h3 class="target-name">{html.escape(item_data['target'])}</h3>
+                            {price_html}
+                        </div>
+                        <div class="item-list">{item_row}</div>
+                    </div>"""
+                    continue
+
                 grouped_items = {}
                 for itm in item_data["items"]:
                     # Group by name, giftability, tradability AND bundle status
@@ -1446,10 +1568,12 @@ class AppHandler(BaseHTTPRequestHandler):
                             {unit_label}
                         </div>"""
 
+                category_label_html = f'<span class="card-category-label">{html.escape(cat_name)}</span>' if cat_name not in ["Arcanas", "Personas"] else ""
+
                 cards_html += f"""
                 <div class="card" data-category="{html.escape(cat_name)}" data-target="{html.escape(item_data['target'].lower())}" data-price="{item_data['price_value']}" data-count="{item_data['full_set_count'] if item_data['is_full'] else item_data['total_units']}" data-rarity="{html.escape(item_data['rarity'].lower())}" data-full="{str(item_data['is_full']).lower()}">
                     <div class="card-header">
-                        <span class="card-category-label">{html.escape(cat_name)}</span>
+                        {category_label_html}
                         <h3 class="target-name">{html.escape(item_data['target'])}</h3>
                         {count_badge}
                         {price_html}
@@ -1471,8 +1595,12 @@ class AppHandler(BaseHTTPRequestHandler):
                     <div class="filter-btn" data-type="personas" data-partial="{result_data['persona_partial']}">
                         <span>Личности ({result_data['persona_count']})</span>
                     </div>
+                    <div class="filter-btn" data-type="items" data-partial="0">
+                        <span>Предметы ({result_data['items_count']})</span>
+                    </div>
 
-                    <span class="chip" style="color: var(--gold); margin-left: 10px;">Общая стоимость: {result_data['total_price_label']}</span>
+                    <span class="chip" style="color: var(--gold); margin-left: 10px;">Сеты: {result_data['total_price_label']}</span>
+                    <span class="chip" style="color: #4FC3F7;">Предметы: {result_data['items_price_label']}</span>
                 </div>
                 <div class="controls" style="gap: 12px; flex-grow: 1; justify-content: flex-start; margin-top: 10px; align-items: center;">
                     <button id="toggle-partials" class="toggle-partials">
