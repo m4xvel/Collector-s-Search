@@ -555,10 +555,9 @@ def extract_price_value(item: Dict) -> float | None:
 
 
 def _format_price(amount: float, currency: str) -> str:
-    if amount.is_integer():
-        base = f"{int(amount):,}".replace(",", " ")
-    else:
-        base = f"{amount:.2f}".rstrip("0").rstrip(".")
+    base = f"{amount:,.2f}".replace(",", " ")
+    if base.endswith(".00"):
+        base = base[:-3]
     return f"{base} {currency.upper()}"
 
 

@@ -1280,20 +1280,67 @@ def render_page(
             const count = parseInt(card.dataset.count) || 1;
             
             const capitalizedTarget = target.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-            let copyText = `Название: ${{capitalizedTarget}}\n`;
-            if (category !== 'Items' && category !== 'Other' && category !== 'Arcanas' && category !== 'Personas') {{
-                copyText += `Категория: ${{category}}\n`;
+            
+            let statusOrCategory = category;
+            if (category === 'Arcanas' || category === 'Personas' || category === 'Other') statusOrCategory = '';
+            
+            let copyText = `${{capitalizedTarget}}`;
+            if (statusOrCategory) {{
+                copyText += ` (${{statusOrCategory}})`;
             }}
             if (count > 1) {{
-                copyText += `Количество: ${{count}} шт.\n`;
+                copyText += ` [x${{count}}]`;
             }}
+            copyText += '\\n';
+
             if (price > 0) {{
+                const formatPrice = (p) => p.toLocaleString('en-US', {{minimumFractionDigits: 2, maximumFractionDigits: 2}}).replace(/,/g, ' ').replace(/\.00$/, '');
                 const total = price * count;
-                copyText += `Цена: ${{price.toLocaleString('ru-RU')}} RUB`;
+                copyText += `   Цена: ${{formatPrice(price)}} RUB`;
                 if (count > 1) {{
-                    copyText += ` (Общая: ${{total.toLocaleString('ru-RU')}} RUB)`;
+                    copyText += ` (Общая: ${{formatPrice(total)}} RUB)`;
                 }}
-                copyText += `\n`;
+                copyText += '\\n';
+            }}
+
+            const items = card.querySelectorAll('.item');
+            if (items.length > 0) {{
+                items.forEach(itemEl => {{
+                    const nameEl = itemEl.querySelector('.item-name');
+                    if (!nameEl) return;
+                    let itemName = nameEl.innerText.trim();
+                    
+                    if (itemName.toLowerCase().startsWith(capitalizedTarget.toLowerCase() + ' - ')) {{
+                        itemName = itemName.substring(capitalizedTarget.length + 3);
+                    }}
+                    if (itemName.toLowerCase() === capitalizedTarget.toLowerCase()) {{
+                        itemName = '';
+                    }}
+
+                    if (itemEl.classList.contains('missing')) {{
+                        copyText += `   Отсутствует: ${{itemName}}\\n`;
+                        return;
+                    }}
+
+                    const tags = [];
+                    if (itemEl.querySelector('.bundle-tag')) tags.push('[БАНДЛ]');
+                    if (itemEl.querySelector('.tradable-tag')) tags.push('[МОЖНО ОБМЕНЯТЬ]');
+                    else if (itemEl.querySelector('.giftable-tag')) tags.push('[МОЖНО ПОДАРИТЬ]');
+                    
+                    const amountEl = itemEl.querySelector('.item-amount');
+                    let amount = amountEl ? amountEl.innerText.trim() : '';
+                    if (amount === 'x1') amount = '';
+
+                    const tagStr = tags.join(' ');
+                    if (!itemName && !tagStr && !amount) return; // Skip empty bullet
+
+                    let line = '   •';
+                    if (itemName) line += ` ${{itemName}}`;
+                    if (tagStr) line += ` ${{tagStr}}`;
+                    if (amount) line += ` (${{amount}})`;
+                    
+                    copyText += `${{line}}\\n`;
+                }});
             }}
             
             navigator.clipboard.writeText(copyText.trim()).then(() => {{
