@@ -659,13 +659,7 @@ body:not(.show-partials) .card[data-full="false"] {
   font-weight: 700;
   color: var(--c);
   box-shadow: 0 0 15px rgba(0,0,0,0.2), inset 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
   cursor: default;
-}
-
-.total-item:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px var(--c), inset 0 0 10px rgba(0,0,0,0.1);
 }
 
 .total-label {
@@ -1287,7 +1281,7 @@ def render_page(
             
             const capitalizedTarget = target.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
             let copyText = `Название: ${{capitalizedTarget}}\n`;
-            if (category !== 'Items' && category !== 'Other') {{
+            if (category !== 'Items' && category !== 'Other' && category !== 'Arcanas' && category !== 'Personas') {{
                 copyText += `Категория: ${{category}}\n`;
             }}
             if (count > 1) {{
@@ -1422,7 +1416,7 @@ class AppHandler(BaseHTTPRequestHandler):
             
             task.update(70, "Получение цен...")
             matched_rows = [r for r in raw_results if r.items]
-            target_names_for_price = [r.target for r in matched_rows if r.is_full]
+            target_names_for_price = [r.target for r in matched_rows if r.is_full and r.category not in ["Arcanas", "Personas"]]
             rich_prices = fetch_rich_prices(target_names_for_price, progress_callback=task.update)
 
             matches = []
@@ -1539,10 +1533,10 @@ class AppHandler(BaseHTTPRequestHandler):
             report_lines.append("🌟 ОТЧЕТ COLLECTOR'S SEARCH 🌟")
             report_lines.append("──────────────────────────────")
             report_lines.append(f"👤 Профиль: {steam_id}")
-            report_lines.append(f"💰 Общая стоимость: {result_data['total_price_label']}")
+            report_lines.append(f"💰 Стоимость сетов: {result_data['total_price_label']}")
             report_lines.append(f"📦 Полных наборов: {result_data['matched_count']}")
             report_lines.append(f"🟢 Арканы: {result_data['arcana_count']} | 🟣 Личности: {result_data['persona_count']}")
-            report_lines.append(f"🔵 Предметы: {result_data['items_count']} | Стоимость: {result_data['items_price_label']}")
+            report_lines.append(f"🔵 Предметы: {result_data['items_count']} | Стоимость предметов: {result_data['items_price_label']}")
             report_lines.append("──────────────────────────────")
             report_lines.append("")
 
